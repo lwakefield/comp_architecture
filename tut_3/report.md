@@ -19,14 +19,18 @@ def mul(n):
     set the output to the product register
 ```
 
-| Multiplicand |   Product   |                 Comment                                     |
-|--------------|-------------|-------------------------------------------------------------|
-|    ZZZZ      |   ZZZZ ZZZZ | Uninitialized                                               |
-|    1010      |   0000 1101 | Initilized                                                  |
-|              |   1010 1101 | First loop, add multiplicand to product                     |
-|              |   0101 0110 | Shift product right                                         |
-|              |   0010 1011 | Second loop, shift product right                            |
-|              |   1100 1011 | Third loop, add multiplicand to product                     |
-|              |   0110 0101 | Shift product right                                         |
-|              | 1 0000 0101 | Fourth loop, add multiplicand to product, note the overflow |
-|              |   1000 0010 | Shift product right                                         |
+Below we follow the data in the multiplicand and product registers. Note that overflow happens on the addition in step 80. We will need to take this into account when designing the multiplier.
+
+|------|--------------|-------------|-------------------------------------------------------------|
+| Step | Multiplicand |   Product   |                           Comment                           |
+|------|--------------|-------------|-------------------------------------------------------------|
+|   10 | ZZZZ         | ZZZZ ZZZZ   | Uninitialized                                               |
+|   20 | 1010         | 0000 1101   | Initilized                                                  |
+|   30 |              | 1010 1101   | First loop, add multiplicand to product                     |
+|   40 |              | 0101 0110   | Shift product right                                         |
+|   50 |              | 0010 1011   | Second loop, shift product right                            |
+|   60 |              | 1100 1011   | Third loop, add multiplicand to product                     |
+|   70 |              | 0110 0101   | Shift product right                                         |
+|   80 |              | 1 0000 0101 | Fourth loop, add multiplicand to product, note the overflow |
+|   90 |              | 1000 0010   | Shift product right                                         |
+|------|--------------|-------------|-------------------------------------------------------------|

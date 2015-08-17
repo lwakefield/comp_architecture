@@ -1,6 +1,6 @@
 
 #all: $(addsuffix .out, $(basename $(wildcard *.scala)))
-all: Mul.out
+all: Mul.out Mulv3.out
 
 %.out: $(wildcard *.scala)
 	sbt "run $* --backend c --targetDir ./emulator --compile --test --genHarness --vcd" 
