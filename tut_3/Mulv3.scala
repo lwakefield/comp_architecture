@@ -36,6 +36,7 @@ class Mulv3(val n: Int) extends Module {
     val x = UInt(INPUT, n)
     val y = UInt(INPUT, n)
     val z = UInt(OUTPUT, 2*n)
+    val load = Bool(INPUT)
   }
 
   val state = Reg(init = UInt(0, width = log2Up(2*n))) // keeps track of state
@@ -51,7 +52,7 @@ class Mulv3(val n: Int) extends Module {
   m.io.write := Bool(false)
 
   when (state === UInt(0)) { 
-    m.io.load := Bool(true)
+    m.io.load := io.load
   } .elsewhen (state(0) === UInt(0)) { 
     m.io.rshift := Bool(true)
     m.io.lshift := Bool(true)
@@ -68,7 +69,10 @@ class Mulv3Tester(c: Mulv3, n: Int) extends Tester(c) {
     val y = BigInt(n, scala.util.Random)
     poke(c.io.x, x)
     poke(c.io.y, y)
-    step(n * 2)
+    poke(c.io.load, 1)
+    step(1)
+    poke(c.io.load, 0)
+    step(n)
     expect(c.io.z, (x * y))
   }
 }
