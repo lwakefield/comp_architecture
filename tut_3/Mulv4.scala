@@ -44,9 +44,9 @@ class Mulv4(val n: Int) extends Module {
 class Mulv4Tester(c: Mulv4, n: Int) extends Tester(c) {
   val ran = scala.util.Random
   for (i <- 0 until 10) {
-    val inX = ran.nextInt(1 << n - 1) * -1*(ran.nextInt(2))
+    val inX = ran.nextInt((1 << (n-1)) - 1) * -1
     val x = BigInt(inX)
-    val y = BigInt(n, scala.util.Random)
+    val y = BigInt(n-1, scala.util.Random)
     poke(c.io.x, x)
     poke(c.io.y, y)
     poke(c.io.load, 1)
