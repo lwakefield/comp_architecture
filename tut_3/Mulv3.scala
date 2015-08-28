@@ -38,7 +38,7 @@ class Mulv3(val n: Int) extends Module {
     val load = Bool(INPUT)
   }
 
-  val state = Reg(init = UInt(0, width = log2Up(2*n))) // keeps track of state
+  val state = Reg(init = UInt(0, width = log2Up(n)+1)) // keeps track of state
   val m = Module(new Mulv3dpath(n))
 
   // connect everything up
