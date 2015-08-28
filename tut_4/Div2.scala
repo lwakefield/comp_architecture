@@ -109,29 +109,31 @@ class Div2(val n: Int) extends Module {
 }
 
 class Div2Tester(c: Div2, n: Int) extends Tester(c) {
-  val x = -7
-  val y = 3
-  poke(c.io.x, x)
-  poke(c.io.y, y)
-  poke(c.io.load, 1)
-  step(1)
-  poke(c.io.load, 0)
-  step(2*n + 1)
-  expect(c.io.z, (x % y) << n | (x / y))
-  //for (i <- 0 until 1000) {
-    //val x = BigInt(n, scala.util.Random)
-    //var y = BigInt(n, scala.util.Random)
+  //val x = -7
+  //val y = 3
+  //poke(c.io.x, x)
+  //poke(c.io.y, y)
+  //poke(c.io.load, 1)
+  //step(1)
+  //poke(c.io.load, 0)
+  //step(n + 1)
+  //expect(c.io.z, (x % y) << n | (x / y))
+  val ran = scala.util.Random
+  for (i <- 0 until 10) {
+    val inX = ran.nextInt((1 << (n-1)) - 1) * -1
+    val x = BigInt(inX)
+    var y = BigInt(n-1, scala.util.Random)
     
-    //if (y == BigInt(0)) {       // never divide by zero
-      //y = 1
-    //}
-    //poke(c.io.x, x)
-    //poke(c.io.y, y)
-    //poke(c.io.load, 1)
-    //step(1)
-    //poke(c.io.load, 0)
-    //step(n + 1)
-    //expect(c.io.z, (x % y) << n | (x / y))
-  //}
+    if (y == BigInt(0)) {       // never divide by zero
+      y = 1
+    }
+    poke(c.io.x, x)
+    poke(c.io.y, y)
+    poke(c.io.load, 1)
+    step(1)
+    poke(c.io.load, 0)
+    step(n + 1)
+    expect(c.io.z, (x % y) << n | (x / y))
+  }
 }
 
