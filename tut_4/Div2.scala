@@ -46,9 +46,9 @@ class Div2dpath(val n: Int) extends Module {
   }.
   elsewhen (io.write) {
     when (sign) {
-      val left_half = ~(remainder(end+1, n+1) - UInt(1))
-      val right_half = ~(remainder(n-1, 0) - UInt(1))
-      remainder := Cat(left_half, right_half)
+      val left_half = remainder(end+1, n+1)
+      val right_half = remainder(n-1, 0)
+      remainder := ~(Cat(left_half, right_half) - UInt(1))
     }.
     otherwise {
       val left_half = remainder(end+1, n+1)
@@ -64,7 +64,7 @@ class Div2(val n: Int) extends Module {
   val io = new Bundle{
     val x = UInt(INPUT, n)
     val y = UInt(INPUT, n)
-    val z = UInt(OUTPUT, 2*n)
+    val z = SInt(OUTPUT, 2*n)
     val load = Bool(INPUT)
     val finished = Bool(OUTPUT)
   }
@@ -109,15 +109,6 @@ class Div2(val n: Int) extends Module {
 }
 
 class Div2Tester(c: Div2, n: Int) extends Tester(c) {
-  //val x = -7
-  //val y = 3
-  //poke(c.io.x, x)
-  //poke(c.io.y, y)
-  //poke(c.io.load, 1)
-  //step(1)
-  //poke(c.io.load, 0)
-  //step(n + 1)
-  //expect(c.io.z, (x % y) << n | (x / y))
   val ran = scala.util.Random
   for (i <- 0 until 10) {
     val inX = ran.nextInt((1 << (n-1)) - 1) * -1
@@ -133,6 +124,9 @@ class Div2Tester(c: Div2, n: Int) extends Tester(c) {
     step(1)
     poke(c.io.load, 0)
     step(n + 1)
+    val peeked = peek(c.io.z)
+    val right = (peeked.toInt << n) >>> n
+    val left = peeked >> n
     expect(c.io.z, (x % y) << n | (x / y))
   }
 }
