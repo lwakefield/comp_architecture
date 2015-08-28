@@ -16,7 +16,7 @@ class Divdpath(val n: Int) extends Module {
     val subtract = Bool(INPUT)
   }
 
-  val remainder = Reg(init = UInt(0, width=2*n))
+  val remainder = Reg(init = UInt(0, width=2*n+1))
   val divisor = Reg(init = UInt(0, width=n))
   val end = (2*n)-1
 
@@ -33,7 +33,7 @@ class Divdpath(val n: Int) extends Module {
     remainder := remainder << UInt(1)
   }.
   elsewhen (io.write) {
-    val left_half = remainder(end, n) >> UInt(1)
+    val left_half = remainder(end+1, n+1)
     val right_half = remainder(n-1, 0)
     remainder := Cat(left_half, right_half)
   }
@@ -99,7 +99,7 @@ class DivTester(c: Div, n: Int) extends Tester(c) {
   //poke(c.io.load, 0)
   //step(n + 1)
   //expect(c.io.z, (x % y) << n | (x / y))
-  for (i <- 0 until 10) {
+  for (i <- 0 until 1000) {
     val x = BigInt(n, scala.util.Random)
     var y = BigInt(n, scala.util.Random)
     
