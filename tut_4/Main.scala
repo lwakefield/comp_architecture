@@ -11,6 +11,8 @@ object UnitTests {
     args(0) match {
       case "Div" =>
         chiselMainTest(tutArgs, () => Module(new Div(n))){ c => new DivTester(c, n) }
+      case "Div2" =>
+        chiselMainTest(tutArgs, () => Module(new Div2(n))){ c => new Div2Tester(c, n) }
     }
   }
 }
