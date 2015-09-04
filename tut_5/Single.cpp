@@ -163,7 +163,7 @@ void Single_t::clock_lo ( dat_t<1> reset ) {
   { Single__op = Single__inst >> 26;}
   Single__op = Single__op & 0x3fL;
   val_t T6;
-  T6 = 0x9L == Single__op;
+  T6 = 0x0L == Single__op;
   val_t T7;
   { T7 = Single__io_isWr.values[0] | Single__io_boot.values[0];}
   { T8.values[0] = T7 ^ 0x1L;}

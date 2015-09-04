@@ -25,7 +25,7 @@ class Single extends Module {
   val imem = Mem(Bits(width = Proc.WORDLENGTH), 1 << Proc.IADDRZ)
   val pc   = Reg(init=UInt(0, Proc.IADDRZ))
 
-  val addiu_op = UInt(9, 6)
+  val addiu_op :: rtype_op :: Nil = Enum(Bits(), 2)
   
   val inst = imem(pc(Proc.IADDRZ-1, 2))
   val op   = inst(31,26)
@@ -48,17 +48,19 @@ class Single extends Module {
   } .elsewhen (io.boot) {
     pc := UInt(0)
   } .otherwise {
-    if (op != UInt(0)) {
+    if (op != rtype_op) {
       switch(op) {
         is(addiu_op) { rc := ra + rdi }  // $t = $s + C
       }
       regfile(rti) := rc
     }
+    if (op == rtype_op) {
+
+    }
     pc := pc + UInt(4)
   }
   io.out := regfile(UInt(3))
   io.inst := inst
-  //io.op := op
   io.pc := pc
 }
 
@@ -89,11 +91,11 @@ class SingleTests(c: Single) extends Tester(c) {
                    I(c.addiu_op, 3, 3, 15, 0, 0),
                    I(c.addiu_op, 3, 3, 15, 0, 0),
                    I(c.addiu_op, 3, 3, 15, 0, 0),
-                   I(c.addiu_op, 0, 0, 0, 0, 0),
-                   I(c.addiu_op, 0, 0, 0, 0, 0),
-                   I(c.addiu_op, 0, 0, 0, 0, 0),
-                   I(c.addiu_op, 0, 0, 0, 0, 0),
-                   I(c.addiu_op, 0, 0, 0, 0, 0))
+                   I(c.addiu_op, 3, 3, 6, 0, 0),
+                   I(c.rtype_op, 0, 0, 0, 0, 0),
+                   I(c.rtype_op, 0, 0, 0, 0, 0),
+                   I(c.rtype_op, 0, 0, 0, 0, 0),
+                   I(c.rtype_op, 0, 0, 0, 0, 0))
   wr(UInt(0), Bits(0)) // skip reset
   for (addr <- 0 until app.length) 
     wr(UInt(addr), app(addr))
