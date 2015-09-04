@@ -19,14 +19,15 @@ class Single extends Module {
     val out    = Bits(OUTPUT, Proc.WORDLENGTH)
     val inst   = Bits(OUTPUT, Proc.WORDLENGTH)
     val pc     = Bits(OUTPUT, Proc.IADDRZ)
-    //val op     = Bits(OUTPUT, 6)
   }
   val regfile = Mem(Bits(width = Proc.WORDLENGTH), Proc.WORDLENGTH)
   val imem = Mem(Bits(width = Proc.WORDLENGTH), 1 << Proc.IADDRZ)
   val pc   = Reg(init=UInt(0, Proc.IADDRZ))
+  val lo = Reg(init=UInt(0, Proc.WORDLENGTH))
+  val hi = Reg(init=UInt(0, Proc.WORDLENGTH))
 
   val addiu_op :: rtype_op :: Nil = Enum(Bits(), 2)
-  val addu_fn :: subu_fn :: or_fn :: sltu_fn  :: Nil = Enum(Bits(), 4)
+  val addu_fn :: subu_fn :: or_fn :: sltu_fn :: multu_fn :: mflo_fn :: mfhi_fn :: Nil = Enum(Bits(), 7)
   
   val inst = imem(pc(Proc.IADDRZ-1, 2))
   val op   = inst(31,26)
@@ -63,6 +64,12 @@ class Single extends Module {
         is(sltu_fn) {                 // $d = $s < $t ? 1 : 0
           rc := Mux(ra > rb, UInt(1), UInt(0))
         }
+        is(multu_fn) {
+          lo := ((ra * rb) << Proc.WORDLENGTH) >> Proc.WORDLENGTH
+          hi := (ra * rb) >> Proc.WORDLENGTH
+        }
+        is(mflo_fn) { rc := lo }
+        is(mfhi_fn) { rc := hi }
       }
       regfile(rdi) := rc
     }
