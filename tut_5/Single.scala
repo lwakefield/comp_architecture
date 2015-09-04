@@ -19,6 +19,10 @@ class Single extends Module {
     val out    = Bits(OUTPUT, Proc.WORDLENGTH)
     val inst   = Bits(OUTPUT, Proc.WORDLENGTH)
     val pc     = Bits(OUTPUT, Proc.IADDRZ)
+    val funct  = Bits(OUTPUT, 6)
+    val op     = Bits(OUTPUT, 6)
+    val lo = Bits(OUTPUT, Proc.WORDLENGTH)
+    val hi = Bits(OUTPUT, Proc.WORDLENGTH)
   }
   val regfile = Mem(Bits(width = Proc.WORDLENGTH), Proc.WORDLENGTH)
   val imem = Mem(Bits(width = Proc.WORDLENGTH), 1 << Proc.IADDRZ)
@@ -26,8 +30,16 @@ class Single extends Module {
   val lo = Reg(init=UInt(0, Proc.WORDLENGTH))
   val hi = Reg(init=UInt(0, Proc.WORDLENGTH))
 
-  val addiu_op :: rtype_op :: Nil = Enum(Bits(), 2)
-  val addu_fn :: subu_fn :: or_fn :: sltu_fn :: multu_fn :: mflo_fn :: mfhi_fn :: Nil = Enum(Bits(), 7)
+  val rtype_op = UInt(0, width=6)
+  val addiu_op = UInt(9, width=6)
+
+  val addu_fn  = UInt(33, width=6)
+  val subu_fn  = UInt(35, width=6)
+  val or_fn    = UInt(37, width=6)
+  val sltu_fn  = UInt(42, width=6)
+  val multu_fn = UInt(25, width=6)
+  val mflo_fn  = UInt(18, width=6)
+  val mfhi_fn  = UInt(16, width=6)
   
   val inst = imem(pc(Proc.IADDRZ-1, 2))
   val op   = inst(31,26)
@@ -50,13 +62,7 @@ class Single extends Module {
   } .elsewhen (io.boot) {
     pc := UInt(0)
   } .otherwise {
-    when (op != rtype_op) {
-      switch(op) {
-        is(addiu_op) { rc := Cat(rdi, shamt, funct) }  // $t = $s + C
-      }
-      regfile(rti) := rc
-    }.
-    elsewhen (op === rtype_op) {
+    when (op === rtype_op){
       switch(funct) {
         is(addu_fn) { rc := ra + rb } // $d = $s + $t
         is(subu_fn) { rc := ra + rb } // $d = $s - $t
@@ -65,19 +71,30 @@ class Single extends Module {
           rc := Mux(ra > rb, UInt(1), UInt(0))
         }
         is(multu_fn) {
-          lo := ((ra * rb) << Proc.WORDLENGTH) >> Proc.WORDLENGTH
-          hi := (ra * rb) >> Proc.WORDLENGTH
+          val res = UInt(ra, width=2*Proc.WORDLENGTH) * UInt(rb, width=2*Proc.WORDLENGTH)
+          hi := res(63,32)
+          lo := res(31,0)
         }
         is(mflo_fn) { rc := lo }
         is(mfhi_fn) { rc := hi }
       }
       regfile(rdi) := rc
+    }.
+    otherwise {
+      switch(op) {
+        is(addiu_op) { rc := Cat(rdi, shamt, funct) }  // $t = $s + C
+      }
+      regfile(rti) := rc
     }
     pc := pc + UInt(4)
   }
   io.out := regfile(UInt(3))
   io.inst := inst
   io.pc := pc
+  io.hi := hi
+  io.lo := lo
+  io.funct := funct
+  io.op := op
 }
 
 class SingleTests(c: Single) extends Tester(c) {  
@@ -96,25 +113,29 @@ class SingleTests(c: Single) extends Tester(c) {
   }
   def tick()  = {
     peek(c.io.inst)
+    peek(c.io.funct)
+    peek(c.io.op)
     peek(c.io.pc)
     step(1)
     peek(c.io.out)
+    peek(c.io.hi)
+    peek(c.io.lo)
   }
-  def R (op: UInt, rsi: Int, rti: Int, rdi: Int, shamt: Int, funct: Int) = 
+  def R (op: UInt, rsi: Int, rti: Int, rdi: Int, shamt: Int, funct: UInt) = 
     Cat(op, UInt(rsi, 5), UInt(rti, 5), 
-        UInt(rdi, 5), UInt(shamt, 5), UInt(funct, 6))
+        UInt(rdi, 5), UInt(shamt, 5), funct)
   def I (op: UInt, rsi: Int, rti: Int, imm: Int) = 
     Cat(op, UInt(rsi, 5), UInt(rti, 5), 
         UInt(imm, 16))
   val app  = Array(I(c.addiu_op, 0, 3, 66), //$t = $s + C
-                   R(c.rtype_op, 0, 0, 0, 0, 0),
-                   R(c.rtype_op, 0, 0, 0, 0, 0),
-                   R(c.rtype_op, 0, 0, 0, 0, 0),
-                   R(c.rtype_op, 0, 0, 0, 0, 0),
-                   R(c.rtype_op, 0, 0, 0, 0, 0),
-                   R(c.rtype_op, 0, 0, 0, 0, 0),
-                   R(c.rtype_op, 0, 0, 0, 0, 0),
-                   R(c.rtype_op, 0, 0, 0, 0, 0))
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0)))
   wr(UInt(0), Bits(0)) // skip reset
   for (addr <- 0 until app.length) 
     wr(UInt(addr), app(addr))
@@ -124,6 +145,25 @@ class SingleTests(c: Single) extends Tester(c) {
     tick(); k += 1
   } while (k < 5)
   expect(c.io.out, 66)
+
+  val app2  = Array(I(c.addiu_op, 0, 3, 50123),
+                   I(c.addiu_op, 0, 1, 1357),
+                   R(c.rtype_op, 3, 1, 0, 0, c.multu_fn),
+                   R(c.rtype_op, 0, 0, 3, 0, c.mflo_fn),
+                   R(c.rtype_op, 3, 1, 0, 0, c.multu_fn),
+                   R(c.rtype_op, 0, 0, 3, 0, c.mflo_fn),
+                   R(c.rtype_op, 0, 0, 3, 0, c.mfhi_fn),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0, width=6)),
+                   R(c.rtype_op, 0, 0, 0, 0, UInt(0, width=6)))
+  wr(UInt(0), Bits(0)) // skip reset
+  for (addr <- 0 until app2.length) 
+    wr(UInt(addr), app2(addr))
+  boot()
+  step(6)
+  expect(c.io.out, 2104635011)
+  step(1)
+  expect(c.io.out, 21)
+
 }
 
 object TutorialExamples {
