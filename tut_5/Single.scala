@@ -52,7 +52,7 @@ class Single extends Module {
   } .otherwise {
     when (op != rtype_op) {
       switch(op) {
-        is(addiu_op) { rc := ra + rdi }  // $t = $s + C
+        is(addiu_op) { rc := Cat(rdi, shamt, funct) }  // $t = $s + C
       }
       regfile(rti) := rc
     }.
@@ -100,18 +100,21 @@ class SingleTests(c: Single) extends Tester(c) {
     step(1)
     peek(c.io.out)
   }
-  def I (op: UInt, rsi: Int, rti: Int, rdi: Int, shamt: Int, funct: Int) = 
+  def R (op: UInt, rsi: Int, rti: Int, rdi: Int, shamt: Int, funct: Int) = 
     Cat(op, UInt(rsi, 5), UInt(rti, 5), 
         UInt(rdi, 5), UInt(shamt, 5), UInt(funct, 6))
-  val app  = Array(I(c.addiu_op, 0, 3, 15, 0, 0), //$t = $s + C
-                   I(c.addiu_op, 3, 3, 15, 0, 0),
-                   I(c.addiu_op, 3, 3, 15, 0, 0),
-                   I(c.addiu_op, 3, 3, 15, 0, 0),
-                   I(c.addiu_op, 3, 3, 6, 0, 0),
-                   I(c.rtype_op, 0, 0, 0, 0, 0),
-                   I(c.rtype_op, 0, 0, 0, 0, 0),
-                   I(c.rtype_op, 0, 0, 0, 0, 0),
-                   I(c.rtype_op, 0, 0, 0, 0, 0))
+  def I (op: UInt, rsi: Int, rti: Int, imm: Int) = 
+    Cat(op, UInt(rsi, 5), UInt(rti, 5), 
+        UInt(imm, 16))
+  val app  = Array(I(c.addiu_op, 0, 3, 66), //$t = $s + C
+                   R(c.rtype_op, 0, 0, 0, 0, 0),
+                   R(c.rtype_op, 0, 0, 0, 0, 0),
+                   R(c.rtype_op, 0, 0, 0, 0, 0),
+                   R(c.rtype_op, 0, 0, 0, 0, 0),
+                   R(c.rtype_op, 0, 0, 0, 0, 0),
+                   R(c.rtype_op, 0, 0, 0, 0, 0),
+                   R(c.rtype_op, 0, 0, 0, 0, 0),
+                   R(c.rtype_op, 0, 0, 0, 0, 0))
   wr(UInt(0), Bits(0)) // skip reset
   for (addr <- 0 until app.length) 
     wr(UInt(addr), app(addr))

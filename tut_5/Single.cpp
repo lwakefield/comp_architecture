@@ -222,13 +222,15 @@ void Single_t::clock_lo ( dat_t<1> reset ) {
   { T24 = TERNARY(reset.values[0], 0x0L, T23);}
   { T25.values[0] = T24;}
   T25.values[0] = T25.values[0] & 0xffffffffL;
+  val_t Single__shamt;
+  { Single__shamt = Single__inst >> 6;}
+  Single__shamt = Single__shamt & 0x1fL;
+  val_t T26;
+  { T26 = Single__funct | Single__shamt << 6;}
   { Single__rdi.values[0] = Single__inst >> 11;}
   Single__rdi.values[0] = Single__rdi.values[0] & 0x1fL;
-  val_t T26;
-  { T26 = Single__rdi.values[0] | 0x0L << 5;}
   val_t T27;
-  { T27 = Single__ra+T26;}
-  T27 = T27 & 0xffffffffL;
+  { T27 = T26 | Single__rdi.values[0] << 11;}
   val_t T28;
   T28 = 0x0L == Single__op;
   { T29.values[0] = T14 & T10;}
@@ -237,70 +239,72 @@ void Single_t::clock_lo ( dat_t<1> reset ) {
   val_t T31;
   { T31 = TERNARY(T30, T27, 0x0L);}
   val_t T32;
-  { T32 = Single__ra+Single__rb;}
-  T32 = T32 & 0xffffffffL;
+  { T32 = T31 | 0x0L << 16;}
   val_t T33;
-  T33 = 0x0L == Single__funct;
+  { T33 = Single__ra+Single__rb;}
+  T33 = T33 & 0xffffffffL;
   val_t T34;
-  { T34 = T15.values[0] & T33;}
+  T34 = 0x0L == Single__funct;
   val_t T35;
-  { T35 = TERNARY_1(T34, T32, T31);}
+  { T35 = T15.values[0] & T34;}
   val_t T36;
-  { T36 = Single__ra+Single__rb;}
-  T36 = T36 & 0xffffffffL;
+  { T36 = TERNARY_1(T35, T33, T32);}
   val_t T37;
-  T37 = 0x1L == Single__funct;
+  { T37 = Single__ra+Single__rb;}
+  T37 = T37 & 0xffffffffL;
   val_t T38;
-  { T38 = T15.values[0] & T37;}
+  T38 = 0x1L == Single__funct;
   val_t T39;
-  { T39 = TERNARY_1(T38, T36, T35);}
+  { T39 = T15.values[0] & T38;}
   val_t T40;
-  { T40 = Single__ra | Single__rb;}
+  { T40 = TERNARY_1(T39, T37, T36);}
   val_t T41;
-  T41 = 0x2L == Single__funct;
+  { T41 = Single__ra | Single__rb;}
   val_t T42;
-  { T42 = T15.values[0] & T41;}
+  T42 = 0x2L == Single__funct;
   val_t T43;
-  { T43 = TERNARY_1(T42, T40, T39);}
+  { T43 = T15.values[0] & T42;}
   val_t T44;
-  T44 = Single__rb<Single__ra;
+  { T44 = TERNARY_1(T43, T41, T40);}
   val_t T45;
-  { T45 = T44 | 0x0L << 1;}
+  T45 = Single__rb<Single__ra;
   val_t T46;
-  T46 = 0x3L == Single__funct;
+  { T46 = T45 | 0x0L << 1;}
   val_t T47;
-  { T47 = T15.values[0] & T46;}
+  T47 = 0x3L == Single__funct;
   val_t T48;
-  { T48 = TERNARY_1(T47, T45, T43);}
+  { T48 = T15.values[0] & T47;}
   val_t T49;
-  T49 = 0x5L == Single__funct;
+  { T49 = TERNARY_1(T48, T46, T44);}
   val_t T50;
-  { T50 = T15.values[0] & T49;}
+  T50 = 0x5L == Single__funct;
   val_t T51;
-  { T51 = TERNARY_1(T50, Single__lo.values[0], T48);}
+  { T51 = T15.values[0] & T50;}
   val_t T52;
-  T52 = 0x6L == Single__funct;
+  { T52 = TERNARY_1(T51, Single__lo.values[0], T49);}
   val_t T53;
-  { T53 = T15.values[0] & T52;}
+  T53 = 0x6L == Single__funct;
   val_t T54;
-  { T54 = TERNARY_1(T53, Single__hi.values[0], T51);}
-  { Single__rc.values[0] = T54;}
+  { T54 = T15.values[0] & T53;}
   val_t T55;
-  { T55 = Single__regfile.get(0x3L, 0);}
-  { Single__io_out.values[0] = T55;}
-  { Single__io_inst.values[0] = Single__inst;}
+  { T55 = TERNARY_1(T54, Single__hi.values[0], T52);}
+  { Single__rc.values[0] = T55;}
   val_t T56;
-  { T56 = Single__io_isWr.values[0] ^ 0x1L;}
+  { T56 = Single__regfile.get(0x3L, 0);}
+  { Single__io_out.values[0] = T56;}
+  { Single__io_inst.values[0] = Single__inst;}
   val_t T57;
-  { T57 = T56 & Single__io_boot.values[0];}
+  { T57 = Single__io_isWr.values[0] ^ 0x1L;}
   val_t T58;
-  { T58 = TERNARY(T57, 0x0L, Single__pc.values[0]);}
+  { T58 = T57 & Single__io_boot.values[0];}
   val_t T59;
-  { T59 = Single__pc.values[0]+0x4L;}
-  T59 = T59 & 0x3ffL;
+  { T59 = TERNARY(T58, 0x0L, Single__pc.values[0]);}
   val_t T60;
-  { T60 = TERNARY_1(T14, T59, T58);}
-  { T61.values[0] = TERNARY(reset.values[0], 0x0L, T60);}
+  { T60 = Single__pc.values[0]+0x4L;}
+  T60 = T60 & 0x3ffL;
+  val_t T61;
+  { T61 = TERNARY_1(T14, T60, T59);}
+  { T62.values[0] = TERNARY(reset.values[0], 0x0L, T61);}
   { Single__io_pc.values[0] = Single__pc.values[0];}
 }
 
@@ -311,10 +315,10 @@ void Single_t::clock_hi ( dat_t<1> reset ) {
   { if (T15.values[0]) Single__regfile.put(Single__rdi.values[0], 0, Single__rc.values[0]);}
   { if (T29.values[0]) Single__regfile.put(Single__rti.values[0], 0, Single__rc.values[0]);}
   { if (Single__io_isWr.values[0]) Single__imem.put(Single__io_wrAddr.values[0], 0, Single__io_wrData.values[0]);}
-  dat_t<10> Single__pc__shadow = T61;
+  dat_t<10> Single__pc__shadow = T62;
   Single__hi = T18;
   Single__lo = T25;
-  Single__pc = T61;
+  Single__pc = T62;
 }
 
 

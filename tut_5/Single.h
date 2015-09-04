@@ -18,7 +18,7 @@ class Single_t : public mod_t {
   dat_t<5> Single__rti;
   dat_t<5> Single__rdi;
   dat_t<10> Single__io_wrAddr;
-  dat_t<10> T61;
+  dat_t<10> T62;
   dat_t<10> Single__pc;
   dat_t<10> Single__io_pc;
   dat_t<32> T18;
