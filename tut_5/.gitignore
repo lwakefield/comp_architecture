@@ -1,0 +1,4 @@
+*.swp
+emulator/
+project/
+target/
