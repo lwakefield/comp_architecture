@@ -12,11 +12,13 @@ class Single_t : public mod_t {
   dat_t<1> Single__io_valid;
   dat_t<1> Single__io_boot;
   dat_t<1> Single__io_isWr;
-  dat_t<1> T8;
+  dat_t<1> T10;
+  dat_t<1> T20;
   dat_t<1> reset;
+  dat_t<5> Single__rdi;
   dat_t<5> Single__rti;
   dat_t<10> Single__io_wrAddr;
-  dat_t<10> T17;
+  dat_t<10> T42;
   dat_t<10> Single__pc;
   dat_t<10> Single__io_pc;
   dat_t<32> Single__rc;

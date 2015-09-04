@@ -26,6 +26,7 @@ class Single extends Module {
   val pc   = Reg(init=UInt(0, Proc.IADDRZ))
 
   val addiu_op :: rtype_op :: Nil = Enum(Bits(), 2)
+  val addu_fn :: subu_fn :: or_fn :: sltu_fn  :: Nil = Enum(Bits(), 4)
   
   val inst = imem(pc(Proc.IADDRZ-1, 2))
   val op   = inst(31,26)
@@ -48,14 +49,22 @@ class Single extends Module {
   } .elsewhen (io.boot) {
     pc := UInt(0)
   } .otherwise {
-    if (op != rtype_op) {
+    when (op != rtype_op) {
       switch(op) {
         is(addiu_op) { rc := ra + rdi }  // $t = $s + C
       }
       regfile(rti) := rc
-    }
-    if (op == rtype_op) {
-
+    }.
+    elsewhen (op === rtype_op) {
+      switch(funct) {
+        is(addu_fn) { rc := ra + rb } // $d = $s + $t
+        is(subu_fn) { rc := ra + rb } // $d = $s - $t
+        is(or_fn) { rc := ra | rb }   // $d = $s | $t 
+        is(sltu_fn) {                 // $d = $s < $t ? 1 : 0
+          rc := Mux(ra > rb, UInt(1), UInt(0))
+        }
+      }
+      regfile(rdi) := rc
     }
     pc := pc + UInt(4)
   }
