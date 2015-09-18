@@ -81,6 +81,8 @@ class Dpath extends Module {
     val s0 = UInt(OUTPUT, C.WORDLENGTH)
     val s1 = UInt(OUTPUT, C.WORDLENGTH)
     val fp = UInt(OUTPUT, C.WORDLENGTH)
+    val t0 = UInt(OUTPUT, C.WORDLENGTH)
+    val t1 = UInt(OUTPUT, C.WORDLENGTH)
     val t9 = UInt(OUTPUT, C.WORDLENGTH)
     val v0 = UInt(OUTPUT, C.WORDLENGTH)
     val v1 = UInt(OUTPUT, C.WORDLENGTH)
@@ -130,8 +132,8 @@ class Dpath extends Module {
 
   val j_addr = Mux(io.j_src, rs, UInt(4) * addr)
 
-  val branch = io.b_en && (io.is_branch_on_eq ^ io.zero)
-  val branch_addr = Mux(branch, pc + sextimm, pcp4)
+  val branch = io.b_en && ((~io.is_branch_on_eq && ~io.zero) || (io.is_branch_on_eq && ~io.zero))
+  val branch_addr = Mux(branch, pc + (UInt(4) * sextimm), pcp4)
 
   // changes of state
   when (io.isWr) {
@@ -162,6 +164,8 @@ class Dpath extends Module {
     io.v0 := regfile(UInt(2))
     io.v1 := regfile(UInt(3))
     io.a0 := regfile(UInt(4))
+    io.t0 := regfile(UInt(8))
+    io.t0 := regfile(UInt(9))
     io.s0 := regfile(UInt(16))
     io.s1 := regfile(UInt(17))
     io.t9 := regfile(UInt(25))
@@ -204,14 +208,14 @@ class Single extends Module {
   val zero = dp.io.zero
 
   // control logic
-  val alu_src = op(C.OP_RTYPE)
+  val alu_src = op(C.OP_RTYPE) || op(C.OP_BNE) || op(C.OP_BEQ)
   val alu_op = MuxCase(UInt(0), Array(
                 (fop(C.OP_RTYPE, C.FUNC_ADDU) || 
                   op(C.OP_ADDI) || op(C.OP_ADDIU) || op(C.OP_SW)
                   || op(C.OP_LW)) -> (C.ALU_ADD),
                 fop(C.OP_RTYPE, C.FUNC_SUBU) -> (C.ALU_SUB),
-                fop(C.OP_RTYPE, C.FUNC_SLTU) -> (C.ALU_SLL),
-                fop(C.OP_RTYPE, C.FUNC_SLL) -> (C.ALU_SLT),
+                fop(C.OP_RTYPE, C.FUNC_SLTU) -> (C.ALU_SLT),
+                fop(C.OP_RTYPE, C.FUNC_SLL) -> (C.ALU_SLL),
                 (op(C.OP_BNE) || op(C.OP_BNE)) -> (C.ALU_SUB),
                 (fop(C.OP_RTYPE, C.FUNC_OR) || op(C.OP_ORI)) -> (C.ALU_OR),
                 op(C.OP_LUI) -> (C.ALU_LUIB)))
@@ -245,6 +249,9 @@ class Single extends Module {
   dp.io.j_en := j_en
   dp.io.j_src := j_src
   dp.io.jal := jal
+
+  dp.io.b_en := b_en
+  dp.io.is_branch_on_eq := is_branch_on_eq
 
   io.j_en := j_en
   io.j_src := j_src
@@ -346,7 +353,7 @@ class SingleTests(c: Single) extends Tester(c) {
   var k = 0
   do {
     tick(); k += 1
-  } while (k < 50)
+  } while (k < 500000)
   expect(c.io.out, 0xa18)
 }
 
