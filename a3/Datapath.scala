@@ -46,7 +46,10 @@ class Dpath extends Module {
   val pc   = Reg(init=UInt(C.STARTADDR, C.WORDLENGTH))
   def mop(o: UInt) = C.opi(io.inst, o)	// match op
   def aop(o: UInt) = io.alu_op === o	// match alu op
-  
+
+  // pc next address
+  val pcp4 = pc + UInt(4)
+
   // instruction decoding
   val inst = imem(pc(C.IADDRZ-1, 2))
   val rsi  = inst(25,21)
@@ -58,6 +61,12 @@ class Dpath extends Module {
   val addr = inst(25, 0)
   val rs = Mux(rsi === Bits(0), Bits(0), regfile(rsi))	// regfile(0) = 0
   val rt = Mux(rti === Bits(0), Bits(0), regfile(rti))
+
+  // IF/ID Stage
+  val ifid_pcp4 = Reg(UInt(width=C.WORDLENGTH))
+  val ifid_inst = Reg(UInt(width=C.WORDLENGTH))
+  ifid_pcp4 := pcp4
+  ifid_inst := inst
 
   // immediate values extracted from instruction
   val sextimm = Cat(Fill(16, imm(15)), imm)
@@ -78,8 +87,6 @@ class Dpath extends Module {
   // data memory
   val dmem_out = dmem(alu_out)
 
-  // pc next address
-  val pcp4 = pc + UInt(4)
 
   val j_addr = Mux(io.j_src, rs, UInt(4) * addr)
 
@@ -112,21 +119,8 @@ class Dpath extends Module {
     }
   }
 
-    io.v0 := regfile(UInt(2))
-    io.v1 := regfile(UInt(3))
-    io.a0 := regfile(UInt(4))
-    io.t0 := regfile(UInt(8))
-    io.t0 := regfile(UInt(9))
-    io.s0 := regfile(UInt(16))
-    io.s1 := regfile(UInt(17))
-    io.t9 := regfile(UInt(25))
-    io.sp := regfile(UInt(29))
-    io.fp := regfile(UInt(30))
-    io.ra := regfile(UInt(31))
-    io.zero := zero
-
   // io for the processor
-  io.out := regfile(UInt(25))
+  io.out := regfile(UInt(24))
   io.pc := pc
   io.inst := inst
 }

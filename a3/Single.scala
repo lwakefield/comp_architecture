@@ -31,41 +31,15 @@ class SingleTests(c: Core) extends Tester(c) {
     Cat(UInt(op, 6), UInt(rsi, 5), UInt(rti, 5), UInt(imm, 16))
   def StrUInt(s: String) = UInt(BigInt(s, 16))
   val app  = Array(
-    StrUInt("2009000e"),  // 0x00400000 addi $9,$0,0x0000000e  1    addi $t1, $zero, 14
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("200a0007"),  // 0x00400004 addi $10,$0,0x00000007 2    addi $t2, $zero, 7
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("200b0006"),  // 0x00400008 addi $11,$0,0x00000006 3    addi $t3, $zero, 6
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("012b5022"),  // 0x0040000c sub $10,$9,$11         4    sub  $t2, $t1, $t3
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("014d6024"),  // 0x00400010 and $12,$10,$13        5    and  $t4, $t2, $t5
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("01ca7825"),  // 0x00400014 or $15,$14,$10         6    or   $t7, $t6, $t2
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("014ac020"),  // 0x00400018 add $24,$10,$10        7    add  $t8, $t2, $t2
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000"),
-    StrUInt("00000000")
+    /*0x00400000*/  StrUInt("2009000e"),  // addi $9,$0,0x0000000e 1    addi $t1, $zero, 14
+    /*0x00400004*/  StrUInt("200a0007"),  // addi $10,$0,0x000000072    addi $t2, $zero, 7
+    /*0x00400008*/  StrUInt("200b0006"),  // addi $11,$0,0x000000063    addi $t3, $zero, 6
+    /*0x0040000c*/  StrUInt("200d0009"),  // addi $13,$0,0x000000094    addi $t5, $zero, 9
+    /*0x00400010*/  StrUInt("200e002a"),  // addi $14,$0,0x0000002a5    addi $t6, $zero, 42
+    /*0x00400014*/  StrUInt("012b5023"),  // subu $10,$9,$11       6    subu $t2, $t1, $t3
+    /*0x00400018*/  StrUInt("014d6021"),  // addu $12,$10,$13      7    addu $t4, $t2, $t5
+    /*0x0040001c*/  StrUInt("01ca7823"),  // subu $15,$14,$10      8    subu $t7, $t6, $t2
+    /*0x00400020*/  StrUInt("014ac021")   // addu $24,$10,$10      9    addu $t8, $t2, $t2
   )
   wr(UInt(0), Bits(0)) // skip reset
   for (addr <- 0 until app.length) {
@@ -75,7 +49,7 @@ class SingleTests(c: Core) extends Tester(c) {
   var k = 0
   do {
     tick(); k += 1
-  } while (k < 7*5)
+  } while (k < app.length)
 }
 
 object MIPSlite {
