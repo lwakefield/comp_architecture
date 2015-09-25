@@ -1,0 +1,9 @@
+ Address    Code        Basic                     Source
+
+0x00400000  0x2009000e  addi $9,$0,0x0000000e  1    addi $t1, $zero, 14
+0x00400004  0x200a0007  addi $10,$0,0x00000007 2    addi $t2, $zero, 7
+0x00400008  0x200b0006  addi $11,$0,0x00000006 3    addi $t3, $zero, 6
+0x0040000c  0x012b5022  sub $10,$9,$11         4    sub  $t2, $t1, $t3
+0x00400010  0x014d6024  and $12,$10,$13        5    and  $t4, $t2, $t5
+0x00400014  0x01ca7825  or $15,$14,$10         6    or   $t7, $t6, $t2
+0x00400018  0x014ac020  add $24,$10,$10        7    add  $t8, $t2, $t2
