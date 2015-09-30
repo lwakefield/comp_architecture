@@ -21,6 +21,53 @@ class SingleTests(c: Core) extends Tester(c) {
     step(1)
   }
   def tick()  = {
+    peek(c.io.pc)
+    peek(c.io.inst)
+
+    peek(c.dp.memwb_reg_write)
+    peek(c.dp.memwb_reg_dst)
+    peek(c.dp.memwb_rti)
+    peek(c.dp.memwb_rdi)
+    peek(c.dp.memwb_mem_toreg)
+    peek(c.dp.memwb_dmem_out)
+    peek(c.dp.memwb_alu_out)
+    peek(c.dp.exmem_alu_out)
+    peek(c.dp.exmem_j_addr)
+    peek(c.dp.exmem_branch_addr)
+    peek(c.dp.exmem_pcp4)
+    peek(c.dp.exmem_addr)
+    peek(c.dp.exmem_sextimm)
+    peek(c.dp.exmem_reg_write)
+    peek(c.dp.exmem_reg_dst)
+    peek(c.dp.exmem_mem_toreg)
+    peek(c.dp.exmem_mem_write)
+    peek(c.dp.exmem_rti)
+    peek(c.dp.exmem_rdi)
+    peek(c.dp.exmem_rt)
+    peek(c.dp.idex_pcp4)
+    peek(c.dp.idex_rs)
+    peek(c.dp.idex_rt)
+    //peek(c.dp.idex_rsi)
+    peek(c.dp.idex_rti)
+    peek(c.dp.idex_rdi)
+    peek(c.dp.idex_sextimm)
+    //peek(c.dp.idex_inst)
+    peek(c.dp.idex_alu_src)
+    peek(c.dp.idex_alu_op)
+    peek(c.dp.idex_shamt)
+    peek(c.dp.idex_reg_write)
+    peek(c.dp.idex_reg_dst)
+    peek(c.dp.idex_mem_toreg)
+    peek(c.dp.idex_mem_write)
+    peek(c.dp.ifid_pcp4)
+    peek(c.dp.ifid_inst)
+    peek(c.dp.ifid_rsi)
+    peek(c.dp.ifid_rti)
+    peek(c.dp.ifid_rdi)
+    peek(c.dp.ifid_reg_write)
+    peek(c.dp.ifid_reg_dst)
+    peek(c.dp.ifid_mem_toreg)
+    peek(c.dp.ifid_mem_write)
     step(1)
     peek(c.io.out)
   }
@@ -31,15 +78,8 @@ class SingleTests(c: Core) extends Tester(c) {
     Cat(UInt(op, 6), UInt(rsi, 5), UInt(rti, 5), UInt(imm, 16))
   def StrUInt(s: String) = UInt(BigInt(s, 16))
   val app  = Array(
-    /*0x00400000*/  StrUInt("2009000e"),  // addi $9,$0,0x0000000e 1    addi $t1, $zero, 14
-    /*0x00400004*/  StrUInt("200a0007"),  // addi $10,$0,0x000000072    addi $t2, $zero, 7
-    /*0x00400008*/  StrUInt("200b0006"),  // addi $11,$0,0x000000063    addi $t3, $zero, 6
-    /*0x0040000c*/  StrUInt("200d0009"),  // addi $13,$0,0x000000094    addi $t5, $zero, 9
-    /*0x00400010*/  StrUInt("200e002a"),  // addi $14,$0,0x0000002a5    addi $t6, $zero, 42
-    /*0x00400014*/  StrUInt("012b5023"),  // subu $10,$9,$11       6    subu $t2, $t1, $t3
-    /*0x00400018*/  StrUInt("014d6021"),  // addu $12,$10,$13      7    addu $t4, $t2, $t5
-    /*0x0040001c*/  StrUInt("01ca7823"),  // subu $15,$14,$10      8    subu $t7, $t6, $t2
-    /*0x00400020*/  StrUInt("014ac021")   // addu $24,$10,$10      9    addu $t8, $t2, $t2
+    /*0x00400000*/  StrUInt("2019001e"),  //addi $25,$0,0x0000001e1    addi $t9, $zero, 30
+    /*0x00400004*/  StrUInt("20190019")  //addi $25,$0,0x000000192    addi $t9, $zero, 25
   )
   wr(UInt(0), Bits(0)) // skip reset
   for (addr <- 0 until app.length) {
@@ -49,7 +89,7 @@ class SingleTests(c: Core) extends Tester(c) {
   var k = 0
   do {
     tick(); k += 1
-  } while (k < app.length)
+  } while (k < (app.length) * 5)
 }
 
 object MIPSlite {
