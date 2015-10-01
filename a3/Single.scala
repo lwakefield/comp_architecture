@@ -3,7 +3,7 @@ package MIPSlite
 import Chisel._
 import scala.collection.mutable.ArrayBuffer
 
-class SingleTests(c: Core) extends Tester(c) {  
+class BaseTester(c: Core) extends Tester(c) {
   def wr(addr: UInt, data: UInt)  = {
     poke(c.io.isWr,   1)
     poke(c.io.wrAddr, addr.litValue())
@@ -13,11 +13,11 @@ class SingleTests(c: Core) extends Tester(c) {
   def boot()  = {
     poke(c.io.isWr, 0)
     poke(c.io.boot, 1)
-    peek(c.io.out)
+    //peek(c.io.out)
     step(1)
     poke(c.io.isWr, 0)
     poke(c.io.boot, 0)
-    peek(c.io.out)
+    //peek(c.io.out)
     step(1)
   }
   def tick()  = {
@@ -71,12 +71,10 @@ class SingleTests(c: Core) extends Tester(c) {
     step(1)
     peek(c.io.out)
   }
-  def IR (op: Int, rsi: Int, rti: Int, rdi: Int, shamt: Int, func: Int) = 
-    Cat(UInt(op, 6), UInt(rsi, 5), UInt(rti, 5), 
-      UInt(rdi, 5), UInt(shamt, 5), UInt(func, 5))
-  def II (op: Int, rsi: Int, rti: Int, imm: Int) = 
-    Cat(UInt(op, 6), UInt(rsi, 5), UInt(rti, 5), UInt(imm, 16))
   def StrUInt(s: String) = UInt(BigInt(s, 16))
+}
+
+class SimplePipelineTest(c: Core) extends BaseTester(c) {  
   val app  = Array(
     /*0x00400000*/  StrUInt("2019001e"),  //addi $25,$0,0x0000001e1    addi $t9, $zero, 30
     /*0x00400004*/  StrUInt("20190019")  //addi $25,$0,0x000000192    addi $t9, $zero, 25
@@ -86,10 +84,46 @@ class SingleTests(c: Core) extends Tester(c) {
     wr(UInt(addr), app(addr))
   }
   boot()
-  var k = 0
-  do {
-    tick(); k += 1
-  } while (k < (app.length) * 5)
+  step(4)
+  expect(c.io.out, 30)
+  step(1)
+  expect(c.io.out, 25)
+}
+
+/**
+ * This tests that the processor breaks when we don't avoid hazards
+ */
+class BrokenHazardTest(c: Core) extends BaseTester(c) {  
+  val app  = Array(
+    /*0x00400000*/  StrUInt("2009001e"), //  addi $9,$0,0x0000001e 1    addi $t1, $zero, 30
+    /*0x00400004*/  StrUInt("200a0019"), //  addi $10,$0,0x000000192    addi $t2, $zero, 25
+    /*0x00400008*/  StrUInt("012ac821") //  addu $25,$9,$10        3    addu $t9, $t1, $t2
+  )
+  wr(UInt(0), Bits(0)) // skip reset
+  for (addr <- 0 until app.length) {
+    wr(UInt(addr), app(addr))
+  }
+  boot()
+  step(6)
+  expect(c.io.out, 0)
+}
+
+class HandlesHazardTest(c: Core) extends BaseTester(c) {  
+  val app  = Array(
+    /*0x00400000*/  StrUInt("2009001e"), //  addi $9,$0,0x0000001e 1    addi $t1, $zero, 30
+    /*0x00400004*/  StrUInt("200a0019"), //  addi $10,$0,0x000000192    addi $t2, $zero, 25
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    /*0x00400008*/  StrUInt("012ac821") //  addu $25,$9,$10        3    addu $t9, $t1, $t2
+  )
+  wr(UInt(0), Bits(0)) // skip reset
+  for (addr <- 0 until app.length) {
+    wr(UInt(addr), app(addr))
+  }
+  boot()
+  step(9)
+  expect(c.io.out, 55)
 }
 
 object MIPSlite {
@@ -99,7 +133,11 @@ object MIPSlite {
       args(0) match {
         case "Core" =>
           chiselMainTest(tutArgs, () => Module(new Core())){
-          c => new SingleTests(c)}
+          c => new SimplePipelineTest(c)}
+          chiselMainTest(tutArgs, () => Module(new Core())){
+          c => new BrokenHazardTest(c)}
+          chiselMainTest(tutArgs, () => Module(new Core())){
+          c => new HandlesHazardTest(c)}
       }
   }
 }
