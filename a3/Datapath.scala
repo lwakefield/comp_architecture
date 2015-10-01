@@ -52,28 +52,17 @@ class Dpath extends Module {
   /**
    * Define pipeline registers
    */
-
-  val memwb_reg_write      = Reg(Bool(false))
-  val memwb_reg_dst        = Reg(Bool(false))
-  val memwb_rti            = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val memwb_rdi            = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val memwb_mem_toreg      = Reg(Bool(false))
-  val memwb_dmem_out       = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val memwb_alu_out        = Reg(UInt(x=0, width=C.WORDLENGTH))
-
-  val exmem_alu_out        = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_j_addr         = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_branch_addr    = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_pcp4           = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_addr           = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_sextimm        = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_reg_write      = Reg(Bool(false))
-  val exmem_reg_dst        = Reg(Bool(false))
-  val exmem_mem_toreg      = Reg(Bool(false))
-  val exmem_mem_write      = Reg(Bool(false))
-  val exmem_rt             = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_rti            = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_rdi            = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val ifid_pcp4            = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val ifid_inst            = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val ifid_rsi             = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val ifid_rti             = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val ifid_rdi             = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val ifid_reg_write       = Reg(Bool(false))
+  val ifid_reg_dst         = Reg(Bool(false))
+  val ifid_mem_toreg       = Reg(Bool(false))
+  val ifid_mem_write       = Reg(Bool(false))
+  val ifid_j_en            = Reg(Bool(false))
+  val ifid_b_en            = Reg(Bool(false))
 
   val idex_pcp4            = Reg(UInt(x=0, width=C.WORDLENGTH))
   val idex_rs              = Reg(UInt(x=0, width=C.WORDLENGTH))
@@ -90,17 +79,32 @@ class Dpath extends Module {
   val idex_reg_dst         = Reg(Bool(false))
   val idex_mem_toreg       = Reg(Bool(false))
   val idex_mem_write       = Reg(Bool(false))
+  val idex_j_en            = Reg(Bool(false))
+  val idex_b_en            = Reg(Bool(false))
 
-  val ifid_pcp4            = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val ifid_inst            = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val ifid_rsi             = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val ifid_rti             = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val ifid_rdi             = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val ifid_reg_write       = Reg(Bool(false))
-  val ifid_reg_dst         = Reg(Bool(false))
-  val ifid_mem_toreg       = Reg(Bool(false))
-  val ifid_mem_write       = Reg(Bool(false))
+  val exmem_alu_out        = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_j_addr         = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_branch_addr    = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_pcp4           = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_addr           = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_sextimm        = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_reg_write      = Reg(Bool(false))
+  val exmem_reg_dst        = Reg(Bool(false))
+  val exmem_mem_toreg      = Reg(Bool(false))
+  val exmem_mem_write      = Reg(Bool(false))
+  val exmem_rt             = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_rti            = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_rdi            = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_j_en           = Reg(Bool(false))
+  val exmem_b_en           = Reg(Bool(false))
 
+  val memwb_reg_write      = Reg(Bool(false))
+  val memwb_reg_dst        = Reg(Bool(false))
+  val memwb_rti            = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val memwb_rdi            = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val memwb_mem_toreg      = Reg(Bool(false))
+  val memwb_dmem_out       = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val memwb_alu_out        = Reg(UInt(x=0, width=C.WORDLENGTH))
 
   /**
    * IF/ID Stage
@@ -122,6 +126,8 @@ class Dpath extends Module {
     ifid_reg_dst   := reg_dst
     ifid_mem_toreg := mem_toreg
     ifid_mem_write := mem_write
+    ifid_j_en      := io.j_en
+    ifid_b_en      := io.b_en
   }
 
   /**
@@ -155,6 +161,8 @@ class Dpath extends Module {
     idex_reg_dst   := ifid_reg_dst
     idex_mem_toreg := ifid_mem_toreg
     idex_mem_write := ifid_mem_write
+    idex_j_en      := ifid_j_en
+    idex_b_en      := ifid_b_en
   }
 
   /**
@@ -182,9 +190,11 @@ class Dpath extends Module {
     exmem_reg_dst   := idex_reg_dst
     exmem_mem_toreg := idex_mem_toreg
     exmem_mem_write := idex_mem_write
-    exmem_rt := idex_rt
-    exmem_rti := idex_rti
-    exmem_rdi := idex_rdi
+    exmem_rt        := idex_rt
+    exmem_rti       := idex_rti
+    exmem_rdi       := idex_rdi
+    exmem_j_en      := idex_j_en
+    exmem_b_en      := idex_b_en
     when (exmem_mem_write) {
       dmem(exmem_alu_out) := exmem_rt
     }
@@ -219,9 +229,9 @@ class Dpath extends Module {
     when (io.jal) {
       regfile(UInt(31)) := exmem_pcp4
     }
-    when (io.j_en) {
+    when (exmem_j_en) {
       pc := exmem_j_addr
-    }.elsewhen (io.b_en) {
+    }.elsewhen (exmem_b_en) {
       pc := exmem_branch_addr
     }.otherwise {
       pc := pcp4
