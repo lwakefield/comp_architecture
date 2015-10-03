@@ -208,7 +208,7 @@ class Dpath extends Module {
     idex_j_en      := ifid_j_en
     idex_j_src     := ifid_j_src
     idex_b_en      := ifid_b_en
-    when (idex_op(OP_JAL)) {
+    when (idex_op(C.OP_JAL)) {
       regfile(UInt(31)) := ifid_pcp4
     }
   }
@@ -264,4 +264,16 @@ class Dpath extends Module {
   io.out := regfile(UInt(25))
   io.pc := pc
   io.inst := ifid_inst
+
+  io.ra := regfile(UInt(31))
+  io.sp := regfile(UInt(29))
+  io.s0 := regfile(UInt(16))
+  io.s1 := regfile(UInt(17))
+  io.fp := regfile(UInt(30))
+  io.t0 := regfile(UInt(8))
+  io.t1 := regfile(UInt(9))
+  io.t9 := regfile(UInt(25))
+  io.v0 := regfile(UInt(2))
+  io.v1 := regfile(UInt(3))
+  io.a0 := regfile(UInt(4))
 }
