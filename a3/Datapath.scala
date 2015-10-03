@@ -208,6 +208,9 @@ class Dpath extends Module {
     idex_j_en      := ifid_j_en
     idex_j_src     := ifid_j_src
     idex_b_en      := ifid_b_en
+    when (idex_op(OP_JAL)) {
+      regfile(UInt(31)) := ifid_pcp4
+    }
   }
 
 
