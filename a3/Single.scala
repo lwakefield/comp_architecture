@@ -146,20 +146,8 @@ class JumpTest(c: Core) extends BaseTester(c) {
     wr(UInt(addr), app(addr))
   }
   boot()
-  peek(c.dp.io.pc)
-  step(1)
-  peek(c.dp.io.pc)
-  step(1)
-  peek(c.dp.io.pc)
-  step(1)
-  peek(c.dp.io.pc)
-  step(1)
-  peek(c.dp.io.pc)
-  step(1)
-  peek(c.dp.io.pc)
-  step(1)
-  peek(c.dp.io.pc)
-  //expect(c.io.out, 35)
+  step(3)
+  expect(c.io.pc, 0x400008)
 }
 
 object MIPSlite {
@@ -168,12 +156,12 @@ object MIPSlite {
     val res =
       args(0) match {
         case "Core" =>
-          chiselMainTest(tutArgs, () => Module(new Core())){
-          c => new SimplePipelineTest(c)}
-          chiselMainTest(tutArgs, () => Module(new Core())){
-          c => new BrokenHazardTest(c)}
-          chiselMainTest(tutArgs, () => Module(new Core())){
-          c => new HandlesHazardTest(c)}
+          //chiselMainTest(tutArgs, () => Module(new Core())){
+          //c => new SimplePipelineTest(c)}
+          //chiselMainTest(tutArgs, () => Module(new Core())){
+          //c => new BrokenHazardTest(c)}
+          //chiselMainTest(tutArgs, () => Module(new Core())){
+          //c => new HandlesHazardTest(c)}
           chiselMainTest(tutArgs, () => Module(new Core())){
           c => new JumpTest(c)}
       }

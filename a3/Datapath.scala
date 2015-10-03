@@ -62,6 +62,7 @@ class Dpath extends Module {
   val ifid_mem_toreg       = Reg(Bool(false))
   val ifid_mem_write       = Reg(Bool(false))
   val ifid_j_en            = Reg(Bool(false))
+  val ifid_j_src           = Reg(Bool(false))
   val ifid_b_en            = Reg(Bool(false))
 
   val idex_pcp4            = Reg(UInt(x=0, width=C.WORDLENGTH))
@@ -80,6 +81,7 @@ class Dpath extends Module {
   val idex_mem_toreg       = Reg(Bool(false))
   val idex_mem_write       = Reg(Bool(false))
   val idex_j_en            = Reg(Bool(false))
+  val idex_j_src           = Reg(Bool(false))
   val idex_b_en            = Reg(Bool(false))
 
   val exmem_alu_out        = Reg(UInt(x=0, width=C.WORDLENGTH))
@@ -88,6 +90,7 @@ class Dpath extends Module {
   val exmem_pcp4           = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_addr           = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_sextimm        = Reg(UInt(x=0, width=C.WORDLENGTH))
+  val exmem_inst           = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_reg_write      = Reg(Bool(false))
   val exmem_reg_dst        = Reg(Bool(false))
   val exmem_mem_toreg      = Reg(Bool(false))
@@ -96,6 +99,7 @@ class Dpath extends Module {
   val exmem_rti            = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_rdi            = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_j_en           = Reg(Bool(false))
+  val exmem_j_src          = Reg(Bool(false))
   val exmem_b_en           = Reg(Bool(false))
 
   val memwb_reg_write      = Reg(Bool(false))
@@ -107,27 +111,65 @@ class Dpath extends Module {
   val memwb_alu_out        = Reg(UInt(x=0, width=C.WORDLENGTH))
 
   /**
-   * IF/ID Stage
+   * MEM/WB Stage
    */
-  val inst = imem(pc(C.IADDRZ-1, 2))
-  def ifid_op(o: UInt) = C.opi(inst, o)
-  val reg_write = (ifid_op(C.OP_RTYPE) || ifid_op(C.OP_ADDI) || ifid_op(C.OP_ADDIU)
-                || ifid_op(C.OP_LW) || ifid_op(C.OP_ORI) || ifid_op(C.OP_LUI))
-  val reg_dst = ifid_op(C.OP_RTYPE)
-  val mem_toreg = ifid_op(C.OP_LW)
-  val mem_write = ifid_op(C.OP_SW)
+  val dmem_out = dmem(exmem_alu_out)
   when (!io.isWr && !io.boot) {
-    ifid_pcp4      := pc + UInt(4)
-    ifid_inst      := inst
-    ifid_rsi       := inst(25,21)
-    ifid_rti       := inst(20,16)
-    ifid_rdi       := inst(15,11)
-    ifid_reg_write := reg_write
-    ifid_reg_dst   := reg_dst
-    ifid_mem_toreg := mem_toreg
-    ifid_mem_write := mem_write
-    ifid_j_en      := io.j_en
-    ifid_b_en      := io.b_en
+    memwb_reg_write := exmem_reg_write
+    memwb_reg_dst := exmem_reg_dst
+    memwb_mem_toreg := exmem_mem_toreg
+    memwb_dmem_out := dmem_out
+    memwb_alu_out := exmem_alu_out
+    memwb_rti := exmem_rti
+    memwb_rdi := exmem_rdi
+    when (memwb_reg_write) {
+      val writedata = Mux(memwb_mem_toreg, memwb_dmem_out, memwb_alu_out)
+      val dstreg = Mux(memwb_reg_dst, memwb_rdi, memwb_rti)
+      regfile(dstreg) := writedata
+    }
+  }
+
+  /**
+   * EX/MEM Stage
+   */
+  def exmem_op(o: UInt) = C.opi(idex_inst, o)
+  def exmem_fop(o: UInt, f: UInt) = C.opi(idex_inst, o) && C.fopi(idex_inst, o, f)
+  def aop(o: UInt) = idex_alu_op === o	// match alu op
+  val alu_in1 = idex_rs
+  val alu_in2 = Mux(idex_alu_src, idex_rt, idex_sextimm)
+  val alu_out = MuxCase(UInt(0), Array(
+              aop(C.ALU_ADD) -> (alu_in1 + alu_in2).toUInt,
+              aop(C.ALU_SUB) -> (alu_in1 - alu_in2).toUInt,
+              aop(C.ALU_LUIB) -> (Cat(alu_in2(15, 0), UInt(0, width=16))).toUInt,
+              aop(C.ALU_SLT) -> (Mux(idex_rs < idex_rt, UInt(1), UInt(0))).toUInt,
+              aop(C.ALU_OR) -> (alu_in1 | alu_in2).toUInt,
+              aop(C.ALU_SLL) -> (alu_in1 << idex_shamt).toUInt
+              ))
+  val zero = (alu_out === UInt(0))
+  val is_branch_on_eq = exmem_op(C.OP_BEQ) 
+  val branch = idex_b_en && ((~is_branch_on_eq && ~zero) || (is_branch_on_eq && ~zero))
+  val j_en = exmem_op(C.OP_J) || exmem_op(C.OP_JAL) || exmem_fop(C.OP_RTYPE, C.FUNC_JR)
+  val j_src = Mux(exmem_op(C.OP_RTYPE), Bool(true), Bool(false))
+  //val jal = exmem_op(C.OP_JAL)
+  when (!io.isWr && !io.boot) {
+    exmem_alu_out := alu_out
+    exmem_pcp4 := idex_pcp4
+    exmem_inst := idex_inst
+    exmem_branch_addr := Mux(branch, (idex_pcp4 - UInt(4)) + (UInt(4) * idex_sextimm), idex_pcp4)
+    exmem_j_addr    := Mux(j_src, idex_rs, UInt(4) * idex_inst(25,0))
+    exmem_reg_write := idex_reg_write
+    exmem_reg_dst   := idex_reg_dst
+    exmem_mem_toreg := idex_mem_toreg
+    exmem_mem_write := idex_mem_write
+    exmem_rt        := idex_rt
+    exmem_rti       := idex_rti
+    exmem_rdi       := idex_rdi
+    exmem_j_en      := j_en
+    exmem_j_src     := j_src
+    exmem_b_en      := idex_b_en
+    when (exmem_mem_write) {
+      dmem(exmem_alu_out) := exmem_rt
+    }
   }
 
   /**
@@ -162,62 +204,37 @@ class Dpath extends Module {
     idex_mem_toreg := ifid_mem_toreg
     idex_mem_write := ifid_mem_write
     idex_j_en      := ifid_j_en
+    idex_j_src     := ifid_j_src
     idex_b_en      := ifid_b_en
   }
 
-  /**
-   * EX/MEM Stage
-   */
-  def aop(o: UInt) = idex_alu_op === o	// match alu op
-  val alu_in1 = idex_rs
-  val alu_in2 = Mux(idex_alu_src, idex_rt, idex_sextimm)
-  val alu_out = MuxCase(UInt(0), Array(
-              aop(C.ALU_ADD) -> (alu_in1 + alu_in2).toUInt,
-              aop(C.ALU_SUB) -> (alu_in1 - alu_in2).toUInt,
-              aop(C.ALU_LUIB) -> (Cat(alu_in2(15, 0), UInt(0, width=16))).toUInt,
-              aop(C.ALU_SLT) -> (Mux(idex_rs < idex_rt, UInt(1), UInt(0))).toUInt,
-              aop(C.ALU_OR) -> (alu_in1 | alu_in2).toUInt,
-              aop(C.ALU_SLL) -> (alu_in1 << idex_shamt).toUInt
-              ))
-  val zero = (alu_out === UInt(0))
-  val branch = io.b_en && ((~io.is_branch_on_eq && ~io.zero) || (io.is_branch_on_eq && ~io.zero))
-  when (!io.isWr && !io.boot) {
-    exmem_alu_out := alu_out
-    exmem_pcp4 := idex_pcp4
-    exmem_j_addr := Mux(io.j_src, idex_rs, UInt(4) * exmem_addr)
-    exmem_branch_addr := Mux(branch, (idex_pcp4 - UInt(4)) + (UInt(4) * exmem_sextimm), idex_pcp4)
-    exmem_reg_write := idex_reg_write
-    exmem_reg_dst   := idex_reg_dst
-    exmem_mem_toreg := idex_mem_toreg
-    exmem_mem_write := idex_mem_write
-    exmem_rt        := idex_rt
-    exmem_rti       := idex_rti
-    exmem_rdi       := idex_rdi
-    exmem_j_en      := idex_j_en
-    exmem_b_en      := idex_b_en
-    when (exmem_mem_write) {
-      dmem(exmem_alu_out) := exmem_rt
-    }
-  }
 
   /**
-   * MEM/WB Stage
+   * IF/ID Stage
    */
-  val dmem_out = dmem(exmem_alu_out)
+  val inst = imem(pc(C.IADDRZ-1, 2))
+  def ifid_op(o: UInt) = C.opi(inst, o)
+  val reg_write = (ifid_op(C.OP_RTYPE) || ifid_op(C.OP_ADDI) || ifid_op(C.OP_ADDIU)
+                || ifid_op(C.OP_LW) || ifid_op(C.OP_ORI) || ifid_op(C.OP_LUI))
+  val reg_dst = ifid_op(C.OP_RTYPE)
+  val mem_toreg = ifid_op(C.OP_LW)
+  val mem_write = ifid_op(C.OP_SW)
   when (!io.isWr && !io.boot) {
-    memwb_reg_write := exmem_reg_write
-    memwb_reg_dst := exmem_reg_dst
-    memwb_mem_toreg := exmem_mem_toreg
-    memwb_dmem_out := dmem_out
-    memwb_alu_out := exmem_alu_out
-    memwb_rti := exmem_rti
-    memwb_rdi := exmem_rdi
-    when (memwb_reg_write) {
-      val writedata = Mux(memwb_mem_toreg, memwb_dmem_out, memwb_alu_out)
-      val dstreg = Mux(memwb_reg_dst, memwb_rdi, memwb_rti)
-      regfile(dstreg) := writedata
-    }
+    ifid_pcp4      := pc + UInt(4)
+    ifid_inst      := inst
+    ifid_rsi       := inst(25,21)
+    ifid_rti       := inst(20,16)
+    ifid_rdi       := inst(15,11)
+    ifid_reg_write := reg_write
+    ifid_reg_dst   := reg_dst
+    ifid_mem_toreg := mem_toreg
+    ifid_mem_write := mem_write
+    ifid_j_en      := io.j_en
+    ifid_j_src     := io.j_src
+    ifid_b_en      := io.b_en
   }
+
+
   // changes of state
   when (io.isWr) {
     imem(io.wrAddr) := io.wrData
