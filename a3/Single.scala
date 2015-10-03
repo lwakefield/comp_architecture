@@ -150,6 +150,29 @@ class JumpTest(c: Core) extends BaseTester(c) {
   expect(c.io.pc, 0x400008)
 }
 
+class BranchTest(c: Core) extends BaseTester(c) {
+  val app = Array(
+    /*0x00400000*/  StrUInt("112a0007"), //  beq $9,$10,0x00000003 1    beq $t1, $t2, L1
+    /*0x00400004*/  StrUInt("00000000"), //  nop                   2    nop
+    /*0x00400008*/  StrUInt("00000000"), //  nop                   3    nop
+    /*0x0040000c*/  StrUInt("00000000"), //  nop                   4    nop
+    /*0x00400010*/  StrUInt("00000000"), //  nop                   5    L1: nop
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000")
+)
+  wr(UInt(0), Bits(0)) // skip reset
+  for (addr <- 0 until app.length) {
+    wr(UInt(addr), app(addr))
+  }
+  boot()
+  step(3)
+  expect(c.io.pc, 0x400020)
+}
+
 object MIPSlite {
   def main(args: Array[String]): Unit = {
     val tutArgs = args.slice(1, args.length)
@@ -162,8 +185,10 @@ object MIPSlite {
           //c => new BrokenHazardTest(c)}
           //chiselMainTest(tutArgs, () => Module(new Core())){
           //c => new HandlesHazardTest(c)}
+          //chiselMainTest(tutArgs, () => Module(new Core())){
+          //c => new JumpTest(c)}
           chiselMainTest(tutArgs, () => Module(new Core())){
-          c => new JumpTest(c)}
+          c => new BranchTest(c)}
       }
   }
 }
