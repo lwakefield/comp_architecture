@@ -152,12 +152,15 @@ class Dpath extends Module {
   val zero = (alu_out === UInt(0))
   val is_branch_on_eq = exmem_op(C.OP_BEQ) 
   val b_en = exmem_op(C.OP_BNE) || exmem_op(C.OP_BEQ)
+  // bne
+  // 1 && ((1 and 0) || (0 && 1))
+  // 1 && 0 && 0
   val branch = b_en && ((~is_branch_on_eq && ~zero) || (is_branch_on_eq && zero))
   when (!io.isWr && !io.boot) {
     exmem_alu_out := alu_out
     exmem_pcp4 := idex_pcp4
     exmem_inst := idex_inst
-    exmem_branch_addr := Mux(branch, idex_pcp4 + (UInt(4) * Cat(Fill(16, idex_inst(15)), idex_inst(15,0))), idex_pcp4)
+    exmem_branch_addr := Mux(branch, (idex_pcp4 - UInt(4)) + (UInt(4) * Cat(Fill(16, idex_inst(15)), idex_inst(15,0))), idex_pcp4)
     exmem_j_addr    := Mux(j_src, idex_rs, UInt(4) * idex_inst(25,0))
     exmem_reg_write := idex_reg_write
     exmem_reg_dst   := idex_reg_dst
