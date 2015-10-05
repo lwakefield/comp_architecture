@@ -86,7 +86,6 @@ class Dpath extends Module {
   val idex_b_en            = Reg(Bool(false))
 
   val exmem_alu_out        = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_j_addr         = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_branch_addr    = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_pcp4           = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_addr           = Reg(UInt(x=0, width=C.WORDLENGTH))
@@ -99,8 +98,6 @@ class Dpath extends Module {
   val exmem_rt             = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_rti            = Reg(UInt(x=0, width=C.WORDLENGTH))
   val exmem_rdi            = Reg(UInt(x=0, width=C.WORDLENGTH))
-  val exmem_j_en           = Reg(Bool(false))
-  val exmem_j_src          = Reg(Bool(false))
   val exmem_b_en           = Reg(Bool(false))
 
   val memwb_reg_write      = Reg(Bool(false))
@@ -147,15 +144,9 @@ class Dpath extends Module {
               aop(C.ALU_SLL) -> (alu_in1 << idex_shamt).toUInt
               ))
 
-  //val j_en = exmem_op(C.OP_J) || exmem_op(C.OP_JAL) || exmem_fop(C.OP_RTYPE, C.FUNC_JR)
-  //val j_src = Mux(exmem_op(C.OP_RTYPE), Bool(true), Bool(false))
-
   val zero = (alu_out === UInt(0))
   val is_branch_on_eq = exmem_op(C.OP_BEQ) 
   val b_en = exmem_op(C.OP_BNE) || exmem_op(C.OP_BEQ)
-  // bne
-  // 1 && ((1 and 0) || (0 && 1))
-  // 1 && 0 && 0
   val branch = b_en && ((~is_branch_on_eq && ~zero) || (is_branch_on_eq && zero))
   when (!io.isWr && !io.boot) {
     exmem_alu_out := alu_out
@@ -169,9 +160,6 @@ class Dpath extends Module {
     exmem_rt        := idex_rt
     exmem_rti       := idex_rti
     exmem_rdi       := idex_rdi
-    //exmem_j_addr    := Mux(j_src, idex_rs, UInt(4) * idex_inst(25,0))
-    //exmem_j_en      := j_en
-    //exmem_j_src     := j_src
     exmem_b_en      := b_en
     when (exmem_mem_write) {
       dmem(exmem_alu_out) := exmem_rt
@@ -212,9 +200,6 @@ class Dpath extends Module {
     idex_j_en      := ifid_j_en
     idex_j_src     := ifid_j_src
     idex_b_en      := ifid_b_en
-    //when (idex_op(C.OP_JAL)) {
-      //regfile(UInt(31)) := ifid_pcp4
-    //}
   }
 
 
