@@ -20,7 +20,6 @@ l1:		li		$s1, 20
 		nop
 		nop
 		nop
-		nop
 		move	$t9, $v0
 		addi	$s0, $s0, 1
 		nop
@@ -34,13 +33,11 @@ l1:		li		$s1, 20
 		nop
 		nop
 		nop
-		nop
 		move	$v0, $a1
 		lw		$ra, 20($sp)
 		lw		$fp, 16($sp)
 		addu	$sp, $sp, 32
 		jr		$ra
-		nop
 		nop
 		nop
 		nop
@@ -63,10 +60,8 @@ fib: 	subu	$sp, $sp, 32
 		nop
 		nop
 		nop
-		nop
 		li		$v0, 0
 		j		$L1
-		nop
 		nop
 		nop
 		nop
@@ -82,9 +77,7 @@ $L2: 	li		$t0, 1
 		nop
 		nop
 		nop
-		nop
 		j		$L1
-		nop
 		nop
 		nop
 		nop
@@ -99,7 +92,6 @@ $L3: 	lw		$v1, 0($fp)
 		nop
 		move	$a0, $v0
 		jal		fib
-		nop
 		nop
 		nop
 		nop
@@ -118,9 +110,7 @@ $L3: 	lw		$v1, 0($fp)
 		nop
 		nop
 		nop
-		nop
 		lw		$v1, 4($fp)	
-		nop
 		nop
 		nop
 		nop
@@ -131,7 +121,6 @@ $L1: 	lw		$ra, 20($sp)
 		lw		$fp, 16($sp)
 		addu	$sp, $sp, 32
 		jr		$ra
-		nop
 		nop
 		nop
 		nop
