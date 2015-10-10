@@ -1,4 +1,4 @@
-% ELEC3608: Single Cycle Processor Part 3
+% ELEC3608: Pipelined Cycle Processor Part 3
 % Lawrence Wakefield
 % 10/10/15
 
