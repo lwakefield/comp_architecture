@@ -87,6 +87,8 @@ Due to the increasing complexity of the processor, the project was split up into
 
 As noted in the above section, a number of modifications to the Fibonacci program must be made for the program to work with our newly pipelined processor. As a result, the program now requires many more clock cycles to complete execution.
 
+The modified Fibonacci program is included in the appendix, but may also be found [here](https://raw.githubusercontent.com/lwakefield/comp_architecture/master/a3/fib.asm).
+
 # Output
 
 With the changes to the datapath made, the Single Cycle processor is still able execute the fib.s program correctly (albeit in more clock cycles than previously). A full display of the internal signals and register values may prove to be overwhelming, however it is recommended that you run the following command to observe the project passing all tests.
@@ -107,3 +109,121 @@ There is a significant amount of refactoring that is possible in the code to imp
 
 - Remove ``core.scala``, move logic from ``datapath.scala`` into ``core.scala``, or split the logic between the two files. Currently ``core.scala`` is just a wrapper around the datapath.
 - Remove any unused signals/registers. Luckily chisel removes any unused signals/registers on compilation, however that is no excuse for sloppy code.
+
+# Appendix
+
+## Modified Fibonacci Program
+
+    # Patterson and Hennessy, 2nd ed. modified for single cycle processor in Chisel.
+        .text
+        .globl  main
+    main:   nop
+            nop
+            subu    $sp, $sp, 32
+            nop
+            nop
+            nop
+            sw      $ra, 20($sp)
+            sw      $fp, 16($sp)
+            addu    $fp, $sp, 28
+            li      $s0, 0
+            nop
+            nop
+            nop
+    l1:     li      $s1, 20
+            move    $a0, $s0
+            jal     fib
+            nop
+            move    $t9, $v0
+            addi    $s0, $s0, 1
+            nop
+            nop
+            nop
+            sltu    $t0, $s0, $s1
+            nop
+            nop
+            nop
+            bne     $t0, $zero, l1
+            nop
+            nop
+            nop
+            move    $v0, $a1
+            lw      $ra, 20($sp)
+            lw      $fp, 16($sp)
+            addu    $sp, $sp, 32
+            jr      $ra
+            nop
+    fib:    subu    $sp, $sp, 32
+            nop
+            nop
+            nop
+            sw      $ra, 20($sp)
+            sw      $fp, 16($sp)
+            addu    $fp, $sp, 28
+            nop
+            nop
+            nop
+            sw      $a0, 0($fp)
+            lw      $v0, 0($fp)
+            nop
+            nop
+            nop
+            bne     $v0, $zero, $L2
+            nop
+            nop
+            nop
+            li      $v0, 0
+            j       $L1
+            nop
+    $L2:    li      $t0, 1
+            nop
+            nop
+            nop
+            sltu    $t1, $t0, $v0
+            nop
+            nop
+            nop
+            bne     $t1, $zero, $L3
+            nop
+            nop
+            nop
+            j       $L1
+            nop
+    $L3:    lw      $v1, 0($fp)
+            nop
+            nop
+            nop
+            nop
+            subu    $v0, $v1, 1
+            nop
+            nop
+            nop
+            move    $a0, $v0
+            jal     fib
+            nop
+            sw      $v0, 4($fp)
+            lw      $v1, 0($fp)
+            nop
+            nop
+            nop
+            nop
+            subu    $v0, $v1, 2
+            nop
+            nop
+            nop
+            move    $a0, $v0
+            jal     fib
+            nop
+            lw      $v1, 4($fp) 
+            nop
+            nop
+            nop
+            addu    $v0, $v0, $v1   
+    $L1:    lw      $ra, 20($sp)
+            nop
+            nop
+            lw      $fp, 16($sp)
+            addu    $sp, $sp, 32
+            jr      $ra
+            nop
+        
