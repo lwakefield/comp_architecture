@@ -231,7 +231,10 @@ class Dpath extends Module {
   /**
    * IF/ID Stage
    */
-  val inst = imem(pc(C.IADDRZ-1, 2))
+  val delay = idex_op(C.OP_J) || idex_op(C.OP_JAL) || idex_fop(C.OP_RTYPE, C.FUNC_JR) ||
+    idex_op(C.OP_BEQ) || idex_op(C.OP_BNE) ||
+    exmem_op(C.OP_BEQ) || exmem_op(C.OP_BNE)
+  val inst = Mux(delay, UInt(0), imem(pc(C.IADDRZ-1, 2)))
   def ifid_op(o: UInt) = C.opi(inst, o)
   def ifid_fop(o: UInt, f: UInt) = C.opi(inst, o) && C.fopi(inst, o, f)
   val reg_write = (ifid_op(C.OP_RTYPE) || ifid_op(C.OP_ADDI) || ifid_op(C.OP_ADDIU)
@@ -262,7 +265,6 @@ class Dpath extends Module {
     }
   }
 
-
   // changes of state
   when (io.isWr) {
     imem(io.wrAddr) := io.wrData
@@ -273,7 +275,7 @@ class Dpath extends Module {
       pc := ifid_j_addr
     }.elsewhen (exmem_b_en) {
       pc := exmem_branch_addr
-    }.otherwise {
+    }.elsewhen (!delay) {
       pc := pcp4
     }
   }
