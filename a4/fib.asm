@@ -15,7 +15,6 @@ l1:		li		$s1, 20
 		addi	$s0, $s0, 1
 		sltu	$t0, $s0, $s1
 		bne		$t0, $zero, l1
-		nop
 		move	$v0, $a1
 		lw		$ra, 20($sp)
 		lw		$fp, 16($sp)
@@ -31,13 +30,11 @@ fib: 	subu	$sp, $sp, 32
 		nop
 		nop
 		bne		$v0, $zero, $L2
-		nop
 		li		$v0, 0
 		j		$L1
 $L2: 	li		$t0, 1
 		sltu	$t1, $t0, $v0
 		bne		$t1, $zero, $L3
-		nop
 		j		$L1
 $L3: 	lw		$v1, 0($fp)
 		nop

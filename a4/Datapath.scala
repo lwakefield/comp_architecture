@@ -113,6 +113,7 @@ class Dpath extends Module {
    * MEM/WB Stage
    */
   val dmem_out = dmem(exmem_alu_out)
+  def memwb_op(o: UInt) = C.opi(exmem_inst, o)
   when (!io.isWr && !io.boot) {
     memwb_reg_write := exmem_reg_write
     memwb_reg_dst := exmem_reg_dst
@@ -233,7 +234,8 @@ class Dpath extends Module {
    */
   val delay = idex_op(C.OP_J) || idex_op(C.OP_JAL) || idex_fop(C.OP_RTYPE, C.FUNC_JR) ||
     idex_op(C.OP_BEQ) || idex_op(C.OP_BNE) ||
-    exmem_op(C.OP_BEQ) || exmem_op(C.OP_BNE)
+    exmem_op(C.OP_BEQ) || exmem_op(C.OP_BNE) ||
+    memwb_op(C.OP_BEQ) || memwb_op(C.OP_BNE)
   val inst = Mux(delay, UInt(0), imem(pc(C.IADDRZ-1, 2)))
   def ifid_op(o: UInt) = C.opi(inst, o)
   def ifid_fop(o: UInt, f: UInt) = C.opi(inst, o) && C.fopi(inst, o, f)
