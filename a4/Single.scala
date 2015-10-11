@@ -39,24 +39,6 @@ class SimplePipelineTest(c: Core) extends BaseTester(c) {
   expect(c.io.out, 25)
 }
 
-/**
- * This tests that the processor breaks when we don't avoid hazards
- */
-class BrokenHazardTest(c: Core) extends BaseTester(c) {  
-  val app  = Array(
-    /*0x00400000*/  StrUInt("2009001e"), //  addi $9,$0,0x0000001e 1    addi $t1, $zero, 30
-    /*0x00400004*/  StrUInt("200a0019"), //  addi $10,$0,0x000000192    addi $t2, $zero, 25
-    /*0x00400008*/  StrUInt("012ac821") //  addu $25,$9,$10        3    addu $t9, $t1, $t2
-  )
-  wr(UInt(0), Bits(0)) // skip reset
-  for (addr <- 0 until app.length) {
-    wr(UInt(addr), app(addr))
-  }
-  boot()
-  step(6)
-  expect(c.io.out, 0)
-}
-
 class HandlesHazardTest(c: Core) extends BaseTester(c) {  
   val app  = Array(
     /*0x00400000*/  StrUInt("2009001e"), //  addi $9,$0,0x0000001e 1    addi $t1, $zero, 30
@@ -163,43 +145,33 @@ class FibTest(c: Core) extends BaseTester(c) {
     /*[00400080]*/ StrUInt("afc40000"), //  sw $4, 0($30)            ; 27: sw $a0, 0($fp) 
     /*[00400084]*/ StrUInt("8fc20000"), //  lw $2, 0($30)            ; 28: lw $v0, 0($fp) 
     /*[00400088]*/ StrUInt("00000000"), //  nop                      ; 29: nop 
-    /*[0040008c]*/ StrUInt("00000000"), //  nop                      ; 30: nop 
-    /*[00400090]*/ StrUInt("00000000"), //  nop                      ; 31: nop 
-    /*[00400094]*/ StrUInt("14400003"), //  bne $2, $0, 12 [$L2-0x00400094]; 32: bne $v0, $zero, $L2 
-    /*[00400098]*/ StrUInt("34020000"), //  ori $2, $0, 0            ; 33: li $v0, 0 
-    /*[0040009c]*/ StrUInt("08100042"), //  j 0x00400108 [$L1]       ; 34: j $L1 
-    /*[004000a0]*/ StrUInt("34080001"), //  ori $8, $0, 1            ; 35: li $t0, 1 
-    /*[004000a4]*/ StrUInt("0102482b"), //  sltu $9, $8, $2          ; 36: sltu $t1, $t0, $v0 
-    /*[004000a8]*/ StrUInt("15200002"), //  bne $9, $0, 8 [$L3-0x004000a8]; 37: bne $t1, $zero, $L3 
-    /*[004000ac]*/ StrUInt("08100042"), //  j 0x00400108 [$L1]       ; 38: j $L1 
-    /*[004000b0]*/ StrUInt("8fc30000"), //  lw $3, 0($30)            ; 39: lw $v1, 0($fp) 
-    /*[004000b4]*/ StrUInt("00000000"), //  nop                      ; 40: nop 
-    /*[004000b8]*/ StrUInt("00000000"), //  nop                      ; 41: nop 
-    /*[004000bc]*/ StrUInt("00000000"), //  nop                      ; 42: nop 
-    /*[004000c0]*/ StrUInt("00000000"), //  nop                      ; 43: nop 
-    /*[004000c4]*/ StrUInt("2462ffff"), //  addiu $2, $3, -1         ; 44: subu $v0, $v1, 1 
-    /*[004000c8]*/ StrUInt("00022021"), //  addu $4, $0, $2          ; 45: move $a0, $v0 
-    /*[004000cc]*/ StrUInt("0c10001c"), //  jal 0x00400070 [fib]     ; 46: jal fib 
-    /*[004000d0]*/ StrUInt("afc20004"), //  sw $2, 4($30)            ; 47: sw $v0, 4($fp) 
-    /*[004000d4]*/ StrUInt("8fc30000"), //  lw $3, 0($30)            ; 48: lw $v1, 0($fp) 
+    /*[0040008c]*/ StrUInt("14400003"), //  bne $2, $0, 12 [$L2-0x0040008c]; 30: bne $v0, $zero, $L2 
+    /*[00400090]*/ StrUInt("34020000"), //  ori $2, $0, 0            ; 31: li $v0, 0 
+    /*[00400094]*/ StrUInt("08100038"), //  j 0x004000e0 [$L1]       ; 32: j $L1 
+    /*[00400098]*/ StrUInt("34080001"), //  ori $8, $0, 1            ; 33: li $t0, 1 
+    /*[0040009c]*/ StrUInt("0102482b"), //  sltu $9, $8, $2          ; 34: sltu $t1, $t0, $v0 
+    /*[004000a0]*/ StrUInt("15200002"), //  bne $9, $0, 8 [$L3-0x004000a0]; 35: bne $t1, $zero, $L3 
+    /*[004000a4]*/ StrUInt("08100038"), //  j 0x004000e0 [$L1]       ; 36: j $L1 
+    /*[004000a8]*/ StrUInt("8fc30000"), //  lw $3, 0($30)            ; 37: lw $v1, 0($fp) 
+    /*[004000ac]*/ StrUInt("00000000"), //  nop                      ; 38: nop 
+    /*[004000b0]*/ StrUInt("2462ffff"), //  addiu $2, $3, -1         ; 39: subu $v0, $v1, 1 
+    /*[004000b4]*/ StrUInt("00022021"), //  addu $4, $0, $2          ; 40: move $a0, $v0 
+    /*[004000b8]*/ StrUInt("0c10001c"), //  jal 0x00400070 [fib]     ; 41: jal fib 
+    /*[004000bc]*/ StrUInt("afc20004"), //  sw $2, 4($30)            ; 42: sw $v0, 4($fp) 
+    /*[004000c0]*/ StrUInt("8fc30000"), //  lw $3, 0($30)            ; 43: lw $v1, 0($fp) 
+    /*[004000c4]*/ StrUInt("00000000"), //  nop                      ; 44: nop 
+    /*[004000c8]*/ StrUInt("2462fffe"), //  addiu $2, $3, -2         ; 45: subu $v0, $v1, 2 
+    /*[004000cc]*/ StrUInt("00022021"), //  addu $4, $0, $2          ; 46: move $a0, $v0 
+    /*[004000d0]*/ StrUInt("0c10001c"), //  jal 0x00400070 [fib]     ; 47: jal fib 
+    /*[004000d4]*/ StrUInt("8fc30004"), //  lw $3, 4($30)            ; 48: lw $v1, 4($fp) 
     /*[004000d8]*/ StrUInt("00000000"), //  nop                      ; 49: nop 
-    /*[004000dc]*/ StrUInt("00000000"), //  nop                      ; 50: nop 
-    /*[004000e0]*/ StrUInt("00000000"), //  nop                      ; 51: nop 
+    /*[004000dc]*/ StrUInt("00431021"), //  addu $2, $2, $3          ; 50: addu $v0, $v0, $v1 
+    /*[004000e0]*/ StrUInt("8fbf0014"), //  lw $31, 20($29)          ; 51: lw $ra, 20($sp) 
     /*[004000e4]*/ StrUInt("00000000"), //  nop                      ; 52: nop 
-    /*[004000e8]*/ StrUInt("2462fffe"), //  addiu $2, $3, -2         ; 53: subu $v0, $v1, 2 
-    /*[004000ec]*/ StrUInt("00022021"), //  addu $4, $0, $2          ; 54: move $a0, $v0 
-    /*[004000f0]*/ StrUInt("0c10001c"), //  jal 0x00400070 [fib]     ; 55: jal fib 
-    /*[004000f4]*/ StrUInt("8fc30004"), //  lw $3, 4($30)            ; 56: lw $v1, 4($fp) 
-    /*[004000f8]*/ StrUInt("00000000"), //  nop                      ; 57: nop 
-    /*[004000fc]*/ StrUInt("00000000"), //  nop                      ; 58: nop 
-    /*[00400100]*/ StrUInt("00000000"), //  nop                      ; 59: nop 
-    /*[00400104]*/ StrUInt("00431021"), //  addu $2, $2, $3          ; 60: addu $v0, $v0, $v1 
-    /*[00400108]*/ StrUInt("8fbf0014"), //  lw $31, 20($29)          ; 61: lw $ra, 20($sp) 
-    /*[0040010c]*/ StrUInt("00000000"), //  nop                      ; 62: nop 
-    /*[00400110]*/ StrUInt("00000000"), //  nop                      ; 63: nop 
-    /*[00400114]*/ StrUInt("8fbe0010"), //  lw $30, 16($29)          ; 64: lw $fp, 16($sp) 
-    /*[00400118]*/ StrUInt("27bd0020"), //  addiu $29, $29, 32       ; 65: addu $sp, $sp, 32 
-    /*[0040011c]*/ StrUInt("03e00008")  //  jr $31                   ; 66: jr $ra 
+    /*[004000e8]*/ StrUInt("00000000"), //  nop                      ; 53: nop 
+    /*[004000ec]*/ StrUInt("8fbe0010"), //  lw $30, 16($29)          ; 54: lw $fp, 16($sp) 
+    /*[004000f0]*/ StrUInt("27bd0020"), //  addiu $29, $29, 32       ; 55: addu $sp, $sp, 32 
+    /*[004000f4]*/ StrUInt("03e00008")  //  jr $31                   ; 56: jr $ra 
 )
   wr(UInt(0), Bits(0)) // skip reset
   for (addr <- 0 until app.length) {
@@ -208,14 +180,14 @@ class FibTest(c: Core) extends BaseTester(c) {
   boot()
   for (i <- 0 until 500000) {
     step(1)
-    peek(c.io.pc)
+    //peek(c.io.pc)
     peek(c.io.out)
   }
   //step(500000)
-  //expect(c.io.out, 0x3db)
+  //expect(c.io.out, 0x63d)
   //step(3000)
   //expect(c.io.out, 5)
-  step(100000)
+  //step(100000)
 }
 
 class ForwardingTest(c: Core) extends BaseTester(c) {
@@ -250,17 +222,15 @@ object MIPSlite {
           //chiselMainTest(tutArgs, () => Module(new Core())){
           //c => new SimplePipelineTest(c)}
           //chiselMainTest(tutArgs, () => Module(new Core())){
-          //c => new BrokenHazardTest(c)}
-          //chiselMainTest(tutArgs, () => Module(new Core())){
           //c => new HandlesHazardTest(c)}
           //chiselMainTest(tutArgs, () => Module(new Core())){
           //c => new JumpTest(c)}
           //chiselMainTest(tutArgs, () => Module(new Core())){
           //c => new BranchTest(c)}
-          chiselMainTest(tutArgs, () => Module(new Core())){
-          c => new FibTest(c)}
           //chiselMainTest(tutArgs, () => Module(new Core())){
           //c => new ForwardingTest(c)}
+          chiselMainTest(tutArgs, () => Module(new Core())){
+          c => new FibTest(c)}
       }
   }
 }

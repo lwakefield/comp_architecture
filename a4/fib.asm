@@ -27,8 +27,6 @@ fib: 	subu	$sp, $sp, 32
 		sw		$a0, 0($fp)
 		lw		$v0, 0($fp)
 		nop
-		nop
-		nop
 		bne		$v0, $zero, $L2
 		li		$v0, 0
 		j		$L1
@@ -38,24 +36,16 @@ $L2: 	li		$t0, 1
 		j		$L1
 $L3: 	lw		$v1, 0($fp)
 		nop
-		nop
-		nop
-		nop
 		subu	$v0, $v1, 1
 		move	$a0, $v0
 		jal		fib
 		sw		$v0, 4($fp)
 		lw		$v1, 0($fp)
 		nop
-		nop
-		nop
-		nop
 		subu	$v0, $v1, 2
 		move	$a0, $v0
 		jal		fib
 		lw		$v1, 4($fp)	
-		nop
-		nop
 		nop
 		addu	$v0, $v0, $v1	
 $L1: 	lw		$ra, 20($sp)

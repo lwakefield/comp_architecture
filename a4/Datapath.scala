@@ -110,85 +110,40 @@ class Dpath extends Module {
   val memwb_inst           = Reg(UInt(x=0, width=C.WORDLENGTH))
 
   /**
-   * MEM/WB Stage
+   * IF/ID Stage
    */
-  val dmem_out = dmem(exmem_alu_out)
-  def memwb_op(o: UInt) = C.opi(exmem_inst, o)
+  val delay = idex_op(C.OP_J) || idex_op(C.OP_JAL) || idex_fop(C.OP_RTYPE, C.FUNC_JR) ||
+    idex_op(C.OP_BEQ) || idex_op(C.OP_BNE) ||
+    exmem_op(C.OP_BEQ) || exmem_op(C.OP_BNE) ||
+    memwb_op(C.OP_BEQ) || memwb_op(C.OP_BNE)
+  val inst = Mux(delay, UInt(0), imem(pc(C.IADDRZ-1, 2)))
+  def ifid_op(o: UInt) = C.opi(inst, o)
+  def ifid_fop(o: UInt, f: UInt) = C.opi(inst, o) && C.fopi(inst, o, f)
+  val reg_write = (ifid_op(C.OP_RTYPE) || ifid_op(C.OP_ADDI) || ifid_op(C.OP_ADDIU)
+                || ifid_op(C.OP_LW) || ifid_op(C.OP_ORI) || ifid_op(C.OP_LUI))
+  val reg_dst = ifid_op(C.OP_RTYPE)
+  val mem_toreg = ifid_op(C.OP_LW)
+  val mem_write = ifid_op(C.OP_SW)
+
+  val j_en = ifid_op(C.OP_J) || ifid_op(C.OP_JAL) || ifid_fop(C.OP_RTYPE, C.FUNC_JR)
+  val j_src = Mux(ifid_op(C.OP_RTYPE), Bool(true), Bool(false))
+  val ifid_rs = Mux(inst(25,21) === Bits(0), Bits(0), regfile(inst(25,21)))  // regfile(0) = 0
   when (!io.isWr && !io.boot) {
-    memwb_reg_write := exmem_reg_write
-    memwb_reg_dst := exmem_reg_dst
-    memwb_mem_toreg := exmem_mem_toreg
-    memwb_dmem_out := dmem_out
-    memwb_alu_out := exmem_alu_out
-    memwb_rti := exmem_rti
-    memwb_rdi := exmem_rdi
-    memwb_inst := exmem_inst
-    when (memwb_reg_write) {
-      val writedata = Mux(memwb_mem_toreg, memwb_dmem_out, memwb_alu_out)
-      val dstreg = Mux(memwb_reg_dst, memwb_rdi, memwb_rti)
-      regfile(dstreg) := writedata
-    }
-  }
-
-  /**
-   * EX/MEM Stage
-   */
-  def exmem_op(o: UInt) = C.opi(idex_inst, o)
-  def exmem_fop(o: UInt, f: UInt) = C.opi(idex_inst, o) && C.fopi(idex_inst, o, f)
-  def aop(o: UInt) = idex_alu_op === o	// match alu op
-  //val alu_in1 = idex_rs
-  val memwb_rtype_forwardable = C.opi(memwb_inst, C.OP_RTYPE)
-  val memwb_itype_forwardable = C.opi(memwb_inst, C.OP_ADDI) ||
-    C.opi(memwb_inst, C.OP_ADDIU) ||
-    C.opi(memwb_inst, C.OP_ORI) ||
-    C.opi(memwb_inst, C.OP_LUI)
-  val exmem_rtype_forwardable = C.opi(exmem_inst, C.OP_RTYPE)
-  val exmem_itype_forwardable = C.opi(exmem_inst, C.OP_ADDI) ||
-    C.opi(exmem_inst, C.OP_ADDIU) ||
-    C.opi(exmem_inst, C.OP_ORI) ||
-    C.opi(exmem_inst, C.OP_LUI)
-
-  val alu_in1 = MuxCase(idex_rs, Array(
-    (memwb_rtype_forwardable && idex_rsi === memwb_rdi) -> memwb_alu_out,
-    (memwb_itype_forwardable && idex_rsi === memwb_rti) -> memwb_alu_out,
-    (exmem_rtype_forwardable && idex_rsi === exmem_rdi) -> exmem_alu_out,
-    (exmem_itype_forwardable && idex_rsi === exmem_rti) -> exmem_alu_out
-    ))
-
-  val alu_in2 = Mux(idex_alu_src, MuxCase(idex_rt, Array(
-      (memwb_rtype_forwardable && idex_rti === memwb_rdi) -> memwb_alu_out,
-      (memwb_itype_forwardable && idex_rti === memwb_rti) -> memwb_alu_out,
-      (exmem_rtype_forwardable && idex_rti === exmem_rdi) -> exmem_alu_out,
-      (exmem_itype_forwardable && idex_rti === exmem_rti) -> exmem_alu_out
-      )), idex_sextimm)
-  val alu_out = MuxCase(UInt(0), Array(
-              aop(C.ALU_ADD) -> (alu_in1 + alu_in2).toUInt,
-              aop(C.ALU_SUB) -> (alu_in1 - alu_in2).toUInt,
-              aop(C.ALU_LUIB) -> (Cat(alu_in2(15, 0), UInt(0, width=16))).toUInt,
-              aop(C.ALU_SLT) -> (Mux(idex_rs < idex_rt, UInt(1), UInt(0))).toUInt,
-              aop(C.ALU_OR) -> (alu_in1 | alu_in2).toUInt,
-              aop(C.ALU_SLL) -> (alu_in1 << idex_shamt).toUInt
-              ))
-
-  val zero = (alu_out === UInt(0))
-  val is_branch_on_eq = exmem_op(C.OP_BEQ) 
-  val b_en = exmem_op(C.OP_BNE) || exmem_op(C.OP_BEQ)
-  val branch = b_en && ((~is_branch_on_eq && ~zero) || (is_branch_on_eq && zero))
-  when (!io.isWr && !io.boot) {
-    exmem_alu_out := alu_out
-    exmem_pcp4 := idex_pcp4
-    exmem_inst := idex_inst
-    exmem_branch_addr := Mux(branch, (idex_pcp4 - UInt(4)) + (UInt(4) * Cat(Fill(16, idex_inst(15)), idex_inst(15,0))), idex_pcp4)
-    exmem_reg_write := idex_reg_write
-    exmem_reg_dst   := idex_reg_dst
-    exmem_mem_toreg := idex_mem_toreg
-    exmem_mem_write := idex_mem_write
-    exmem_rt        := idex_rt
-    exmem_rti       := idex_rti
-    exmem_rdi       := idex_rdi
-    exmem_b_en      := b_en
-    when (exmem_mem_write) {
-      dmem(exmem_alu_out) := exmem_rt
+    ifid_pcp4      := pc + UInt(4)
+    ifid_inst      := inst
+    ifid_rsi       := inst(25,21)
+    ifid_rti       := inst(20,16)
+    ifid_rdi       := inst(15,11)
+    ifid_reg_write := reg_write
+    ifid_reg_dst   := reg_dst
+    ifid_mem_toreg := mem_toreg
+    ifid_mem_write := mem_write
+    ifid_j_en      := j_en
+    ifid_j_src     := j_src
+    ifid_j_addr    := Mux(j_src, ifid_rs, UInt(4) * inst(25,0))
+    ifid_b_en      := io.b_en
+    when (ifid_op(C.OP_JAL)) {
+      regfile(UInt(31)) := pc + UInt(4)
     }
   }
 
@@ -228,42 +183,88 @@ class Dpath extends Module {
     idex_b_en      := ifid_b_en
   }
 
+  /**
+   * EX/MEM Stage
+   */
+  def exmem_op(o: UInt) = C.opi(idex_inst, o)
+  def exmem_fop(o: UInt, f: UInt) = C.opi(idex_inst, o) && C.fopi(idex_inst, o, f)
+  def aop(o: UInt) = idex_alu_op === o  // match alu op
+  val memwb_rtype_forwardable = C.opi(memwb_inst, C.OP_RTYPE)
+  val memwb_itype_forwardable = C.opi(memwb_inst, C.OP_ADDI) ||
+    C.opi(memwb_inst, C.OP_ADDIU) ||
+    C.opi(memwb_inst, C.OP_ORI) ||
+    C.opi(memwb_inst, C.OP_LUI)
+  val memwb_lw_forwardable = C.opi(memwb_inst, C.OP_LW)
+  val exmem_rtype_forwardable = C.opi(exmem_inst, C.OP_RTYPE)
+  val exmem_itype_forwardable = C.opi(exmem_inst, C.OP_ADDI) ||
+    C.opi(exmem_inst, C.OP_ADDIU) ||
+    C.opi(exmem_inst, C.OP_ORI) ||
+    C.opi(exmem_inst, C.OP_LUI)
+
+  val alu_in1 = MuxCase(idex_rs, Array(
+    (memwb_lw_forwardable && idex_rsi === memwb_rti) -> memwb_dmem_out,
+    (memwb_rtype_forwardable && idex_rsi === memwb_rdi) -> memwb_alu_out,
+    (memwb_itype_forwardable && idex_rsi === memwb_rti) -> memwb_alu_out,
+    (exmem_rtype_forwardable && idex_rsi === exmem_rdi) -> exmem_alu_out,
+    (exmem_itype_forwardable && idex_rsi === exmem_rti) -> exmem_alu_out
+    ))
+
+  val alu_in2 = Mux(idex_alu_src, MuxCase(idex_rt, Array(
+      (memwb_lw_forwardable && idex_rti === memwb_rti) -> memwb_dmem_out,
+      (memwb_rtype_forwardable && idex_rti === memwb_rdi) -> memwb_alu_out,
+      (memwb_itype_forwardable && idex_rti === memwb_rti) -> memwb_alu_out,
+      (exmem_rtype_forwardable && idex_rti === exmem_rdi) -> exmem_alu_out,
+      (exmem_itype_forwardable && idex_rti === exmem_rti) -> exmem_alu_out
+      )), idex_sextimm)
+  val alu_out = MuxCase(UInt(0), Array(
+              aop(C.ALU_ADD) -> (alu_in1 + alu_in2).toUInt,
+              aop(C.ALU_SUB) -> (alu_in1 - alu_in2).toUInt,
+              aop(C.ALU_LUIB) -> (Cat(alu_in2(15, 0), UInt(0, width=16))).toUInt,
+              aop(C.ALU_SLT) -> (Mux(idex_rs < idex_rt, UInt(1), UInt(0))).toUInt,
+              aop(C.ALU_OR) -> (alu_in1 | alu_in2).toUInt,
+              aop(C.ALU_SLL) -> (alu_in1 << idex_shamt).toUInt
+              ))
+
+  val zero = (alu_out === UInt(0))
+  val is_branch_on_eq = exmem_op(C.OP_BEQ) 
+  val b_en = exmem_op(C.OP_BNE) || exmem_op(C.OP_BEQ)
+  val branch = b_en && ((~is_branch_on_eq && ~zero) || (is_branch_on_eq && zero))
+  when (!io.isWr && !io.boot) {
+    exmem_alu_out := alu_out
+    exmem_pcp4 := idex_pcp4
+    exmem_inst := idex_inst
+    exmem_branch_addr := Mux(branch, (idex_pcp4 - UInt(4)) + (UInt(4) * Cat(Fill(16, idex_inst(15)), idex_inst(15,0))), idex_pcp4)
+    exmem_reg_write := idex_reg_write
+    exmem_reg_dst   := idex_reg_dst
+    exmem_mem_toreg := idex_mem_toreg
+    exmem_mem_write := idex_mem_write
+    exmem_rt        := idex_rt
+    exmem_rti       := idex_rti
+    exmem_rdi       := idex_rdi
+    exmem_b_en      := b_en
+    when (exmem_mem_write) {
+      dmem(exmem_alu_out) := exmem_rt
+    }
+  }
 
   /**
-   * IF/ID Stage
+   * MEM/WB Stage
    */
-  val delay = idex_op(C.OP_J) || idex_op(C.OP_JAL) || idex_fop(C.OP_RTYPE, C.FUNC_JR) ||
-    idex_op(C.OP_BEQ) || idex_op(C.OP_BNE) ||
-    exmem_op(C.OP_BEQ) || exmem_op(C.OP_BNE) ||
-    memwb_op(C.OP_BEQ) || memwb_op(C.OP_BNE)
-  val inst = Mux(delay, UInt(0), imem(pc(C.IADDRZ-1, 2)))
-  def ifid_op(o: UInt) = C.opi(inst, o)
-  def ifid_fop(o: UInt, f: UInt) = C.opi(inst, o) && C.fopi(inst, o, f)
-  val reg_write = (ifid_op(C.OP_RTYPE) || ifid_op(C.OP_ADDI) || ifid_op(C.OP_ADDIU)
-                || ifid_op(C.OP_LW) || ifid_op(C.OP_ORI) || ifid_op(C.OP_LUI))
-  val reg_dst = ifid_op(C.OP_RTYPE)
-  val mem_toreg = ifid_op(C.OP_LW)
-  val mem_write = ifid_op(C.OP_SW)
-
-  val j_en = ifid_op(C.OP_J) || ifid_op(C.OP_JAL) || ifid_fop(C.OP_RTYPE, C.FUNC_JR)
-  val j_src = Mux(ifid_op(C.OP_RTYPE), Bool(true), Bool(false))
-  val ifid_rs = Mux(inst(25,21) === Bits(0), Bits(0), regfile(inst(25,21)))  // regfile(0) = 0
+  val dmem_out = dmem(exmem_alu_out)
+  def memwb_op(o: UInt) = C.opi(exmem_inst, o)
   when (!io.isWr && !io.boot) {
-    ifid_pcp4      := pc + UInt(4)
-    ifid_inst      := inst
-    ifid_rsi       := inst(25,21)
-    ifid_rti       := inst(20,16)
-    ifid_rdi       := inst(15,11)
-    ifid_reg_write := reg_write
-    ifid_reg_dst   := reg_dst
-    ifid_mem_toreg := mem_toreg
-    ifid_mem_write := mem_write
-    ifid_j_en      := j_en
-    ifid_j_src     := j_src
-    ifid_j_addr    := Mux(j_src, ifid_rs, UInt(4) * inst(25,0))
-    ifid_b_en      := io.b_en
-    when (ifid_op(C.OP_JAL)) {
-      regfile(UInt(31)) := pc + UInt(4)
+    memwb_reg_write := exmem_reg_write
+    memwb_reg_dst := exmem_reg_dst
+    memwb_mem_toreg := exmem_mem_toreg
+    memwb_dmem_out := dmem_out
+    memwb_alu_out := exmem_alu_out
+    memwb_rti := exmem_rti
+    memwb_rdi := exmem_rdi
+    memwb_inst := exmem_inst
+    when (memwb_reg_write) {
+      val writedata = Mux(memwb_mem_toreg, memwb_dmem_out, memwb_alu_out)
+      val dstreg = Mux(memwb_reg_dst, memwb_rdi, memwb_rti)
+      regfile(dstreg) := writedata
     }
   }
 
