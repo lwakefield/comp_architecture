@@ -252,6 +252,14 @@ class FibTest(c: Core) extends BaseTester(c) {
     wr(UInt(addr), app(addr))
   }
   boot()
+  for (i <- 0 until 100000000) {
+    step(1)
+    val pc = peek(c.io.pc)
+    if (pc == 0x00400020) {
+      throw new Exception("done")
+    }
+    peek(c.io.out)
+  }
   //for (i <- 0 until 500000) {
     //step(1)
     //peek(c.io.out)

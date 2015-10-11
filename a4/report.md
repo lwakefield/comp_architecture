@@ -85,3 +85,76 @@ add $t3, $t1, $t1
 |    6 |     |     |     | add | nop |
 
 Now in step 5, we are able to forward data.
+
+# Performance Results
+
+Letting the Fibonacci program run, it is now able to complete in a total of 1134554 cycles. At a clock cycle of 1ns(1GHz), this would suggest the program would execute in ~0.001134554 seconds. We can compare this to the Fibonacci program from part 3 of this assignment, which completed the program in 1925949 cycles.
+
+Given these results, we can see that our forwarded pipelined processor executes the Fibonacci program in ~58.9% of the time that the non-forwarded processor, providing a satisfying performance increase.
+
+# Improvements
+
+There are still improvements to be made, especially on dynamically handling hazards. Most notably, dynamic detection of hazards on ``lw`` instructions is suggested. This would remove the need to insert ``nop`` instructions after ``lw`` instructions with hazards. Another notable improvement would be branch prediction, which would offer a further performance increase.
+
+# Appendix
+
+## Modified Fibonacci Program
+
+      # Patterson and Hennessy, 2nd ed. modified for single cycle processor in Chisel.
+                  .text
+                  .globl      main
+      main:       nop
+                  nop
+                  subu  $sp, $sp, 32
+                  sw          $ra, 20($sp)
+                  sw          $fp, 16($sp)
+                  addu  $fp, $sp, 28
+                  li          $s0, 0
+      l1:         li          $s1, 20
+                  move  $a0, $s0
+                  jal         fib
+                  move  $t9, $v0
+                  addi  $s0, $s0, 1
+                  sltu  $t0, $s0, $s1
+                  bne         $t0, $zero, l1
+                  move  $v0, $a1
+                  lw          $ra, 20($sp)
+                  lw          $fp, 16($sp)
+                  addu  $sp, $sp, 32
+                  jr          $ra
+      fib:  subu  $sp, $sp, 32
+                  sw          $ra, 20($sp)
+                  sw          $fp, 16($sp)
+                  addu  $fp, $sp, 28
+                  sw          $a0, 0($fp)
+                  lw          $v0, 0($fp)
+                  nop
+                  bne         $v0, $zero, $L2
+                  li          $v0, 0
+                  j           $L1
+      $L2:  li          $t0, 1
+                  sltu  $t1, $t0, $v0
+                  bne         $t1, $zero, $L3
+                  j           $L1
+      $L3:  lw          $v1, 0($fp)
+                  nop
+                  subu  $v0, $v1, 1
+                  move  $a0, $v0
+                  jal         fib
+                  sw          $v0, 4($fp)
+                  lw          $v1, 0($fp)
+                  nop
+                  subu  $v0, $v1, 2
+                  move  $a0, $v0
+                  jal         fib
+                  lw          $v1, 4($fp) 
+                  nop
+                  addu  $v0, $v0, $v1     
+      $L1:  lw          $ra, 20($sp)
+                  nop
+                  nop
+                  lw          $fp, 16($sp)
+                  addu  $sp, $sp, 32
+                  jr          $ra
+      
+

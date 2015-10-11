@@ -104,6 +104,28 @@ class BranchTest(c: Core) extends BaseTester(c) {
   expect(c.io.pc, 0x40001c)
 }
 
+class SLTTest(c: Core) extends BaseTester(c) {
+  val app = Array(
+    /*[00400024]*/ StrUInt("2009000a"), //  addi $9, $0, 10          ; 1: addi $t1, $zero, 10 
+    /*[00400028]*/ StrUInt("200a0005"), //  addi $10, $0, 5          ; 2: addi $t2, $zero, 5 
+    /*[0040002c]*/ StrUInt("0149c82b"),  //  sltu $25, $10, $9        ; 3: sltu $t9, $t2, $t1
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000"),
+    StrUInt("00000000")
+)
+  wr(UInt(0), Bits(0)) // skip reset
+  for (addr <- 0 until app.length) {
+    wr(UInt(addr), app(addr))
+  }
+  boot()
+  step(6)
+  peek(c.io.out)
+  expect(c.io.out, 1)
+}
+
 /**
  * The sequence looks like this: 
  * ['0x0', '0x1', '0x1', '0x2', '0x3', '0x5', '0x8', '0xd', '0x15', '0x22', '0x37', '0x59', '0x90', '0xe9', '0x179', '0x262', '0x3db', '0x63d', '0xa18', '0x1055', '0x1a6d', '0x2ac2']
@@ -178,13 +200,16 @@ class FibTest(c: Core) extends BaseTester(c) {
     wr(UInt(addr), app(addr))
   }
   boot()
-  for (i <- 0 until 500000) {
-    step(1)
-    //peek(c.io.pc)
-    peek(c.io.out)
-  }
-  //step(500000)
-  //expect(c.io.out, 0x63d)
+  //for (i <- 0 until 100000000) {
+    //step(1)
+    //val pc = peek(c.io.pc)
+    //if (pc == 0x00400020) {
+      //throw new Exception("done")
+    //}
+    //peek(c.io.out)
+  //}
+  step(500000)
+  expect(c.io.out, 0x63d)
   //step(3000)
   //expect(c.io.out, 5)
   //step(100000)
@@ -229,6 +254,8 @@ object MIPSlite {
           //c => new BranchTest(c)}
           //chiselMainTest(tutArgs, () => Module(new Core())){
           //c => new ForwardingTest(c)}
+          chiselMainTest(tutArgs, () => Module(new Core())){
+          c => new SLTTest(c)}
           chiselMainTest(tutArgs, () => Module(new Core())){
           c => new FibTest(c)}
       }
