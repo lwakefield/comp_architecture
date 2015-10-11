@@ -220,7 +220,7 @@ class Dpath extends Module {
               aop(C.ALU_ADD) -> (alu_in1 + alu_in2).toUInt,
               aop(C.ALU_SUB) -> (alu_in1 - alu_in2).toUInt,
               aop(C.ALU_LUIB) -> (Cat(alu_in2(15, 0), UInt(0, width=16))).toUInt,
-              aop(C.ALU_SLT) -> (Mux(idex_rs < idex_rt, UInt(1), UInt(0))).toUInt,
+              aop(C.ALU_SLT) -> (Mux(alu_in1 < alu_in2, UInt(1), UInt(0))).toUInt,
               aop(C.ALU_OR) -> (alu_in1 | alu_in2).toUInt,
               aop(C.ALU_SLL) -> (alu_in1 << idex_shamt).toUInt
               ))
