@@ -1,0 +1,2000 @@
+Block size = 1, N = 1000
+--- fn = mmul0, MFLOPS = 80.5312, elapsed time = 24.8351s, sum = -2257.74
+Block size = 2, N = 1000
+--- fn = mmul0, MFLOPS = 323.984, elapsed time = 6.17314s, sum = -2257.74
+Block size = 3, N = 1000
+--- fn = mmul0, MFLOPS = 454.376, elapsed time = 4.40164s, sum = -2257.74
+Block size = 4, N = 1000
+--- fn = mmul0, MFLOPS = 601.793, elapsed time = 3.3234s, sum = -2257.74
+Block size = 5, N = 1000
+--- fn = mmul0, MFLOPS = 674.097, elapsed time = 2.96693s, sum = -2257.74
+Block size = 6, N = 1000
+--- fn = mmul0, MFLOPS = 873.863, elapsed time = 2.28869s, sum = -2257.74
+Block size = 7, N = 1000
+--- fn = mmul0, MFLOPS = 980.649, elapsed time = 2.03947s, sum = -2257.74
+Block size = 8, N = 1000
+--- fn = mmul0, MFLOPS = 1443.23, elapsed time = 1.38578s, sum = -2257.74
+Block size = 9, N = 1000
+--- fn = mmul0, MFLOPS = 1292.24, elapsed time = 1.5477s, sum = -2257.74
+Block size = 10, N = 1000
+--- fn = mmul0, MFLOPS = 1286.74, elapsed time = 1.55431s, sum = -2257.74
+Block size = 11, N = 1000
+--- fn = mmul0, MFLOPS = 1290.87, elapsed time = 1.54935s, sum = -2257.74
+Block size = 12, N = 1000
+--- fn = mmul0, MFLOPS = 1892.94, elapsed time = 1.05656s, sum = -2257.74
+Block size = 13, N = 1000
+--- fn = mmul0, MFLOPS = 1670, elapsed time = 1.19761s, sum = -2257.74
+Block size = 14, N = 1000
+--- fn = mmul0, MFLOPS = 1704.63, elapsed time = 1.17327s, sum = -2257.74
+Block size = 15, N = 1000
+--- fn = mmul0, MFLOPS = 1407.62, elapsed time = 1.42084s, sum = -2257.74
+Block size = 16, N = 1000
+--- fn = mmul0, MFLOPS = 2169.28, elapsed time = 0.921964s, sum = -2257.74
+Block size = 17, N = 1000
+--- fn = mmul0, MFLOPS = 2043.4, elapsed time = 0.978763s, sum = -2257.74
+Block size = 18, N = 1000
+--- fn = mmul0, MFLOPS = 1994.37, elapsed time = 1.00283s, sum = -2257.74
+Block size = 19, N = 1000
+--- fn = mmul0, MFLOPS = 1806.62, elapsed time = 1.10704s, sum = -2257.74
+Block size = 20, N = 1000
+--- fn = mmul0, MFLOPS = 2598.09, elapsed time = 0.769795s, sum = -2257.74
+Block size = 21, N = 1000
+--- fn = mmul0, MFLOPS = 2073.48, elapsed time = 0.964561s, sum = -2257.74
+Block size = 22, N = 1000
+--- fn = mmul0, MFLOPS = 1998.68, elapsed time = 1.00066s, sum = -2257.74
+Block size = 23, N = 1000
+--- fn = mmul0, MFLOPS = 2148.37, elapsed time = 0.93094s, sum = -2257.74
+Block size = 24, N = 1000
+--- fn = mmul0, MFLOPS = 2881.85, elapsed time = 0.693998s, sum = -2257.74
+Block size = 25, N = 1000
+--- fn = mmul0, MFLOPS = 2512.92, elapsed time = 0.795888s, sum = -2257.74
+Block size = 26, N = 1000
+--- fn = mmul0, MFLOPS = 2370.36, elapsed time = 0.843754s, sum = -2257.74
+Block size = 27, N = 1000
+--- fn = mmul0, MFLOPS = 2367.62, elapsed time = 0.844731s, sum = -2257.74
+Block size = 28, N = 1000
+--- fn = mmul0, MFLOPS = 2857.41, elapsed time = 0.699934s, sum = -2257.74
+Block size = 29, N = 1000
+--- fn = mmul0, MFLOPS = 2697.34, elapsed time = 0.741471s, sum = -2257.74
+Block size = 30, N = 1000
+--- fn = mmul0, MFLOPS = 2888.48, elapsed time = 0.692405s, sum = -2257.74
+Block size = 31, N = 1000
+--- fn = mmul0, MFLOPS = 2684.73, elapsed time = 0.744955s, sum = -2257.74
+Block size = 32, N = 1000
+--- fn = mmul0, MFLOPS = 3187.41, elapsed time = 0.627468s, sum = -2257.74
+Block size = 33, N = 1000
+--- fn = mmul0, MFLOPS = 3037.85, elapsed time = 0.65836s, sum = -2257.74
+Block size = 34, N = 1000
+--- fn = mmul0, MFLOPS = 2967.1, elapsed time = 0.674058s, sum = -2257.74
+Block size = 35, N = 1000
+--- fn = mmul0, MFLOPS = 2752.31, elapsed time = 0.726662s, sum = -2257.74
+Block size = 36, N = 1000
+--- fn = mmul0, MFLOPS = 3205.43, elapsed time = 0.623941s, sum = -2257.74
+Block size = 37, N = 1000
+--- fn = mmul0, MFLOPS = 3028.29, elapsed time = 0.660438s, sum = -2257.74
+Block size = 38, N = 1000
+--- fn = mmul0, MFLOPS = 3249.32, elapsed time = 0.615514s, sum = -2257.74
+Block size = 39, N = 1000
+--- fn = mmul0, MFLOPS = 2967.52, elapsed time = 0.673963s, sum = -2257.74
+Block size = 40, N = 1000
+--- fn = mmul0, MFLOPS = 2908.77, elapsed time = 0.687577s, sum = -2257.74
+Block size = 41, N = 1000
+--- fn = mmul0, MFLOPS = 2531.74, elapsed time = 0.789971s, sum = -2257.74
+Block size = 42, N = 1000
+--- fn = mmul0, MFLOPS = 3076.12, elapsed time = 0.65017s, sum = -2257.74
+Block size = 43, N = 1000
+--- fn = mmul0, MFLOPS = 3052.85, elapsed time = 0.655126s, sum = -2257.74
+Block size = 44, N = 1000
+--- fn = mmul0, MFLOPS = 3580.08, elapsed time = 0.558646s, sum = -2257.74
+Block size = 45, N = 1000
+--- fn = mmul0, MFLOPS = 2659.26, elapsed time = 0.752088s, sum = -2257.74
+Block size = 46, N = 1000
+--- fn = mmul0, MFLOPS = 3000.12, elapsed time = 0.66664s, sum = -2257.74
+Block size = 47, N = 1000
+--- fn = mmul0, MFLOPS = 2865.21, elapsed time = 0.69803s, sum = -2257.74
+Block size = 48, N = 1000
+--- fn = mmul0, MFLOPS = 3187.4, elapsed time = 0.627471s, sum = -2257.74
+Block size = 49, N = 1000
+--- fn = mmul0, MFLOPS = 3253.64, elapsed time = 0.614697s, sum = -2257.74
+Block size = 50, N = 1000
+--- fn = mmul0, MFLOPS = 3240.64, elapsed time = 0.617162s, sum = -2257.74
+Block size = 51, N = 1000
+--- fn = mmul0, MFLOPS = 2857.11, elapsed time = 0.700009s, sum = -2257.74
+Block size = 52, N = 1000
+--- fn = mmul0, MFLOPS = 2935.99, elapsed time = 0.681202s, sum = -2257.74
+Block size = 53, N = 1000
+--- fn = mmul0, MFLOPS = 3282.62, elapsed time = 0.609269s, sum = -2257.74
+Block size = 54, N = 1000
+--- fn = mmul0, MFLOPS = 3475.36, elapsed time = 0.57548s, sum = -2257.74
+Block size = 55, N = 1000
+--- fn = mmul0, MFLOPS = 3284.83, elapsed time = 0.60886s, sum = -2257.74
+Block size = 56, N = 1000
+--- fn = mmul0, MFLOPS = 3914.61, elapsed time = 0.510906s, sum = -2257.74
+Block size = 57, N = 1000
+--- fn = mmul0, MFLOPS = 3064.12, elapsed time = 0.652716s, sum = -2257.74
+Block size = 58, N = 1000
+--- fn = mmul0, MFLOPS = 3503.33, elapsed time = 0.570886s, sum = -2257.74
+Block size = 59, N = 1000
+--- fn = mmul0, MFLOPS = 3291.05, elapsed time = 0.607708s, sum = -2257.74
+Block size = 60, N = 1000
+--- fn = mmul0, MFLOPS = 3642.89, elapsed time = 0.549014s, sum = -2257.74
+Block size = 61, N = 1000
+--- fn = mmul0, MFLOPS = 3196.47, elapsed time = 0.625691s, sum = -2257.74
+Block size = 62, N = 1000
+--- fn = mmul0, MFLOPS = 3266.32, elapsed time = 0.612309s, sum = -2257.74
+Block size = 63, N = 1000
+--- fn = mmul0, MFLOPS = 3234.19, elapsed time = 0.618392s, sum = -2257.74
+Block size = 64, N = 1000
+--- fn = mmul0, MFLOPS = 3145.37, elapsed time = 0.635856s, sum = -2257.74
+Block size = 65, N = 1000
+--- fn = mmul0, MFLOPS = 3240.61, elapsed time = 0.617168s, sum = -2257.74
+Block size = 66, N = 1000
+--- fn = mmul0, MFLOPS = 3375.58, elapsed time = 0.59249s, sum = -2257.74
+Block size = 67, N = 1000
+--- fn = mmul0, MFLOPS = 3256.88, elapsed time = 0.614085s, sum = -2257.74
+Block size = 68, N = 1000
+--- fn = mmul0, MFLOPS = 3650.97, elapsed time = 0.547799s, sum = -2257.74
+Block size = 69, N = 1000
+--- fn = mmul0, MFLOPS = 3656.53, elapsed time = 0.546967s, sum = -2257.74
+Block size = 70, N = 1000
+--- fn = mmul0, MFLOPS = 3530.51, elapsed time = 0.56649s, sum = -2257.74
+Block size = 71, N = 1000
+--- fn = mmul0, MFLOPS = 3471.62, elapsed time = 0.5761s, sum = -2257.74
+Block size = 72, N = 1000
+--- fn = mmul0, MFLOPS = 3990.45, elapsed time = 0.501196s, sum = -2257.74
+Block size = 73, N = 1000
+--- fn = mmul0, MFLOPS = 3509.68, elapsed time = 0.569853s, sum = -2257.74
+Block size = 74, N = 1000
+--- fn = mmul0, MFLOPS = 3483.72, elapsed time = 0.574099s, sum = -2257.74
+Block size = 75, N = 1000
+--- fn = mmul0, MFLOPS = 3295.89, elapsed time = 0.606816s, sum = -2257.74
+Block size = 76, N = 1000
+--- fn = mmul0, MFLOPS = 3783.04, elapsed time = 0.528676s, sum = -2257.74
+Block size = 77, N = 1000
+--- fn = mmul0, MFLOPS = 3222.14, elapsed time = 0.620705s, sum = -2257.74
+Block size = 78, N = 1000
+--- fn = mmul0, MFLOPS = 3754.94, elapsed time = 0.532632s, sum = -2257.74
+Block size = 79, N = 1000
+--- fn = mmul0, MFLOPS = 3265.04, elapsed time = 0.612549s, sum = -2257.74
+Block size = 80, N = 1000
+--- fn = mmul0, MFLOPS = 3733.6, elapsed time = 0.535676s, sum = -2257.74
+Block size = 81, N = 1000
+--- fn = mmul0, MFLOPS = 3514.8, elapsed time = 0.569022s, sum = -2257.74
+Block size = 82, N = 1000
+--- fn = mmul0, MFLOPS = 3715.82, elapsed time = 0.538239s, sum = -2257.74
+Block size = 83, N = 1000
+--- fn = mmul0, MFLOPS = 2781.04, elapsed time = 0.719156s, sum = -2257.74
+Block size = 84, N = 1000
+--- fn = mmul0, MFLOPS = 3180.79, elapsed time = 0.628774s, sum = -2257.74
+Block size = 85, N = 1000
+--- fn = mmul0, MFLOPS = 3253.29, elapsed time = 0.614762s, sum = -2257.74
+Block size = 86, N = 1000
+--- fn = mmul0, MFLOPS = 3398.75, elapsed time = 0.588452s, sum = -2257.74
+Block size = 87, N = 1000
+--- fn = mmul0, MFLOPS = 3097.66, elapsed time = 0.645648s, sum = -2257.74
+Block size = 88, N = 1000
+--- fn = mmul0, MFLOPS = 3500.76, elapsed time = 0.571304s, sum = -2257.74
+Block size = 89, N = 1000
+--- fn = mmul0, MFLOPS = 3368.42, elapsed time = 0.59375s, sum = -2257.74
+Block size = 90, N = 1000
+--- fn = mmul0, MFLOPS = 3538.4, elapsed time = 0.565228s, sum = -2257.74
+Block size = 91, N = 1000
+--- fn = mmul0, MFLOPS = 3201.26, elapsed time = 0.624754s, sum = -2257.74
+Block size = 92, N = 1000
+--- fn = mmul0, MFLOPS = 3499.93, elapsed time = 0.57144s, sum = -2257.74
+Block size = 93, N = 1000
+--- fn = mmul0, MFLOPS = 3176.34, elapsed time = 0.629655s, sum = -2257.74
+Block size = 94, N = 1000
+--- fn = mmul0, MFLOPS = 3561.89, elapsed time = 0.5615s, sum = -2257.74
+Block size = 95, N = 1000
+--- fn = mmul0, MFLOPS = 3296, elapsed time = 0.606796s, sum = -2257.74
+Block size = 96, N = 1000
+--- fn = mmul0, MFLOPS = 3532.66, elapsed time = 0.566145s, sum = -2257.74
+Block size = 97, N = 1000
+--- fn = mmul0, MFLOPS = 3363.78, elapsed time = 0.59457s, sum = -2257.74
+Block size = 98, N = 1000
+--- fn = mmul0, MFLOPS = 3204.87, elapsed time = 0.624051s, sum = -2257.74
+Block size = 99, N = 1000
+--- fn = mmul0, MFLOPS = 3106.69, elapsed time = 0.643772s, sum = -2257.74
+Block size = 100, N = 1000
+--- fn = mmul0, MFLOPS = 3710.62, elapsed time = 0.538993s, sum = -2257.74
+Block size = 101, N = 1000
+--- fn = mmul0, MFLOPS = 3429.97, elapsed time = 0.583096s, sum = -2257.74
+Block size = 102, N = 1000
+--- fn = mmul0, MFLOPS = 3824.93, elapsed time = 0.522886s, sum = -2257.74
+Block size = 103, N = 1000
+--- fn = mmul0, MFLOPS = 3577.05, elapsed time = 0.55912s, sum = -2257.74
+Block size = 104, N = 1000
+--- fn = mmul0, MFLOPS = 3856.97, elapsed time = 0.518542s, sum = -2257.74
+Block size = 105, N = 1000
+--- fn = mmul0, MFLOPS = 3616.22, elapsed time = 0.553063s, sum = -2257.74
+Block size = 106, N = 1000
+--- fn = mmul0, MFLOPS = 3920.88, elapsed time = 0.51009s, sum = -2257.74
+Block size = 107, N = 1000
+--- fn = mmul0, MFLOPS = 3599.48, elapsed time = 0.555636s, sum = -2257.74
+Block size = 108, N = 1000
+--- fn = mmul0, MFLOPS = 4067.52, elapsed time = 0.4917s, sum = -2257.74
+Block size = 109, N = 1000
+--- fn = mmul0, MFLOPS = 3245.72, elapsed time = 0.616196s, sum = -2257.74
+Block size = 110, N = 1000
+--- fn = mmul0, MFLOPS = 3333.31, elapsed time = 0.600004s, sum = -2257.74
+Block size = 111, N = 1000
+--- fn = mmul0, MFLOPS = 3549.18, elapsed time = 0.56351s, sum = -2257.74
+Block size = 112, N = 1000
+--- fn = mmul0, MFLOPS = 4067.69, elapsed time = 0.491679s, sum = -2257.74
+Block size = 113, N = 1000
+--- fn = mmul0, MFLOPS = 3817.09, elapsed time = 0.523959s, sum = -2257.74
+Block size = 114, N = 1000
+--- fn = mmul0, MFLOPS = 3925.33, elapsed time = 0.509511s, sum = -2257.74
+Block size = 115, N = 1000
+--- fn = mmul0, MFLOPS = 3602.25, elapsed time = 0.555209s, sum = -2257.74
+Block size = 116, N = 1000
+--- fn = mmul0, MFLOPS = 4198.61, elapsed time = 0.476348s, sum = -2257.74
+Block size = 117, N = 1000
+--- fn = mmul0, MFLOPS = 3695.61, elapsed time = 0.541182s, sum = -2257.74
+Block size = 118, N = 1000
+--- fn = mmul0, MFLOPS = 4118.83, elapsed time = 0.485575s, sum = -2257.74
+Block size = 119, N = 1000
+--- fn = mmul0, MFLOPS = 3995.55, elapsed time = 0.500557s, sum = -2257.74
+Block size = 120, N = 1000
+--- fn = mmul0, MFLOPS = 4167.16, elapsed time = 0.479943s, sum = -2257.74
+Block size = 121, N = 1000
+--- fn = mmul0, MFLOPS = 3714.21, elapsed time = 0.538472s, sum = -2257.74
+Block size = 122, N = 1000
+--- fn = mmul0, MFLOPS = 4185.74, elapsed time = 0.477813s, sum = -2257.74
+Block size = 123, N = 1000
+--- fn = mmul0, MFLOPS = 3432.18, elapsed time = 0.58272s, sum = -2257.74
+Block size = 124, N = 1000
+--- fn = mmul0, MFLOPS = 4229.72, elapsed time = 0.472844s, sum = -2257.74
+Block size = 125, N = 1000
+--- fn = mmul0, MFLOPS = 3848.26, elapsed time = 0.519716s, sum = -2257.74
+Block size = 126, N = 1000
+--- fn = mmul0, MFLOPS = 3980.41, elapsed time = 0.502461s, sum = -2257.74
+Block size = 127, N = 1000
+--- fn = mmul0, MFLOPS = 3595.96, elapsed time = 0.55618s, sum = -2257.74
+Block size = 128, N = 1000
+--- fn = mmul0, MFLOPS = 4001.02, elapsed time = 0.499873s, sum = -2257.74
+Block size = 129, N = 1000
+--- fn = mmul0, MFLOPS = 3833.11, elapsed time = 0.52177s, sum = -2257.74
+Block size = 130, N = 1000
+--- fn = mmul0, MFLOPS = 4046.4, elapsed time = 0.494266s, sum = -2257.74
+Block size = 131, N = 1000
+--- fn = mmul0, MFLOPS = 3637.22, elapsed time = 0.54987s, sum = -2257.74
+Block size = 132, N = 1000
+--- fn = mmul0, MFLOPS = 3781.96, elapsed time = 0.528827s, sum = -2257.74
+Block size = 133, N = 1000
+--- fn = mmul0, MFLOPS = 3605.42, elapsed time = 0.55472s, sum = -2257.74
+Block size = 134, N = 1000
+--- fn = mmul0, MFLOPS = 3725.81, elapsed time = 0.536796s, sum = -2257.74
+Block size = 135, N = 1000
+--- fn = mmul0, MFLOPS = 3550, elapsed time = 0.563381s, sum = -2257.74
+Block size = 136, N = 1000
+--- fn = mmul0, MFLOPS = 4104.28, elapsed time = 0.487296s, sum = -2257.74
+Block size = 137, N = 1000
+--- fn = mmul0, MFLOPS = 3762.94, elapsed time = 0.5315s, sum = -2257.74
+Block size = 138, N = 1000
+--- fn = mmul0, MFLOPS = 4122.35, elapsed time = 0.48516s, sum = -2257.74
+Block size = 139, N = 1000
+--- fn = mmul0, MFLOPS = 3638.37, elapsed time = 0.549697s, sum = -2257.74
+Block size = 140, N = 1000
+--- fn = mmul0, MFLOPS = 4233.27, elapsed time = 0.472448s, sum = -2257.74
+Block size = 141, N = 1000
+--- fn = mmul0, MFLOPS = 3676.59, elapsed time = 0.543982s, sum = -2257.74
+Block size = 142, N = 1000
+--- fn = mmul0, MFLOPS = 3763.15, elapsed time = 0.53147s, sum = -2257.74
+Block size = 143, N = 1000
+--- fn = mmul0, MFLOPS = 3585.37, elapsed time = 0.557822s, sum = -2257.74
+Block size = 144, N = 1000
+--- fn = mmul0, MFLOPS = 4123.21, elapsed time = 0.485059s, sum = -2257.74
+Block size = 145, N = 1000
+--- fn = mmul0, MFLOPS = 3692.35, elapsed time = 0.541661s, sum = -2257.74
+Block size = 146, N = 1000
+--- fn = mmul0, MFLOPS = 3824.9, elapsed time = 0.52289s, sum = -2257.74
+Block size = 147, N = 1000
+--- fn = mmul0, MFLOPS = 3611.37, elapsed time = 0.553806s, sum = -2257.74
+Block size = 148, N = 1000
+--- fn = mmul0, MFLOPS = 3975.16, elapsed time = 0.503124s, sum = -2257.74
+Block size = 149, N = 1000
+--- fn = mmul0, MFLOPS = 3118.18, elapsed time = 0.6414s, sum = -2257.74
+Block size = 150, N = 1000
+--- fn = mmul0, MFLOPS = 3285.58, elapsed time = 0.608721s, sum = -2257.74
+Block size = 151, N = 1000
+--- fn = mmul0, MFLOPS = 3052.68, elapsed time = 0.655163s, sum = -2257.74
+Block size = 152, N = 1000
+--- fn = mmul0, MFLOPS = 3124.71, elapsed time = 0.64006s, sum = -2257.74
+Block size = 153, N = 1000
+--- fn = mmul0, MFLOPS = 3370.12, elapsed time = 0.59345s, sum = -2257.74
+Block size = 154, N = 1000
+--- fn = mmul0, MFLOPS = 3307.99, elapsed time = 0.604597s, sum = -2257.74
+Block size = 155, N = 1000
+--- fn = mmul0, MFLOPS = 3283, elapsed time = 0.609199s, sum = -2257.74
+Block size = 156, N = 1000
+--- fn = mmul0, MFLOPS = 3492.38, elapsed time = 0.572676s, sum = -2257.74
+Block size = 157, N = 1000
+--- fn = mmul0, MFLOPS = 3323.88, elapsed time = 0.601706s, sum = -2257.74
+Block size = 158, N = 1000
+--- fn = mmul0, MFLOPS = 3398.26, elapsed time = 0.588537s, sum = -2257.74
+Block size = 159, N = 1000
+--- fn = mmul0, MFLOPS = 3207.24, elapsed time = 0.62359s, sum = -2257.74
+Block size = 160, N = 1000
+--- fn = mmul0, MFLOPS = 3509.33, elapsed time = 0.56991s, sum = -2257.74
+Block size = 161, N = 1000
+--- fn = mmul0, MFLOPS = 3266.66, elapsed time = 0.612246s, sum = -2257.74
+Block size = 162, N = 1000
+--- fn = mmul0, MFLOPS = 3614.37, elapsed time = 0.553347s, sum = -2257.74
+Block size = 163, N = 1000
+--- fn = mmul0, MFLOPS = 3180.82, elapsed time = 0.628768s, sum = -2257.74
+Block size = 164, N = 1000
+--- fn = mmul0, MFLOPS = 3588.47, elapsed time = 0.557341s, sum = -2257.74
+Block size = 165, N = 1000
+--- fn = mmul0, MFLOPS = 3224.09, elapsed time = 0.62033s, sum = -2257.74
+Block size = 166, N = 1000
+--- fn = mmul0, MFLOPS = 3434.61, elapsed time = 0.582307s, sum = -2257.74
+Block size = 167, N = 1000
+--- fn = mmul0, MFLOPS = 3300.17, elapsed time = 0.606029s, sum = -2257.74
+Block size = 168, N = 1000
+--- fn = mmul0, MFLOPS = 3474.87, elapsed time = 0.575561s, sum = -2257.74
+Block size = 169, N = 1000
+--- fn = mmul0, MFLOPS = 3227.98, elapsed time = 0.619582s, sum = -2257.74
+Block size = 170, N = 1000
+--- fn = mmul0, MFLOPS = 3207.57, elapsed time = 0.623525s, sum = -2257.74
+Block size = 171, N = 1000
+--- fn = mmul0, MFLOPS = 3330.25, elapsed time = 0.600555s, sum = -2257.74
+Block size = 172, N = 1000
+--- fn = mmul0, MFLOPS = 3532.81, elapsed time = 0.566122s, sum = -2257.74
+Block size = 173, N = 1000
+--- fn = mmul0, MFLOPS = 3282.98, elapsed time = 0.609203s, sum = -2257.74
+Block size = 174, N = 1000
+--- fn = mmul0, MFLOPS = 3437.67, elapsed time = 0.58179s, sum = -2257.74
+Block size = 175, N = 1000
+--- fn = mmul0, MFLOPS = 3013.66, elapsed time = 0.663644s, sum = -2257.74
+Block size = 176, N = 1000
+--- fn = mmul0, MFLOPS = 3289.25, elapsed time = 0.608041s, sum = -2257.74
+Block size = 177, N = 1000
+--- fn = mmul0, MFLOPS = 3470.97, elapsed time = 0.576208s, sum = -2257.74
+Block size = 178, N = 1000
+--- fn = mmul0, MFLOPS = 3696.48, elapsed time = 0.541055s, sum = -2257.74
+Block size = 179, N = 1000
+--- fn = mmul0, MFLOPS = 3218.02, elapsed time = 0.621501s, sum = -2257.74
+Block size = 180, N = 1000
+--- fn = mmul0, MFLOPS = 3738.21, elapsed time = 0.535015s, sum = -2257.74
+Block size = 181, N = 1000
+--- fn = mmul0, MFLOPS = 3650.01, elapsed time = 0.547943s, sum = -2257.74
+Block size = 182, N = 1000
+--- fn = mmul0, MFLOPS = 3622.23, elapsed time = 0.552146s, sum = -2257.74
+Block size = 183, N = 1000
+--- fn = mmul0, MFLOPS = 3476.85, elapsed time = 0.575234s, sum = -2257.74
+Block size = 184, N = 1000
+--- fn = mmul0, MFLOPS = 3854.55, elapsed time = 0.518867s, sum = -2257.74
+Block size = 185, N = 1000
+--- fn = mmul0, MFLOPS = 3487.75, elapsed time = 0.573436s, sum = -2257.74
+Block size = 186, N = 1000
+--- fn = mmul0, MFLOPS = 3777.76, elapsed time = 0.529414s, sum = -2257.74
+Block size = 187, N = 1000
+--- fn = mmul0, MFLOPS = 3519.09, elapsed time = 0.568329s, sum = -2257.74
+Block size = 188, N = 1000
+--- fn = mmul0, MFLOPS = 3841.22, elapsed time = 0.520668s, sum = -2257.74
+Block size = 189, N = 1000
+--- fn = mmul0, MFLOPS = 3300.1, elapsed time = 0.606042s, sum = -2257.74
+Block size = 190, N = 1000
+--- fn = mmul0, MFLOPS = 3769.35, elapsed time = 0.530596s, sum = -2257.74
+Block size = 191, N = 1000
+--- fn = mmul0, MFLOPS = 3408.35, elapsed time = 0.586795s, sum = -2257.74
+Block size = 192, N = 1000
+--- fn = mmul0, MFLOPS = 3722.6, elapsed time = 0.537259s, sum = -2257.74
+Block size = 193, N = 1000
+--- fn = mmul0, MFLOPS = 3294.6, elapsed time = 0.607054s, sum = -2257.74
+Block size = 194, N = 1000
+--- fn = mmul0, MFLOPS = 3632.86, elapsed time = 0.55053s, sum = -2257.74
+Block size = 195, N = 1000
+--- fn = mmul0, MFLOPS = 3552.93, elapsed time = 0.562915s, sum = -2257.74
+Block size = 196, N = 1000
+--- fn = mmul0, MFLOPS = 3740.87, elapsed time = 0.534635s, sum = -2257.74
+Block size = 197, N = 1000
+--- fn = mmul0, MFLOPS = 3581.04, elapsed time = 0.558497s, sum = -2257.74
+Block size = 198, N = 1000
+--- fn = mmul0, MFLOPS = 3699.03, elapsed time = 0.540682s, sum = -2257.74
+Block size = 199, N = 1000
+--- fn = mmul0, MFLOPS = 3538.71, elapsed time = 0.565177s, sum = -2257.74
+Block size = 200, N = 1000
+--- fn = mmul0, MFLOPS = 3894.88, elapsed time = 0.513494s, sum = -2257.74
+Block size = 201, N = 1000
+--- fn = mmul0, MFLOPS = 3582.93, elapsed time = 0.558203s, sum = -2257.74
+Block size = 202, N = 1000
+--- fn = mmul0, MFLOPS = 3727.57, elapsed time = 0.536542s, sum = -2257.74
+Block size = 203, N = 1000
+--- fn = mmul0, MFLOPS = 3693.56, elapsed time = 0.541483s, sum = -2257.74
+Block size = 204, N = 1000
+--- fn = mmul0, MFLOPS = 3827.48, elapsed time = 0.522537s, sum = -2257.74
+Block size = 205, N = 1000
+--- fn = mmul0, MFLOPS = 3713.13, elapsed time = 0.538629s, sum = -2257.74
+Block size = 206, N = 1000
+--- fn = mmul0, MFLOPS = 3846.94, elapsed time = 0.519894s, sum = -2257.74
+Block size = 207, N = 1000
+--- fn = mmul0, MFLOPS = 3571.05, elapsed time = 0.56006s, sum = -2257.74
+Block size = 208, N = 1000
+--- fn = mmul0, MFLOPS = 3792.66, elapsed time = 0.527335s, sum = -2257.74
+Block size = 209, N = 1000
+--- fn = mmul0, MFLOPS = 3466.09, elapsed time = 0.577019s, sum = -2257.74
+Block size = 210, N = 1000
+--- fn = mmul0, MFLOPS = 3781.86, elapsed time = 0.52884s, sum = -2257.74
+Block size = 211, N = 1000
+--- fn = mmul0, MFLOPS = 3593.54, elapsed time = 0.556554s, sum = -2257.74
+Block size = 212, N = 1000
+--- fn = mmul0, MFLOPS = 3867.36, elapsed time = 0.517149s, sum = -2257.74
+Block size = 213, N = 1000
+--- fn = mmul0, MFLOPS = 3676.86, elapsed time = 0.543942s, sum = -2257.74
+Block size = 214, N = 1000
+--- fn = mmul0, MFLOPS = 3866.01, elapsed time = 0.517329s, sum = -2257.74
+Block size = 215, N = 1000
+--- fn = mmul0, MFLOPS = 3614.47, elapsed time = 0.553331s, sum = -2257.74
+Block size = 216, N = 1000
+--- fn = mmul0, MFLOPS = 3953.4, elapsed time = 0.505894s, sum = -2257.74
+Block size = 217, N = 1000
+--- fn = mmul0, MFLOPS = 3352.63, elapsed time = 0.596547s, sum = -2257.74
+Block size = 218, N = 1000
+--- fn = mmul0, MFLOPS = 3294.23, elapsed time = 0.607123s, sum = -2257.74
+Block size = 219, N = 1000
+--- fn = mmul0, MFLOPS = 3326.23, elapsed time = 0.601282s, sum = -2257.74
+Block size = 220, N = 1000
+--- fn = mmul0, MFLOPS = 3654.67, elapsed time = 0.547245s, sum = -2257.74
+Block size = 221, N = 1000
+--- fn = mmul0, MFLOPS = 3562.36, elapsed time = 0.561426s, sum = -2257.74
+Block size = 222, N = 1000
+--- fn = mmul0, MFLOPS = 3679.19, elapsed time = 0.543598s, sum = -2257.74
+Block size = 223, N = 1000
+--- fn = mmul0, MFLOPS = 3273.48, elapsed time = 0.61097s, sum = -2257.74
+Block size = 224, N = 1000
+--- fn = mmul0, MFLOPS = 3244.2, elapsed time = 0.616485s, sum = -2257.74
+Block size = 225, N = 1000
+--- fn = mmul0, MFLOPS = 3172.6, elapsed time = 0.630398s, sum = -2257.74
+Block size = 226, N = 1000
+--- fn = mmul0, MFLOPS = 3323.77, elapsed time = 0.601726s, sum = -2257.74
+Block size = 227, N = 1000
+--- fn = mmul0, MFLOPS = 3065.9, elapsed time = 0.652338s, sum = -2257.74
+Block size = 228, N = 1000
+--- fn = mmul0, MFLOPS = 3163.93, elapsed time = 0.632126s, sum = -2257.74
+Block size = 229, N = 1000
+--- fn = mmul0, MFLOPS = 2943.15, elapsed time = 0.679544s, sum = -2257.74
+Block size = 230, N = 1000
+--- fn = mmul0, MFLOPS = 2996.66, elapsed time = 0.66741s, sum = -2257.74
+Block size = 231, N = 1000
+--- fn = mmul0, MFLOPS = 3239.51, elapsed time = 0.617378s, sum = -2257.74
+Block size = 232, N = 1000
+--- fn = mmul0, MFLOPS = 3390.97, elapsed time = 0.589801s, sum = -2257.74
+Block size = 233, N = 1000
+--- fn = mmul0, MFLOPS = 2814.34, elapsed time = 0.710647s, sum = -2257.74
+Block size = 234, N = 1000
+--- fn = mmul0, MFLOPS = 3394.65, elapsed time = 0.589163s, sum = -2257.74
+Block size = 235, N = 1000
+--- fn = mmul0, MFLOPS = 2978.22, elapsed time = 0.671543s, sum = -2257.74
+Block size = 236, N = 1000
+--- fn = mmul0, MFLOPS = 3241.08, elapsed time = 0.617079s, sum = -2257.74
+Block size = 237, N = 1000
+--- fn = mmul0, MFLOPS = 3418.34, elapsed time = 0.585079s, sum = -2257.74
+Block size = 238, N = 1000
+--- fn = mmul0, MFLOPS = 3576.97, elapsed time = 0.559133s, sum = -2257.74
+Block size = 239, N = 1000
+--- fn = mmul0, MFLOPS = 3284.88, elapsed time = 0.608851s, sum = -2257.74
+Block size = 240, N = 1000
+--- fn = mmul0, MFLOPS = 3354.73, elapsed time = 0.596174s, sum = -2257.74
+Block size = 241, N = 1000
+--- fn = mmul0, MFLOPS = 3164.61, elapsed time = 0.63199s, sum = -2257.74
+Block size = 242, N = 1000
+--- fn = mmul0, MFLOPS = 3544.43, elapsed time = 0.564265s, sum = -2257.74
+Block size = 243, N = 1000
+--- fn = mmul0, MFLOPS = 3331.79, elapsed time = 0.600278s, sum = -2257.74
+Block size = 244, N = 1000
+--- fn = mmul0, MFLOPS = 3637.88, elapsed time = 0.54977s, sum = -2257.74
+Block size = 245, N = 1000
+--- fn = mmul0, MFLOPS = 3501.11, elapsed time = 0.571248s, sum = -2257.74
+Block size = 246, N = 1000
+--- fn = mmul0, MFLOPS = 3760.06, elapsed time = 0.531907s, sum = -2257.74
+Block size = 247, N = 1000
+--- fn = mmul0, MFLOPS = 3380.75, elapsed time = 0.591585s, sum = -2257.74
+Block size = 248, N = 1000
+--- fn = mmul0, MFLOPS = 3788.9, elapsed time = 0.527858s, sum = -2257.74
+Block size = 249, N = 1000
+--- fn = mmul0, MFLOPS = 3559.07, elapsed time = 0.561944s, sum = -2257.74
+Block size = 250, N = 1000
+--- fn = mmul0, MFLOPS = 3803.37, elapsed time = 0.52585s, sum = -2257.74
+Block size = 251, N = 1000
+--- fn = mmul0, MFLOPS = 3482.43, elapsed time = 0.574311s, sum = -2257.74
+Block size = 252, N = 1000
+--- fn = mmul0, MFLOPS = 3756.4, elapsed time = 0.532424s, sum = -2257.74
+Block size = 253, N = 1000
+--- fn = mmul0, MFLOPS = 3636.18, elapsed time = 0.550028s, sum = -2257.74
+Block size = 254, N = 1000
+--- fn = mmul0, MFLOPS = 3782.76, elapsed time = 0.528714s, sum = -2257.74
+Block size = 255, N = 1000
+--- fn = mmul0, MFLOPS = 3527.31, elapsed time = 0.567004s, sum = -2257.74
+Block size = 256, N = 1000
+--- fn = mmul0, MFLOPS = 4047.77, elapsed time = 0.494099s, sum = -2257.74
+Block size = 257, N = 1000
+--- fn = mmul0, MFLOPS = 3573.66, elapsed time = 0.55965s, sum = -2257.74
+Block size = 258, N = 1000
+--- fn = mmul0, MFLOPS = 3772.23, elapsed time = 0.530191s, sum = -2257.74
+Block size = 259, N = 1000
+--- fn = mmul0, MFLOPS = 3666.95, elapsed time = 0.545412s, sum = -2257.74
+Block size = 260, N = 1000
+--- fn = mmul0, MFLOPS = 3836.92, elapsed time = 0.521251s, sum = -2257.74
+Block size = 261, N = 1000
+--- fn = mmul0, MFLOPS = 3702.89, elapsed time = 0.540118s, sum = -2257.74
+Block size = 262, N = 1000
+--- fn = mmul0, MFLOPS = 3661.25, elapsed time = 0.546261s, sum = -2257.74
+Block size = 263, N = 1000
+--- fn = mmul0, MFLOPS = 3615.2, elapsed time = 0.553219s, sum = -2257.74
+Block size = 264, N = 1000
+--- fn = mmul0, MFLOPS = 3720.95, elapsed time = 0.537497s, sum = -2257.74
+Block size = 265, N = 1000
+--- fn = mmul0, MFLOPS = 3399.89, elapsed time = 0.588255s, sum = -2257.74
+Block size = 266, N = 1000
+--- fn = mmul0, MFLOPS = 3248.85, elapsed time = 0.615603s, sum = -2257.74
+Block size = 267, N = 1000
+--- fn = mmul0, MFLOPS = 3578.57, elapsed time = 0.558883s, sum = -2257.74
+Block size = 268, N = 1000
+--- fn = mmul0, MFLOPS = 3911.74, elapsed time = 0.511282s, sum = -2257.74
+Block size = 269, N = 1000
+--- fn = mmul0, MFLOPS = 3583.38, elapsed time = 0.558133s, sum = -2257.74
+Block size = 270, N = 1000
+--- fn = mmul0, MFLOPS = 3824.21, elapsed time = 0.522984s, sum = -2257.74
+Block size = 271, N = 1000
+--- fn = mmul0, MFLOPS = 3531.24, elapsed time = 0.566373s, sum = -2257.74
+Block size = 272, N = 1000
+--- fn = mmul0, MFLOPS = 3749.1, elapsed time = 0.533462s, sum = -2257.74
+Block size = 273, N = 1000
+--- fn = mmul0, MFLOPS = 3577.41, elapsed time = 0.559063s, sum = -2257.74
+Block size = 274, N = 1000
+--- fn = mmul0, MFLOPS = 3713.18, elapsed time = 0.538622s, sum = -2257.74
+Block size = 275, N = 1000
+--- fn = mmul0, MFLOPS = 3629.88, elapsed time = 0.550982s, sum = -2257.74
+Block size = 276, N = 1000
+--- fn = mmul0, MFLOPS = 3907.1, elapsed time = 0.511889s, sum = -2257.74
+Block size = 277, N = 1000
+--- fn = mmul0, MFLOPS = 3364.41, elapsed time = 0.594457s, sum = -2257.74
+Block size = 278, N = 1000
+--- fn = mmul0, MFLOPS = 3545.99, elapsed time = 0.564017s, sum = -2257.74
+Block size = 279, N = 1000
+--- fn = mmul0, MFLOPS = 3488.23, elapsed time = 0.573357s, sum = -2257.74
+Block size = 280, N = 1000
+--- fn = mmul0, MFLOPS = 3960.66, elapsed time = 0.504966s, sum = -2257.74
+Block size = 281, N = 1000
+--- fn = mmul0, MFLOPS = 3793.73, elapsed time = 0.527186s, sum = -2257.74
+Block size = 282, N = 1000
+--- fn = mmul0, MFLOPS = 3854.43, elapsed time = 0.518884s, sum = -2257.74
+Block size = 283, N = 1000
+--- fn = mmul0, MFLOPS = 3698.12, elapsed time = 0.540816s, sum = -2257.74
+Block size = 284, N = 1000
+--- fn = mmul0, MFLOPS = 3930.05, elapsed time = 0.508899s, sum = -2257.74
+Block size = 285, N = 1000
+--- fn = mmul0, MFLOPS = 3657.1, elapsed time = 0.546881s, sum = -2257.74
+Block size = 286, N = 1000
+--- fn = mmul0, MFLOPS = 3876.13, elapsed time = 0.515979s, sum = -2257.74
+Block size = 287, N = 1000
+--- fn = mmul0, MFLOPS = 3645.56, elapsed time = 0.548612s, sum = -2257.74
+Block size = 288, N = 1000
+--- fn = mmul0, MFLOPS = 3965.75, elapsed time = 0.504318s, sum = -2257.74
+Block size = 289, N = 1000
+--- fn = mmul0, MFLOPS = 3804.23, elapsed time = 0.52573s, sum = -2257.74
+Block size = 290, N = 1000
+--- fn = mmul0, MFLOPS = 3734.09, elapsed time = 0.535606s, sum = -2257.74
+Block size = 291, N = 1000
+--- fn = mmul0, MFLOPS = 3633.65, elapsed time = 0.55041s, sum = -2257.74
+Block size = 292, N = 1000
+--- fn = mmul0, MFLOPS = 3884.06, elapsed time = 0.514925s, sum = -2257.74
+Block size = 293, N = 1000
+--- fn = mmul0, MFLOPS = 3673.23, elapsed time = 0.54448s, sum = -2257.74
+Block size = 294, N = 1000
+--- fn = mmul0, MFLOPS = 3879.46, elapsed time = 0.515536s, sum = -2257.74
+Block size = 295, N = 1000
+--- fn = mmul0, MFLOPS = 3698.44, elapsed time = 0.540768s, sum = -2257.74
+Block size = 296, N = 1000
+--- fn = mmul0, MFLOPS = 3944.42, elapsed time = 0.507045s, sum = -2257.74
+Block size = 297, N = 1000
+--- fn = mmul0, MFLOPS = 3799.33, elapsed time = 0.526409s, sum = -2257.74
+Block size = 298, N = 1000
+--- fn = mmul0, MFLOPS = 3847.27, elapsed time = 0.519849s, sum = -2257.74
+Block size = 299, N = 1000
+--- fn = mmul0, MFLOPS = 3514.59, elapsed time = 0.569057s, sum = -2257.74
+Block size = 300, N = 1000
+--- fn = mmul0, MFLOPS = 3933.93, elapsed time = 0.508398s, sum = -2257.74
+Block size = 301, N = 1000
+--- fn = mmul0, MFLOPS = 3604.05, elapsed time = 0.554931s, sum = -2257.74
+Block size = 302, N = 1000
+--- fn = mmul0, MFLOPS = 3739.61, elapsed time = 0.534815s, sum = -2257.74
+Block size = 303, N = 1000
+--- fn = mmul0, MFLOPS = 3541.35, elapsed time = 0.564757s, sum = -2257.74
+Block size = 304, N = 1000
+--- fn = mmul0, MFLOPS = 4030.37, elapsed time = 0.496232s, sum = -2257.74
+Block size = 305, N = 1000
+--- fn = mmul0, MFLOPS = 3721.42, elapsed time = 0.537429s, sum = -2257.74
+Block size = 306, N = 1000
+--- fn = mmul0, MFLOPS = 3927.81, elapsed time = 0.509189s, sum = -2257.74
+Block size = 307, N = 1000
+--- fn = mmul0, MFLOPS = 3690.96, elapsed time = 0.541865s, sum = -2257.74
+Block size = 308, N = 1000
+--- fn = mmul0, MFLOPS = 4054.97, elapsed time = 0.493222s, sum = -2257.74
+Block size = 309, N = 1000
+--- fn = mmul0, MFLOPS = 3929.9, elapsed time = 0.508919s, sum = -2257.74
+Block size = 310, N = 1000
+--- fn = mmul0, MFLOPS = 3905.83, elapsed time = 0.512055s, sum = -2257.74
+Block size = 311, N = 1000
+--- fn = mmul0, MFLOPS = 3600.96, elapsed time = 0.555407s, sum = -2257.74
+Block size = 312, N = 1000
+--- fn = mmul0, MFLOPS = 3891.96, elapsed time = 0.51388s, sum = -2257.74
+Block size = 313, N = 1000
+--- fn = mmul0, MFLOPS = 3883.13, elapsed time = 0.515049s, sum = -2257.74
+Block size = 314, N = 1000
+--- fn = mmul0, MFLOPS = 3920.69, elapsed time = 0.510114s, sum = -2257.74
+Block size = 315, N = 1000
+--- fn = mmul0, MFLOPS = 3736.56, elapsed time = 0.535252s, sum = -2257.74
+Block size = 316, N = 1000
+--- fn = mmul0, MFLOPS = 4044.31, elapsed time = 0.494522s, sum = -2257.74
+Block size = 317, N = 1000
+--- fn = mmul0, MFLOPS = 3739.58, elapsed time = 0.534819s, sum = -2257.74
+Block size = 318, N = 1000
+--- fn = mmul0, MFLOPS = 3900.1, elapsed time = 0.512807s, sum = -2257.74
+Block size = 319, N = 1000
+--- fn = mmul0, MFLOPS = 3792.8, elapsed time = 0.527315s, sum = -2257.74
+Block size = 320, N = 1000
+--- fn = mmul0, MFLOPS = 3862.79, elapsed time = 0.517761s, sum = -2257.74
+Block size = 321, N = 1000
+--- fn = mmul0, MFLOPS = 3854.86, elapsed time = 0.518826s, sum = -2257.74
+Block size = 322, N = 1000
+--- fn = mmul0, MFLOPS = 3991.27, elapsed time = 0.501094s, sum = -2257.74
+Block size = 323, N = 1000
+--- fn = mmul0, MFLOPS = 3718.32, elapsed time = 0.537878s, sum = -2257.74
+Block size = 324, N = 1000
+--- fn = mmul0, MFLOPS = 3986.97, elapsed time = 0.501634s, sum = -2257.74
+Block size = 325, N = 1000
+--- fn = mmul0, MFLOPS = 3746.63, elapsed time = 0.533813s, sum = -2257.74
+Block size = 326, N = 1000
+--- fn = mmul0, MFLOPS = 3704.4, elapsed time = 0.539898s, sum = -2257.74
+Block size = 327, N = 1000
+--- fn = mmul0, MFLOPS = 3600.79, elapsed time = 0.555434s, sum = -2257.74
+Block size = 328, N = 1000
+--- fn = mmul0, MFLOPS = 4128.17, elapsed time = 0.484476s, sum = -2257.74
+Block size = 329, N = 1000
+--- fn = mmul0, MFLOPS = 3755.52, elapsed time = 0.53255s, sum = -2257.74
+Block size = 330, N = 1000
+--- fn = mmul0, MFLOPS = 3867.54, elapsed time = 0.517124s, sum = -2257.74
+Block size = 331, N = 1000
+--- fn = mmul0, MFLOPS = 3715.09, elapsed time = 0.538345s, sum = -2257.74
+Block size = 332, N = 1000
+--- fn = mmul0, MFLOPS = 3939.3, elapsed time = 0.507705s, sum = -2257.74
+Block size = 333, N = 1000
+--- fn = mmul0, MFLOPS = 3801.05, elapsed time = 0.526171s, sum = -2257.74
+Block size = 334, N = 1000
+--- fn = mmul0, MFLOPS = 3983.44, elapsed time = 0.502078s, sum = -2257.74
+Block size = 335, N = 1000
+--- fn = mmul0, MFLOPS = 3758.2, elapsed time = 0.532169s, sum = -2257.74
+Block size = 336, N = 1000
+--- fn = mmul0, MFLOPS = 4061.1, elapsed time = 0.492477s, sum = -2257.74
+Block size = 337, N = 1000
+--- fn = mmul0, MFLOPS = 3745.96, elapsed time = 0.533909s, sum = -2257.74
+Block size = 338, N = 1000
+--- fn = mmul0, MFLOPS = 3687.42, elapsed time = 0.542385s, sum = -2257.74
+Block size = 339, N = 1000
+--- fn = mmul0, MFLOPS = 3823.02, elapsed time = 0.523147s, sum = -2257.74
+Block size = 340, N = 1000
+--- fn = mmul0, MFLOPS = 3824.9, elapsed time = 0.522889s, sum = -2257.74
+Block size = 341, N = 1000
+--- fn = mmul0, MFLOPS = 3812.33, elapsed time = 0.524613s, sum = -2257.74
+Block size = 342, N = 1000
+--- fn = mmul0, MFLOPS = 4014.61, elapsed time = 0.49818s, sum = -2257.74
+Block size = 343, N = 1000
+--- fn = mmul0, MFLOPS = 3699.39, elapsed time = 0.540629s, sum = -2257.74
+Block size = 344, N = 1000
+--- fn = mmul0, MFLOPS = 4097.97, elapsed time = 0.488046s, sum = -2257.74
+Block size = 345, N = 1000
+--- fn = mmul0, MFLOPS = 3844.37, elapsed time = 0.520241s, sum = -2257.74
+Block size = 346, N = 1000
+--- fn = mmul0, MFLOPS = 3878.56, elapsed time = 0.515655s, sum = -2257.74
+Block size = 347, N = 1000
+--- fn = mmul0, MFLOPS = 3762.21, elapsed time = 0.531603s, sum = -2257.74
+Block size = 348, N = 1000
+--- fn = mmul0, MFLOPS = 4074.27, elapsed time = 0.490886s, sum = -2257.74
+Block size = 349, N = 1000
+--- fn = mmul0, MFLOPS = 3812.62, elapsed time = 0.524574s, sum = -2257.74
+Block size = 350, N = 1000
+--- fn = mmul0, MFLOPS = 3929.6, elapsed time = 0.508958s, sum = -2257.74
+Block size = 351, N = 1000
+--- fn = mmul0, MFLOPS = 3782.08, elapsed time = 0.52881s, sum = -2257.74
+Block size = 352, N = 1000
+--- fn = mmul0, MFLOPS = 4193.16, elapsed time = 0.476967s, sum = -2257.74
+Block size = 353, N = 1000
+--- fn = mmul0, MFLOPS = 3704.04, elapsed time = 0.539951s, sum = -2257.74
+Block size = 354, N = 1000
+--- fn = mmul0, MFLOPS = 3954.23, elapsed time = 0.505787s, sum = -2257.74
+Block size = 355, N = 1000
+--- fn = mmul0, MFLOPS = 3794.24, elapsed time = 0.527115s, sum = -2257.74
+Block size = 356, N = 1000
+--- fn = mmul0, MFLOPS = 4049.2, elapsed time = 0.493925s, sum = -2257.74
+Block size = 357, N = 1000
+--- fn = mmul0, MFLOPS = 3767.51, elapsed time = 0.530854s, sum = -2257.74
+Block size = 358, N = 1000
+--- fn = mmul0, MFLOPS = 4048.98, elapsed time = 0.493952s, sum = -2257.74
+Block size = 359, N = 1000
+--- fn = mmul0, MFLOPS = 3711.05, elapsed time = 0.538931s, sum = -2257.74
+Block size = 360, N = 1000
+--- fn = mmul0, MFLOPS = 4039.46, elapsed time = 0.495116s, sum = -2257.74
+Block size = 361, N = 1000
+--- fn = mmul0, MFLOPS = 3757.24, elapsed time = 0.532305s, sum = -2257.74
+Block size = 362, N = 1000
+--- fn = mmul0, MFLOPS = 4008.46, elapsed time = 0.498945s, sum = -2257.74
+Block size = 363, N = 1000
+--- fn = mmul0, MFLOPS = 3670.26, elapsed time = 0.54492s, sum = -2257.74
+Block size = 364, N = 1000
+--- fn = mmul0, MFLOPS = 3942.96, elapsed time = 0.507233s, sum = -2257.74
+Block size = 365, N = 1000
+--- fn = mmul0, MFLOPS = 3907.2, elapsed time = 0.511876s, sum = -2257.74
+Block size = 366, N = 1000
+--- fn = mmul0, MFLOPS = 3870.95, elapsed time = 0.516669s, sum = -2257.74
+Block size = 367, N = 1000
+--- fn = mmul0, MFLOPS = 3776.48, elapsed time = 0.529593s, sum = -2257.74
+Block size = 368, N = 1000
+--- fn = mmul0, MFLOPS = 3979.85, elapsed time = 0.502532s, sum = -2257.74
+Block size = 369, N = 1000
+--- fn = mmul0, MFLOPS = 3260.35, elapsed time = 0.613432s, sum = -2257.74
+Block size = 370, N = 1000
+--- fn = mmul0, MFLOPS = 3732.95, elapsed time = 0.53577s, sum = -2257.74
+Block size = 371, N = 1000
+--- fn = mmul0, MFLOPS = 3608.58, elapsed time = 0.554234s, sum = -2257.74
+Block size = 372, N = 1000
+--- fn = mmul0, MFLOPS = 3741.63, elapsed time = 0.534526s, sum = -2257.74
+Block size = 373, N = 1000
+--- fn = mmul0, MFLOPS = 3540.07, elapsed time = 0.564961s, sum = -2257.74
+Block size = 374, N = 1000
+--- fn = mmul0, MFLOPS = 3812.54, elapsed time = 0.524585s, sum = -2257.74
+Block size = 375, N = 1000
+--- fn = mmul0, MFLOPS = 3608.47, elapsed time = 0.554252s, sum = -2257.74
+Block size = 376, N = 1000
+--- fn = mmul0, MFLOPS = 3809.11, elapsed time = 0.525057s, sum = -2257.74
+Block size = 377, N = 1000
+--- fn = mmul0, MFLOPS = 3558, elapsed time = 0.562114s, sum = -2257.74
+Block size = 378, N = 1000
+--- fn = mmul0, MFLOPS = 3688.57, elapsed time = 0.542215s, sum = -2257.74
+Block size = 379, N = 1000
+--- fn = mmul0, MFLOPS = 3373.7, elapsed time = 0.592821s, sum = -2257.74
+Block size = 380, N = 1000
+--- fn = mmul0, MFLOPS = 3878.25, elapsed time = 0.515697s, sum = -2257.74
+Block size = 381, N = 1000
+--- fn = mmul0, MFLOPS = 3566.34, elapsed time = 0.560799s, sum = -2257.74
+Block size = 382, N = 1000
+--- fn = mmul0, MFLOPS = 3787, elapsed time = 0.528122s, sum = -2257.74
+Block size = 383, N = 1000
+--- fn = mmul0, MFLOPS = 3578.96, elapsed time = 0.558822s, sum = -2257.74
+Block size = 384, N = 1000
+--- fn = mmul0, MFLOPS = 3673.8, elapsed time = 0.544396s, sum = -2257.74
+Block size = 385, N = 1000
+--- fn = mmul0, MFLOPS = 3568.5, elapsed time = 0.560459s, sum = -2257.74
+Block size = 386, N = 1000
+--- fn = mmul0, MFLOPS = 3606.98, elapsed time = 0.554481s, sum = -2257.74
+Block size = 387, N = 1000
+--- fn = mmul0, MFLOPS = 3522.24, elapsed time = 0.567821s, sum = -2257.74
+Block size = 388, N = 1000
+--- fn = mmul0, MFLOPS = 3785.55, elapsed time = 0.528325s, sum = -2257.74
+Block size = 389, N = 1000
+--- fn = mmul0, MFLOPS = 3668.42, elapsed time = 0.545194s, sum = -2257.74
+Block size = 390, N = 1000
+--- fn = mmul0, MFLOPS = 3738.05, elapsed time = 0.535039s, sum = -2257.74
+Block size = 391, N = 1000
+--- fn = mmul0, MFLOPS = 3438.56, elapsed time = 0.581639s, sum = -2257.74
+Block size = 392, N = 1000
+--- fn = mmul0, MFLOPS = 3847.59, elapsed time = 0.519806s, sum = -2257.74
+Block size = 393, N = 1000
+--- fn = mmul0, MFLOPS = 3665.89, elapsed time = 0.54557s, sum = -2257.74
+Block size = 394, N = 1000
+--- fn = mmul0, MFLOPS = 3790.65, elapsed time = 0.527614s, sum = -2257.74
+Block size = 395, N = 1000
+--- fn = mmul0, MFLOPS = 3650.29, elapsed time = 0.547902s, sum = -2257.74
+Block size = 396, N = 1000
+--- fn = mmul0, MFLOPS = 3852.83, elapsed time = 0.519099s, sum = -2257.74
+Block size = 397, N = 1000
+--- fn = mmul0, MFLOPS = 3597.54, elapsed time = 0.555936s, sum = -2257.74
+Block size = 398, N = 1000
+--- fn = mmul0, MFLOPS = 3728.57, elapsed time = 0.536399s, sum = -2257.74
+Block size = 399, N = 1000
+--- fn = mmul0, MFLOPS = 3448.55, elapsed time = 0.579954s, sum = -2257.74
+Block size = 400, N = 1000
+--- fn = mmul0, MFLOPS = 3745.46, elapsed time = 0.53398s, sum = -2257.74
+Block size = 401, N = 1000
+--- fn = mmul0, MFLOPS = 3693.41, elapsed time = 0.541505s, sum = -2257.74
+Block size = 402, N = 1000
+--- fn = mmul0, MFLOPS = 3838.48, elapsed time = 0.52104s, sum = -2257.74
+Block size = 403, N = 1000
+--- fn = mmul0, MFLOPS = 3691.79, elapsed time = 0.541743s, sum = -2257.74
+Block size = 404, N = 1000
+--- fn = mmul0, MFLOPS = 3806.94, elapsed time = 0.525357s, sum = -2257.74
+Block size = 405, N = 1000
+--- fn = mmul0, MFLOPS = 3613.79, elapsed time = 0.553435s, sum = -2257.74
+Block size = 406, N = 1000
+--- fn = mmul0, MFLOPS = 3783.79, elapsed time = 0.52857s, sum = -2257.74
+Block size = 407, N = 1000
+--- fn = mmul0, MFLOPS = 3400.12, elapsed time = 0.588214s, sum = -2257.74
+Block size = 408, N = 1000
+--- fn = mmul0, MFLOPS = 3736.35, elapsed time = 0.535282s, sum = -2257.74
+Block size = 409, N = 1000
+--- fn = mmul0, MFLOPS = 3618.78, elapsed time = 0.552673s, sum = -2257.74
+Block size = 410, N = 1000
+--- fn = mmul0, MFLOPS = 3792.78, elapsed time = 0.527318s, sum = -2257.74
+Block size = 411, N = 1000
+--- fn = mmul0, MFLOPS = 3544.26, elapsed time = 0.564292s, sum = -2257.74
+Block size = 412, N = 1000
+--- fn = mmul0, MFLOPS = 3157.46, elapsed time = 0.63342s, sum = -2257.74
+Block size = 413, N = 1000
+--- fn = mmul0, MFLOPS = 3449.44, elapsed time = 0.579804s, sum = -2257.74
+Block size = 414, N = 1000
+--- fn = mmul0, MFLOPS = 3450.03, elapsed time = 0.579705s, sum = -2257.74
+Block size = 415, N = 1000
+--- fn = mmul0, MFLOPS = 3472.82, elapsed time = 0.575901s, sum = -2257.74
+Block size = 416, N = 1000
+--- fn = mmul0, MFLOPS = 3790.78, elapsed time = 0.527596s, sum = -2257.74
+Block size = 417, N = 1000
+--- fn = mmul0, MFLOPS = 3165.61, elapsed time = 0.631789s, sum = -2257.74
+Block size = 418, N = 1000
+--- fn = mmul0, MFLOPS = 3499.35, elapsed time = 0.571535s, sum = -2257.74
+Block size = 419, N = 1000
+--- fn = mmul0, MFLOPS = 3278.94, elapsed time = 0.609954s, sum = -2257.74
+Block size = 420, N = 1000
+--- fn = mmul0, MFLOPS = 2687.05, elapsed time = 0.744312s, sum = -2257.74
+Block size = 421, N = 1000
+--- fn = mmul0, MFLOPS = 2576.74, elapsed time = 0.776176s, sum = -2257.74
+Block size = 422, N = 1000
+--- fn = mmul0, MFLOPS = 2933.35, elapsed time = 0.681815s, sum = -2257.74
+Block size = 423, N = 1000
+--- fn = mmul0, MFLOPS = 3251.22, elapsed time = 0.615154s, sum = -2257.74
+Block size = 424, N = 1000
+--- fn = mmul0, MFLOPS = 3614.38, elapsed time = 0.553345s, sum = -2257.74
+Block size = 425, N = 1000
+--- fn = mmul0, MFLOPS = 3445.64, elapsed time = 0.580444s, sum = -2257.74
+Block size = 426, N = 1000
+--- fn = mmul0, MFLOPS = 3356.17, elapsed time = 0.595918s, sum = -2257.74
+Block size = 427, N = 1000
+--- fn = mmul0, MFLOPS = 2305.9, elapsed time = 0.867341s, sum = -2257.74
+Block size = 428, N = 1000
+--- fn = mmul0, MFLOPS = 2611.63, elapsed time = 0.765806s, sum = -2257.74
+Block size = 429, N = 1000
+--- fn = mmul0, MFLOPS = 2779.63, elapsed time = 0.719521s, sum = -2257.74
+Block size = 430, N = 1000
+--- fn = mmul0, MFLOPS = 2948.81, elapsed time = 0.67824s, sum = -2257.74
+Block size = 431, N = 1000
+--- fn = mmul0, MFLOPS = 2825.79, elapsed time = 0.707767s, sum = -2257.74
+Block size = 432, N = 1000
+--- fn = mmul0, MFLOPS = 2921.32, elapsed time = 0.684621s, sum = -2257.74
+Block size = 433, N = 1000
+--- fn = mmul0, MFLOPS = 2898.7, elapsed time = 0.689964s, sum = -2257.74
+Block size = 434, N = 1000
+--- fn = mmul0, MFLOPS = 2970.36, elapsed time = 0.67332s, sum = -2257.74
+Block size = 435, N = 1000
+--- fn = mmul0, MFLOPS = 2903.25, elapsed time = 0.688882s, sum = -2257.74
+Block size = 436, N = 1000
+--- fn = mmul0, MFLOPS = 3079.9, elapsed time = 0.649371s, sum = -2257.74
+Block size = 437, N = 1000
+--- fn = mmul0, MFLOPS = 2620.33, elapsed time = 0.763264s, sum = -2257.74
+Block size = 438, N = 1000
+--- fn = mmul0, MFLOPS = 2811.96, elapsed time = 0.711248s, sum = -2257.74
+Block size = 439, N = 1000
+--- fn = mmul0, MFLOPS = 2874.63, elapsed time = 0.695742s, sum = -2257.74
+Block size = 440, N = 1000
+--- fn = mmul0, MFLOPS = 2837.89, elapsed time = 0.704748s, sum = -2257.74
+Block size = 441, N = 1000
+--- fn = mmul0, MFLOPS = 2850.12, elapsed time = 0.701724s, sum = -2257.74
+Block size = 442, N = 1000
+--- fn = mmul0, MFLOPS = 2822.3, elapsed time = 0.708641s, sum = -2257.74
+Block size = 443, N = 1000
+--- fn = mmul0, MFLOPS = 2567.75, elapsed time = 0.778891s, sum = -2257.74
+Block size = 444, N = 1000
+--- fn = mmul0, MFLOPS = 2770.35, elapsed time = 0.721931s, sum = -2257.74
+Block size = 445, N = 1000
+--- fn = mmul0, MFLOPS = 3062.67, elapsed time = 0.653025s, sum = -2257.74
+Block size = 446, N = 1000
+--- fn = mmul0, MFLOPS = 3468.96, elapsed time = 0.576542s, sum = -2257.74
+Block size = 447, N = 1000
+--- fn = mmul0, MFLOPS = 3105.35, elapsed time = 0.64405s, sum = -2257.74
+Block size = 448, N = 1000
+--- fn = mmul0, MFLOPS = 3250.03, elapsed time = 0.615378s, sum = -2257.74
+Block size = 449, N = 1000
+--- fn = mmul0, MFLOPS = 3320.87, elapsed time = 0.602252s, sum = -2257.74
+Block size = 450, N = 1000
+--- fn = mmul0, MFLOPS = 3356.28, elapsed time = 0.595897s, sum = -2257.74
+Block size = 451, N = 1000
+--- fn = mmul0, MFLOPS = 2870.15, elapsed time = 0.696827s, sum = -2257.74
+Block size = 452, N = 1000
+--- fn = mmul0, MFLOPS = 2854.56, elapsed time = 0.700633s, sum = -2257.74
+Block size = 453, N = 1000
+--- fn = mmul0, MFLOPS = 3436.72, elapsed time = 0.581951s, sum = -2257.74
+Block size = 454, N = 1000
+--- fn = mmul0, MFLOPS = 3514.6, elapsed time = 0.569055s, sum = -2257.74
+Block size = 455, N = 1000
+--- fn = mmul0, MFLOPS = 3339.2, elapsed time = 0.598946s, sum = -2257.74
+Block size = 456, N = 1000
+--- fn = mmul0, MFLOPS = 3476.16, elapsed time = 0.575348s, sum = -2257.74
+Block size = 457, N = 1000
+--- fn = mmul0, MFLOPS = 3343.4, elapsed time = 0.598193s, sum = -2257.74
+Block size = 458, N = 1000
+--- fn = mmul0, MFLOPS = 3397.99, elapsed time = 0.588584s, sum = -2257.74
+Block size = 459, N = 1000
+--- fn = mmul0, MFLOPS = 3377.79, elapsed time = 0.592103s, sum = -2257.74
+Block size = 460, N = 1000
+--- fn = mmul0, MFLOPS = 3487.62, elapsed time = 0.573457s, sum = -2257.74
+Block size = 461, N = 1000
+--- fn = mmul0, MFLOPS = 3345.93, elapsed time = 0.597741s, sum = -2257.74
+Block size = 462, N = 1000
+--- fn = mmul0, MFLOPS = 3363.97, elapsed time = 0.594536s, sum = -2257.74
+Block size = 463, N = 1000
+--- fn = mmul0, MFLOPS = 3179.39, elapsed time = 0.629052s, sum = -2257.74
+Block size = 464, N = 1000
+--- fn = mmul0, MFLOPS = 3469.03, elapsed time = 0.57653s, sum = -2257.74
+Block size = 465, N = 1000
+--- fn = mmul0, MFLOPS = 3311.55, elapsed time = 0.603946s, sum = -2257.74
+Block size = 466, N = 1000
+--- fn = mmul0, MFLOPS = 3417, elapsed time = 0.585309s, sum = -2257.74
+Block size = 467, N = 1000
+--- fn = mmul0, MFLOPS = 3200.95, elapsed time = 0.624814s, sum = -2257.74
+Block size = 468, N = 1000
+--- fn = mmul0, MFLOPS = 3548.38, elapsed time = 0.563637s, sum = -2257.74
+Block size = 469, N = 1000
+--- fn = mmul0, MFLOPS = 3246.47, elapsed time = 0.616054s, sum = -2257.74
+Block size = 470, N = 1000
+--- fn = mmul0, MFLOPS = 3531.72, elapsed time = 0.566297s, sum = -2257.74
+Block size = 471, N = 1000
+--- fn = mmul0, MFLOPS = 3279.32, elapsed time = 0.609883s, sum = -2257.74
+Block size = 472, N = 1000
+--- fn = mmul0, MFLOPS = 3574.08, elapsed time = 0.559585s, sum = -2257.74
+Block size = 473, N = 1000
+--- fn = mmul0, MFLOPS = 2963.31, elapsed time = 0.674922s, sum = -2257.74
+Block size = 474, N = 1000
+--- fn = mmul0, MFLOPS = 2938.98, elapsed time = 0.680509s, sum = -2257.74
+Block size = 475, N = 1000
+--- fn = mmul0, MFLOPS = 2921.83, elapsed time = 0.684503s, sum = -2257.74
+Block size = 476, N = 1000
+--- fn = mmul0, MFLOPS = 3386.91, elapsed time = 0.590509s, sum = -2257.74
+Block size = 477, N = 1000
+--- fn = mmul0, MFLOPS = 3450.79, elapsed time = 0.579578s, sum = -2257.74
+Block size = 478, N = 1000
+--- fn = mmul0, MFLOPS = 3400.41, elapsed time = 0.588164s, sum = -2257.74
+Block size = 479, N = 1000
+--- fn = mmul0, MFLOPS = 3410.32, elapsed time = 0.586456s, sum = -2257.74
+Block size = 480, N = 1000
+--- fn = mmul0, MFLOPS = 3599.7, elapsed time = 0.555602s, sum = -2257.74
+Block size = 481, N = 1000
+--- fn = mmul0, MFLOPS = 3389.88, elapsed time = 0.589991s, sum = -2257.74
+Block size = 482, N = 1000
+--- fn = mmul0, MFLOPS = 3453.03, elapsed time = 0.579202s, sum = -2257.74
+Block size = 483, N = 1000
+--- fn = mmul0, MFLOPS = 3313.72, elapsed time = 0.603551s, sum = -2257.74
+Block size = 484, N = 1000
+--- fn = mmul0, MFLOPS = 3462.97, elapsed time = 0.577539s, sum = -2257.74
+Block size = 485, N = 1000
+--- fn = mmul0, MFLOPS = 3297.58, elapsed time = 0.606506s, sum = -2257.74
+Block size = 486, N = 1000
+--- fn = mmul0, MFLOPS = 3284.6, elapsed time = 0.608902s, sum = -2257.74
+Block size = 487, N = 1000
+--- fn = mmul0, MFLOPS = 3251.28, elapsed time = 0.615142s, sum = -2257.74
+Block size = 488, N = 1000
+--- fn = mmul0, MFLOPS = 3476.42, elapsed time = 0.575305s, sum = -2257.74
+Block size = 489, N = 1000
+--- fn = mmul0, MFLOPS = 3331.81, elapsed time = 0.600275s, sum = -2257.74
+Block size = 490, N = 1000
+--- fn = mmul0, MFLOPS = 3320.31, elapsed time = 0.602353s, sum = -2257.74
+Block size = 491, N = 1000
+--- fn = mmul0, MFLOPS = 3210.22, elapsed time = 0.62301s, sum = -2257.74
+Block size = 492, N = 1000
+--- fn = mmul0, MFLOPS = 3126.81, elapsed time = 0.63963s, sum = -2257.74
+Block size = 493, N = 1000
+--- fn = mmul0, MFLOPS = 2778.68, elapsed time = 0.719766s, sum = -2257.74
+Block size = 494, N = 1000
+--- fn = mmul0, MFLOPS = 2813.16, elapsed time = 0.710944s, sum = -2257.74
+Block size = 495, N = 1000
+--- fn = mmul0, MFLOPS = 2717.3, elapsed time = 0.736025s, sum = -2257.74
+Block size = 496, N = 1000
+--- fn = mmul0, MFLOPS = 3290.01, elapsed time = 0.607901s, sum = -2257.74
+Block size = 497, N = 1000
+--- fn = mmul0, MFLOPS = 3008.09, elapsed time = 0.664873s, sum = -2257.74
+Block size = 498, N = 1000
+--- fn = mmul0, MFLOPS = 3098.07, elapsed time = 0.645564s, sum = -2257.74
+Block size = 499, N = 1000
+--- fn = mmul0, MFLOPS = 2555.65, elapsed time = 0.782581s, sum = -2257.74
+Block size = 500, N = 1000
+--- fn = mmul0, MFLOPS = 2701.92, elapsed time = 0.740215s, sum = -2257.74
+Block size = 501, N = 1000
+--- fn = mmul0, MFLOPS = 2588.89, elapsed time = 0.772532s, sum = -2257.74
+Block size = 502, N = 1000
+--- fn = mmul0, MFLOPS = 2650.22, elapsed time = 0.754653s, sum = -2257.74
+Block size = 503, N = 1000
+--- fn = mmul0, MFLOPS = 2507.2, elapsed time = 0.797703s, sum = -2257.74
+Block size = 504, N = 1000
+--- fn = mmul0, MFLOPS = 2552.91, elapsed time = 0.783419s, sum = -2257.74
+Block size = 505, N = 1000
+--- fn = mmul0, MFLOPS = 2524.28, elapsed time = 0.792306s, sum = -2257.74
+Block size = 506, N = 1000
+--- fn = mmul0, MFLOPS = 2934.98, elapsed time = 0.681436s, sum = -2257.74
+Block size = 507, N = 1000
+--- fn = mmul0, MFLOPS = 2984.03, elapsed time = 0.670234s, sum = -2257.74
+Block size = 508, N = 1000
+--- fn = mmul0, MFLOPS = 3061.85, elapsed time = 0.653199s, sum = -2257.74
+Block size = 509, N = 1000
+--- fn = mmul0, MFLOPS = 3054.55, elapsed time = 0.654762s, sum = -2257.74
+Block size = 510, N = 1000
+--- fn = mmul0, MFLOPS = 3092.61, elapsed time = 0.646702s, sum = -2257.74
+Block size = 511, N = 1000
+--- fn = mmul0, MFLOPS = 2804.66, elapsed time = 0.7131s, sum = -2257.74
+Block size = 512, N = 1000
+--- fn = mmul0, MFLOPS = 2957.29, elapsed time = 0.676295s, sum = -2257.74
+Block size = 513, N = 1000
+--- fn = mmul0, MFLOPS = 3105.82, elapsed time = 0.643952s, sum = -2257.74
+Block size = 514, N = 1000
+--- fn = mmul0, MFLOPS = 3201.47, elapsed time = 0.624713s, sum = -2257.74
+Block size = 515, N = 1000
+--- fn = mmul0, MFLOPS = 2954.9, elapsed time = 0.676843s, sum = -2257.74
+Block size = 516, N = 1000
+--- fn = mmul0, MFLOPS = 3132.35, elapsed time = 0.638499s, sum = -2257.74
+Block size = 517, N = 1000
+--- fn = mmul0, MFLOPS = 2776.22, elapsed time = 0.720404s, sum = -2257.74
+Block size = 518, N = 1000
+--- fn = mmul0, MFLOPS = 2685.94, elapsed time = 0.744619s, sum = -2257.74
+Block size = 519, N = 1000
+--- fn = mmul0, MFLOPS = 2857.63, elapsed time = 0.699881s, sum = -2257.74
+Block size = 520, N = 1000
+--- fn = mmul0, MFLOPS = 3218.63, elapsed time = 0.621382s, sum = -2257.74
+Block size = 521, N = 1000
+--- fn = mmul0, MFLOPS = 3192, elapsed time = 0.626567s, sum = -2257.74
+Block size = 522, N = 1000
+--- fn = mmul0, MFLOPS = 3219.98, elapsed time = 0.621121s, sum = -2257.74
+Block size = 523, N = 1000
+--- fn = mmul0, MFLOPS = 3182.35, elapsed time = 0.628466s, sum = -2257.74
+Block size = 524, N = 1000
+--- fn = mmul0, MFLOPS = 3133.79, elapsed time = 0.638205s, sum = -2257.74
+Block size = 525, N = 1000
+--- fn = mmul0, MFLOPS = 3169.8, elapsed time = 0.630954s, sum = -2257.74
+Block size = 526, N = 1000
+--- fn = mmul0, MFLOPS = 3219.93, elapsed time = 0.621131s, sum = -2257.74
+Block size = 527, N = 1000
+--- fn = mmul0, MFLOPS = 2521.79, elapsed time = 0.793086s, sum = -2257.74
+Block size = 528, N = 1000
+--- fn = mmul0, MFLOPS = 2672.53, elapsed time = 0.748355s, sum = -2257.74
+Block size = 529, N = 1000
+--- fn = mmul0, MFLOPS = 2680.16, elapsed time = 0.746224s, sum = -2257.74
+Block size = 530, N = 1000
+--- fn = mmul0, MFLOPS = 2820.57, elapsed time = 0.709077s, sum = -2257.74
+Block size = 531, N = 1000
+--- fn = mmul0, MFLOPS = 2957.03, elapsed time = 0.676355s, sum = -2257.74
+Block size = 532, N = 1000
+--- fn = mmul0, MFLOPS = 3016.27, elapsed time = 0.663071s, sum = -2257.74
+Block size = 533, N = 1000
+--- fn = mmul0, MFLOPS = 3076.32, elapsed time = 0.650128s, sum = -2257.74
+Block size = 534, N = 1000
+--- fn = mmul0, MFLOPS = 3130.45, elapsed time = 0.638885s, sum = -2257.74
+Block size = 535, N = 1000
+--- fn = mmul0, MFLOPS = 3024.61, elapsed time = 0.661242s, sum = -2257.74
+Block size = 536, N = 1000
+--- fn = mmul0, MFLOPS = 3279.41, elapsed time = 0.609865s, sum = -2257.74
+Block size = 537, N = 1000
+--- fn = mmul0, MFLOPS = 3173.37, elapsed time = 0.630244s, sum = -2257.74
+Block size = 538, N = 1000
+--- fn = mmul0, MFLOPS = 3132.57, elapsed time = 0.638453s, sum = -2257.74
+Block size = 539, N = 1000
+--- fn = mmul0, MFLOPS = 2956.95, elapsed time = 0.676372s, sum = -2257.74
+Block size = 540, N = 1000
+--- fn = mmul0, MFLOPS = 3161.28, elapsed time = 0.632655s, sum = -2257.74
+Block size = 541, N = 1000
+--- fn = mmul0, MFLOPS = 3123.91, elapsed time = 0.640224s, sum = -2257.74
+Block size = 542, N = 1000
+--- fn = mmul0, MFLOPS = 3147.77, elapsed time = 0.635371s, sum = -2257.74
+Block size = 543, N = 1000
+--- fn = mmul0, MFLOPS = 3033.46, elapsed time = 0.659313s, sum = -2257.74
+Block size = 544, N = 1000
+--- fn = mmul0, MFLOPS = 2519.65, elapsed time = 0.79376s, sum = -2257.74
+Block size = 545, N = 1000
+--- fn = mmul0, MFLOPS = 2487.55, elapsed time = 0.804004s, sum = -2257.74
+Block size = 546, N = 1000
+--- fn = mmul0, MFLOPS = 3069.27, elapsed time = 0.65162s, sum = -2257.74
+Block size = 547, N = 1000
+--- fn = mmul0, MFLOPS = 3087.46, elapsed time = 0.647782s, sum = -2257.74
+Block size = 548, N = 1000
+--- fn = mmul0, MFLOPS = 2873.8, elapsed time = 0.695942s, sum = -2257.74
+Block size = 549, N = 1000
+--- fn = mmul0, MFLOPS = 2593.16, elapsed time = 0.771261s, sum = -2257.74
+Block size = 550, N = 1000
+--- fn = mmul0, MFLOPS = 2969.7, elapsed time = 0.673468s, sum = -2257.74
+Block size = 551, N = 1000
+--- fn = mmul0, MFLOPS = 2639.7, elapsed time = 0.757663s, sum = -2257.74
+Block size = 552, N = 1000
+--- fn = mmul0, MFLOPS = 2728.09, elapsed time = 0.733113s, sum = -2257.74
+Block size = 553, N = 1000
+--- fn = mmul0, MFLOPS = 2677.3, elapsed time = 0.747022s, sum = -2257.74
+Block size = 554, N = 1000
+--- fn = mmul0, MFLOPS = 2878.11, elapsed time = 0.6949s, sum = -2257.74
+Block size = 555, N = 1000
+--- fn = mmul0, MFLOPS = 2644.79, elapsed time = 0.756203s, sum = -2257.74
+Block size = 556, N = 1000
+--- fn = mmul0, MFLOPS = 2824.93, elapsed time = 0.707981s, sum = -2257.74
+Block size = 557, N = 1000
+--- fn = mmul0, MFLOPS = 2775.67, elapsed time = 0.720546s, sum = -2257.74
+Block size = 558, N = 1000
+--- fn = mmul0, MFLOPS = 2933.91, elapsed time = 0.681685s, sum = -2257.74
+Block size = 559, N = 1000
+--- fn = mmul0, MFLOPS = 2846.2, elapsed time = 0.702691s, sum = -2257.74
+Block size = 560, N = 1000
+--- fn = mmul0, MFLOPS = 3027.14, elapsed time = 0.660689s, sum = -2257.74
+Block size = 561, N = 1000
+--- fn = mmul0, MFLOPS = 2858.87, elapsed time = 0.699577s, sum = -2257.74
+Block size = 562, N = 1000
+--- fn = mmul0, MFLOPS = 2936.61, elapsed time = 0.681058s, sum = -2257.74
+Block size = 563, N = 1000
+--- fn = mmul0, MFLOPS = 2431.33, elapsed time = 0.822596s, sum = -2257.74
+Block size = 564, N = 1000
+--- fn = mmul0, MFLOPS = 2537.3, elapsed time = 0.788238s, sum = -2257.74
+Block size = 565, N = 1000
+--- fn = mmul0, MFLOPS = 2596.09, elapsed time = 0.77039s, sum = -2257.74
+Block size = 566, N = 1000
+--- fn = mmul0, MFLOPS = 2829.82, elapsed time = 0.706759s, sum = -2257.74
+Block size = 567, N = 1000
+--- fn = mmul0, MFLOPS = 2496.7, elapsed time = 0.801057s, sum = -2257.74
+Block size = 568, N = 1000
+--- fn = mmul0, MFLOPS = 2901.99, elapsed time = 0.689182s, sum = -2257.74
+Block size = 569, N = 1000
+--- fn = mmul0, MFLOPS = 2168.65, elapsed time = 0.922231s, sum = -2257.74
+Block size = 570, N = 1000
+--- fn = mmul0, MFLOPS = 2425.47, elapsed time = 0.824584s, sum = -2257.74
+Block size = 571, N = 1000
+--- fn = mmul0, MFLOPS = 2731.14, elapsed time = 0.732296s, sum = -2257.74
+Block size = 572, N = 1000
+--- fn = mmul0, MFLOPS = 2779.03, elapsed time = 0.719676s, sum = -2257.74
+Block size = 573, N = 1000
+--- fn = mmul0, MFLOPS = 2541.74, elapsed time = 0.786863s, sum = -2257.74
+Block size = 574, N = 1000
+--- fn = mmul0, MFLOPS = 3077.51, elapsed time = 0.649875s, sum = -2257.74
+Block size = 575, N = 1000
+--- fn = mmul0, MFLOPS = 2954.2, elapsed time = 0.677002s, sum = -2257.74
+Block size = 576, N = 1000
+--- fn = mmul0, MFLOPS = 3060.55, elapsed time = 0.653477s, sum = -2257.74
+Block size = 577, N = 1000
+--- fn = mmul0, MFLOPS = 2381.39, elapsed time = 0.839847s, sum = -2257.74
+Block size = 578, N = 1000
+--- fn = mmul0, MFLOPS = 2252.67, elapsed time = 0.887837s, sum = -2257.74
+Block size = 579, N = 1000
+--- fn = mmul0, MFLOPS = 2653.57, elapsed time = 0.753702s, sum = -2257.74
+Block size = 580, N = 1000
+--- fn = mmul0, MFLOPS = 3118.35, elapsed time = 0.641364s, sum = -2257.74
+Block size = 581, N = 1000
+--- fn = mmul0, MFLOPS = 3044.48, elapsed time = 0.656926s, sum = -2257.74
+Block size = 582, N = 1000
+--- fn = mmul0, MFLOPS = 3084.33, elapsed time = 0.648438s, sum = -2257.74
+Block size = 583, N = 1000
+--- fn = mmul0, MFLOPS = 2857.51, elapsed time = 0.699909s, sum = -2257.74
+Block size = 584, N = 1000
+--- fn = mmul0, MFLOPS = 3155.82, elapsed time = 0.63375s, sum = -2257.74
+Block size = 585, N = 1000
+--- fn = mmul0, MFLOPS = 2851.26, elapsed time = 0.701445s, sum = -2257.74
+Block size = 586, N = 1000
+--- fn = mmul0, MFLOPS = 2812.13, elapsed time = 0.711205s, sum = -2257.74
+Block size = 587, N = 1000
+--- fn = mmul0, MFLOPS = 2741.49, elapsed time = 0.729529s, sum = -2257.74
+Block size = 588, N = 1000
+--- fn = mmul0, MFLOPS = 2753.46, elapsed time = 0.72636s, sum = -2257.74
+Block size = 589, N = 1000
+--- fn = mmul0, MFLOPS = 2937.22, elapsed time = 0.680916s, sum = -2257.74
+Block size = 590, N = 1000
+--- fn = mmul0, MFLOPS = 3097.81, elapsed time = 0.645617s, sum = -2257.74
+Block size = 591, N = 1000
+--- fn = mmul0, MFLOPS = 2740.97, elapsed time = 0.729668s, sum = -2257.74
+Block size = 592, N = 1000
+--- fn = mmul0, MFLOPS = 2908.51, elapsed time = 0.687638s, sum = -2257.74
+Block size = 593, N = 1000
+--- fn = mmul0, MFLOPS = 2843.53, elapsed time = 0.703351s, sum = -2257.74
+Block size = 594, N = 1000
+--- fn = mmul0, MFLOPS = 2928.69, elapsed time = 0.6829s, sum = -2257.74
+Block size = 595, N = 1000
+--- fn = mmul0, MFLOPS = 2922.3, elapsed time = 0.684392s, sum = -2257.74
+Block size = 596, N = 1000
+--- fn = mmul0, MFLOPS = 2847.75, elapsed time = 0.702309s, sum = -2257.74
+Block size = 597, N = 1000
+--- fn = mmul0, MFLOPS = 2807.42, elapsed time = 0.712397s, sum = -2257.74
+Block size = 598, N = 1000
+--- fn = mmul0, MFLOPS = 2780.45, elapsed time = 0.719308s, sum = -2257.74
+Block size = 599, N = 1000
+--- fn = mmul0, MFLOPS = 2891.41, elapsed time = 0.691704s, sum = -2257.74
+Block size = 600, N = 1000
+--- fn = mmul0, MFLOPS = 2982.32, elapsed time = 0.670618s, sum = -2257.74
+Block size = 601, N = 1000
+--- fn = mmul0, MFLOPS = 2324.61, elapsed time = 0.860359s, sum = -2257.74
+Block size = 602, N = 1000
+--- fn = mmul0, MFLOPS = 2595.51, elapsed time = 0.77056s, sum = -2257.74
+Block size = 603, N = 1000
+--- fn = mmul0, MFLOPS = 2738.92, elapsed time = 0.730214s, sum = -2257.74
+Block size = 604, N = 1000
+--- fn = mmul0, MFLOPS = 2662.84, elapsed time = 0.751079s, sum = -2257.74
+Block size = 605, N = 1000
+--- fn = mmul0, MFLOPS = 2913.07, elapsed time = 0.686561s, sum = -2257.74
+Block size = 606, N = 1000
+--- fn = mmul0, MFLOPS = 3013.33, elapsed time = 0.663717s, sum = -2257.74
+Block size = 607, N = 1000
+--- fn = mmul0, MFLOPS = 2447.44, elapsed time = 0.817179s, sum = -2257.74
+Block size = 608, N = 1000
+--- fn = mmul0, MFLOPS = 3063.57, elapsed time = 0.652834s, sum = -2257.74
+Block size = 609, N = 1000
+--- fn = mmul0, MFLOPS = 3002.73, elapsed time = 0.666061s, sum = -2257.74
+Block size = 610, N = 1000
+--- fn = mmul0, MFLOPS = 3061.56, elapsed time = 0.653262s, sum = -2257.74
+Block size = 611, N = 1000
+--- fn = mmul0, MFLOPS = 3034.28, elapsed time = 0.659136s, sum = -2257.74
+Block size = 612, N = 1000
+--- fn = mmul0, MFLOPS = 3100.03, elapsed time = 0.645155s, sum = -2257.74
+Block size = 613, N = 1000
+--- fn = mmul0, MFLOPS = 3089.01, elapsed time = 0.647456s, sum = -2257.74
+Block size = 614, N = 1000
+--- fn = mmul0, MFLOPS = 2931.68, elapsed time = 0.682203s, sum = -2257.74
+Block size = 615, N = 1000
+--- fn = mmul0, MFLOPS = 3097.6, elapsed time = 0.645661s, sum = -2257.74
+Block size = 616, N = 1000
+--- fn = mmul0, MFLOPS = 3108.37, elapsed time = 0.643424s, sum = -2257.74
+Block size = 617, N = 1000
+--- fn = mmul0, MFLOPS = 3062.43, elapsed time = 0.653077s, sum = -2257.74
+Block size = 618, N = 1000
+--- fn = mmul0, MFLOPS = 3166.23, elapsed time = 0.631667s, sum = -2257.74
+Block size = 619, N = 1000
+--- fn = mmul0, MFLOPS = 2416.02, elapsed time = 0.827807s, sum = -2257.74
+Block size = 620, N = 1000
+--- fn = mmul0, MFLOPS = 2995.28, elapsed time = 0.667718s, sum = -2257.74
+Block size = 621, N = 1000
+--- fn = mmul0, MFLOPS = 2800.6, elapsed time = 0.714132s, sum = -2257.74
+Block size = 622, N = 1000
+--- fn = mmul0, MFLOPS = 3064.94, elapsed time = 0.652542s, sum = -2257.74
+Block size = 623, N = 1000
+--- fn = mmul0, MFLOPS = 2719.18, elapsed time = 0.735515s, sum = -2257.74
+Block size = 624, N = 1000
+--- fn = mmul0, MFLOPS = 2480.03, elapsed time = 0.806443s, sum = -2257.74
+Block size = 625, N = 1000
+--- fn = mmul0, MFLOPS = 2999.44, elapsed time = 0.666791s, sum = -2257.74
+Block size = 626, N = 1000
+--- fn = mmul0, MFLOPS = 2893.21, elapsed time = 0.691273s, sum = -2257.74
+Block size = 627, N = 1000
+--- fn = mmul0, MFLOPS = 2963.25, elapsed time = 0.674935s, sum = -2257.74
+Block size = 628, N = 1000
+--- fn = mmul0, MFLOPS = 2674.89, elapsed time = 0.747695s, sum = -2257.74
+Block size = 629, N = 1000
+--- fn = mmul0, MFLOPS = 3058.12, elapsed time = 0.653996s, sum = -2257.74
+Block size = 630, N = 1000
+--- fn = mmul0, MFLOPS = 2907.87, elapsed time = 0.687788s, sum = -2257.74
+Block size = 631, N = 1000
+--- fn = mmul0, MFLOPS = 2598.6, elapsed time = 0.769645s, sum = -2257.74
+Block size = 632, N = 1000
+--- fn = mmul0, MFLOPS = 2651.26, elapsed time = 0.754359s, sum = -2257.74
+Block size = 633, N = 1000
+--- fn = mmul0, MFLOPS = 2481.06, elapsed time = 0.806108s, sum = -2257.74
+Block size = 634, N = 1000
+--- fn = mmul0, MFLOPS = 2964.17, elapsed time = 0.674726s, sum = -2257.74
+Block size = 635, N = 1000
+--- fn = mmul0, MFLOPS = 2672.33, elapsed time = 0.748411s, sum = -2257.74
+Block size = 636, N = 1000
+--- fn = mmul0, MFLOPS = 2912.78, elapsed time = 0.68663s, sum = -2257.74
+Block size = 637, N = 1000
+--- fn = mmul0, MFLOPS = 2737.42, elapsed time = 0.730615s, sum = -2257.74
+Block size = 638, N = 1000
+--- fn = mmul0, MFLOPS = 3037.74, elapsed time = 0.658384s, sum = -2257.74
+Block size = 639, N = 1000
+--- fn = mmul0, MFLOPS = 2783.65, elapsed time = 0.71848s, sum = -2257.74
+Block size = 640, N = 1000
+--- fn = mmul0, MFLOPS = 2620.57, elapsed time = 0.763193s, sum = -2257.74
+Block size = 641, N = 1000
+--- fn = mmul0, MFLOPS = 2780.32, elapsed time = 0.719342s, sum = -2257.74
+Block size = 642, N = 1000
+--- fn = mmul0, MFLOPS = 3019.13, elapsed time = 0.662443s, sum = -2257.74
+Block size = 643, N = 1000
+--- fn = mmul0, MFLOPS = 2949.3, elapsed time = 0.678127s, sum = -2257.74
+Block size = 644, N = 1000
+--- fn = mmul0, MFLOPS = 3055.02, elapsed time = 0.654661s, sum = -2257.74
+Block size = 645, N = 1000
+--- fn = mmul0, MFLOPS = 2855.2, elapsed time = 0.700476s, sum = -2257.74
+Block size = 646, N = 1000
+--- fn = mmul0, MFLOPS = 2967.09, elapsed time = 0.674061s, sum = -2257.74
+Block size = 647, N = 1000
+--- fn = mmul0, MFLOPS = 2910.59, elapsed time = 0.687145s, sum = -2257.74
+Block size = 648, N = 1000
+--- fn = mmul0, MFLOPS = 3042.45, elapsed time = 0.657366s, sum = -2257.74
+Block size = 649, N = 1000
+--- fn = mmul0, MFLOPS = 2880.62, elapsed time = 0.694295s, sum = -2257.74
+Block size = 650, N = 1000
+--- fn = mmul0, MFLOPS = 3036.94, elapsed time = 0.658557s, sum = -2257.74
+Block size = 651, N = 1000
+--- fn = mmul0, MFLOPS = 3011.36, elapsed time = 0.664152s, sum = -2257.74
+Block size = 652, N = 1000
+--- fn = mmul0, MFLOPS = 3075.57, elapsed time = 0.650287s, sum = -2257.74
+Block size = 653, N = 1000
+--- fn = mmul0, MFLOPS = 3030.1, elapsed time = 0.660044s, sum = -2257.74
+Block size = 654, N = 1000
+--- fn = mmul0, MFLOPS = 3072.75, elapsed time = 0.650883s, sum = -2257.74
+Block size = 655, N = 1000
+--- fn = mmul0, MFLOPS = 2921.17, elapsed time = 0.684658s, sum = -2257.74
+Block size = 656, N = 1000
+--- fn = mmul0, MFLOPS = 3103.29, elapsed time = 0.644477s, sum = -2257.74
+Block size = 657, N = 1000
+--- fn = mmul0, MFLOPS = 3022.64, elapsed time = 0.661674s, sum = -2257.74
+Block size = 658, N = 1000
+--- fn = mmul0, MFLOPS = 3208.85, elapsed time = 0.623276s, sum = -2257.74
+Block size = 659, N = 1000
+--- fn = mmul0, MFLOPS = 3033.55, elapsed time = 0.659293s, sum = -2257.74
+Block size = 660, N = 1000
+--- fn = mmul0, MFLOPS = 3154.7, elapsed time = 0.633975s, sum = -2257.74
+Block size = 661, N = 1000
+--- fn = mmul0, MFLOPS = 3075.29, elapsed time = 0.650346s, sum = -2257.74
+Block size = 662, N = 1000
+--- fn = mmul0, MFLOPS = 2988.57, elapsed time = 0.669216s, sum = -2257.74
+Block size = 663, N = 1000
+--- fn = mmul0, MFLOPS = 2825.18, elapsed time = 0.70792s, sum = -2257.74
+Block size = 664, N = 1000
+--- fn = mmul0, MFLOPS = 3050.65, elapsed time = 0.655597s, sum = -2257.74
+Block size = 665, N = 1000
+--- fn = mmul0, MFLOPS = 3118.35, elapsed time = 0.641364s, sum = -2257.74
+Block size = 666, N = 1000
+--- fn = mmul0, MFLOPS = 3104.61, elapsed time = 0.644204s, sum = -2257.74
+Block size = 667, N = 1000
+--- fn = mmul0, MFLOPS = 2723.84, elapsed time = 0.734258s, sum = -2257.74
+Block size = 668, N = 1000
+--- fn = mmul0, MFLOPS = 2493.72, elapsed time = 0.802014s, sum = -2257.74
+Block size = 669, N = 1000
+--- fn = mmul0, MFLOPS = 2435.66, elapsed time = 0.821133s, sum = -2257.74
+Block size = 670, N = 1000
+--- fn = mmul0, MFLOPS = 2619.3, elapsed time = 0.763564s, sum = -2257.74
+Block size = 671, N = 1000
+--- fn = mmul0, MFLOPS = 2757.4, elapsed time = 0.725322s, sum = -2257.74
+Block size = 672, N = 1000
+--- fn = mmul0, MFLOPS = 3108.54, elapsed time = 0.643388s, sum = -2257.74
+Block size = 673, N = 1000
+--- fn = mmul0, MFLOPS = 3056.32, elapsed time = 0.654382s, sum = -2257.74
+Block size = 674, N = 1000
+--- fn = mmul0, MFLOPS = 3155.9, elapsed time = 0.633734s, sum = -2257.74
+Block size = 675, N = 1000
+--- fn = mmul0, MFLOPS = 3019.57, elapsed time = 0.662346s, sum = -2257.74
+Block size = 676, N = 1000
+--- fn = mmul0, MFLOPS = 2866.98, elapsed time = 0.697598s, sum = -2257.74
+Block size = 677, N = 1000
+--- fn = mmul0, MFLOPS = 2639.82, elapsed time = 0.757626s, sum = -2257.74
+Block size = 678, N = 1000
+--- fn = mmul0, MFLOPS = 3123.69, elapsed time = 0.640269s, sum = -2257.74
+Block size = 679, N = 1000
+--- fn = mmul0, MFLOPS = 2924.9, elapsed time = 0.683784s, sum = -2257.74
+Block size = 680, N = 1000
+--- fn = mmul0, MFLOPS = 3181.13, elapsed time = 0.628707s, sum = -2257.74
+Block size = 681, N = 1000
+--- fn = mmul0, MFLOPS = 3103.75, elapsed time = 0.644381s, sum = -2257.74
+Block size = 682, N = 1000
+--- fn = mmul0, MFLOPS = 3127.78, elapsed time = 0.639432s, sum = -2257.74
+Block size = 683, N = 1000
+--- fn = mmul0, MFLOPS = 3036.74, elapsed time = 0.6586s, sum = -2257.74
+Block size = 684, N = 1000
+--- fn = mmul0, MFLOPS = 3052.52, elapsed time = 0.655196s, sum = -2257.74
+Block size = 685, N = 1000
+--- fn = mmul0, MFLOPS = 2796.14, elapsed time = 0.715272s, sum = -2257.74
+Block size = 686, N = 1000
+--- fn = mmul0, MFLOPS = 2889.92, elapsed time = 0.692061s, sum = -2257.74
+Block size = 687, N = 1000
+--- fn = mmul0, MFLOPS = 2617.73, elapsed time = 0.764022s, sum = -2257.74
+Block size = 688, N = 1000
+--- fn = mmul0, MFLOPS = 3028.16, elapsed time = 0.660466s, sum = -2257.74
+Block size = 689, N = 1000
+--- fn = mmul0, MFLOPS = 2984.36, elapsed time = 0.670161s, sum = -2257.74
+Block size = 690, N = 1000
+--- fn = mmul0, MFLOPS = 2742.72, elapsed time = 0.729203s, sum = -2257.74
+Block size = 691, N = 1000
+--- fn = mmul0, MFLOPS = 2362.95, elapsed time = 0.846401s, sum = -2257.74
+Block size = 692, N = 1000
+--- fn = mmul0, MFLOPS = 2598.2, elapsed time = 0.769765s, sum = -2257.74
+Block size = 693, N = 1000
+--- fn = mmul0, MFLOPS = 2701.14, elapsed time = 0.740428s, sum = -2257.74
+Block size = 694, N = 1000
+--- fn = mmul0, MFLOPS = 2633.39, elapsed time = 0.759478s, sum = -2257.74
+Block size = 695, N = 1000
+--- fn = mmul0, MFLOPS = 2882.36, elapsed time = 0.693876s, sum = -2257.74
+Block size = 696, N = 1000
+--- fn = mmul0, MFLOPS = 2922.25, elapsed time = 0.684403s, sum = -2257.74
+Block size = 697, N = 1000
+--- fn = mmul0, MFLOPS = 2840.62, elapsed time = 0.704072s, sum = -2257.74
+Block size = 698, N = 1000
+--- fn = mmul0, MFLOPS = 2974.85, elapsed time = 0.672303s, sum = -2257.74
+Block size = 699, N = 1000
+--- fn = mmul0, MFLOPS = 2750.11, elapsed time = 0.727243s, sum = -2257.74
+Block size = 700, N = 1000
+--- fn = mmul0, MFLOPS = 3046.31, elapsed time = 0.656533s, sum = -2257.74
+Block size = 701, N = 1000
+--- fn = mmul0, MFLOPS = 3064.86, elapsed time = 0.652559s, sum = -2257.74
+Block size = 702, N = 1000
+--- fn = mmul0, MFLOPS = 2892.71, elapsed time = 0.691394s, sum = -2257.74
+Block size = 703, N = 1000
+--- fn = mmul0, MFLOPS = 2951.18, elapsed time = 0.677696s, sum = -2257.74
+Block size = 704, N = 1000
+--- fn = mmul0, MFLOPS = 3022.74, elapsed time = 0.661651s, sum = -2257.74
+Block size = 705, N = 1000
+--- fn = mmul0, MFLOPS = 3054.92, elapsed time = 0.654682s, sum = -2257.74
+Block size = 706, N = 1000
+--- fn = mmul0, MFLOPS = 3069.92, elapsed time = 0.651482s, sum = -2257.74
+Block size = 707, N = 1000
+--- fn = mmul0, MFLOPS = 2814.51, elapsed time = 0.710604s, sum = -2257.74
+Block size = 708, N = 1000
+--- fn = mmul0, MFLOPS = 2955.42, elapsed time = 0.676722s, sum = -2257.74
+Block size = 709, N = 1000
+--- fn = mmul0, MFLOPS = 2928.67, elapsed time = 0.682905s, sum = -2257.74
+Block size = 710, N = 1000
+--- fn = mmul0, MFLOPS = 2372.66, elapsed time = 0.842937s, sum = -2257.74
+Block size = 711, N = 1000
+--- fn = mmul0, MFLOPS = 2715.05, elapsed time = 0.736634s, sum = -2257.74
+Block size = 712, N = 1000
+--- fn = mmul0, MFLOPS = 2823.28, elapsed time = 0.708397s, sum = -2257.74
+Block size = 713, N = 1000
+--- fn = mmul0, MFLOPS = 2625.83, elapsed time = 0.761663s, sum = -2257.74
+Block size = 714, N = 1000
+--- fn = mmul0, MFLOPS = 2639.47, elapsed time = 0.757729s, sum = -2257.74
+Block size = 715, N = 1000
+--- fn = mmul0, MFLOPS = 2299.12, elapsed time = 0.869897s, sum = -2257.74
+Block size = 716, N = 1000
+--- fn = mmul0, MFLOPS = 2671.78, elapsed time = 0.748564s, sum = -2257.74
+Block size = 717, N = 1000
+--- fn = mmul0, MFLOPS = 2721.27, elapsed time = 0.734951s, sum = -2257.74
+Block size = 718, N = 1000
+--- fn = mmul0, MFLOPS = 2845.94, elapsed time = 0.702755s, sum = -2257.74
+Block size = 719, N = 1000
+--- fn = mmul0, MFLOPS = 2940.51, elapsed time = 0.680153s, sum = -2257.74
+Block size = 720, N = 1000
+--- fn = mmul0, MFLOPS = 2948.77, elapsed time = 0.678248s, sum = -2257.74
+Block size = 721, N = 1000
+--- fn = mmul0, MFLOPS = 2932.93, elapsed time = 0.681912s, sum = -2257.74
+Block size = 722, N = 1000
+--- fn = mmul0, MFLOPS = 2919.43, elapsed time = 0.685065s, sum = -2257.74
+Block size = 723, N = 1000
+--- fn = mmul0, MFLOPS = 2904.76, elapsed time = 0.688524s, sum = -2257.74
+Block size = 724, N = 1000
+--- fn = mmul0, MFLOPS = 2922.01, elapsed time = 0.68446s, sum = -2257.74
+Block size = 725, N = 1000
+--- fn = mmul0, MFLOPS = 2711.52, elapsed time = 0.737593s, sum = -2257.74
+Block size = 726, N = 1000
+--- fn = mmul0, MFLOPS = 2732.18, elapsed time = 0.732017s, sum = -2257.74
+Block size = 727, N = 1000
+--- fn = mmul0, MFLOPS = 2965.35, elapsed time = 0.674457s, sum = -2257.74
+Block size = 728, N = 1000
+--- fn = mmul0, MFLOPS = 3042.45, elapsed time = 0.657365s, sum = -2257.74
+Block size = 729, N = 1000
+--- fn = mmul0, MFLOPS = 2856.45, elapsed time = 0.70017s, sum = -2257.74
+Block size = 730, N = 1000
+--- fn = mmul0, MFLOPS = 3005.5, elapsed time = 0.665447s, sum = -2257.74
+Block size = 731, N = 1000
+--- fn = mmul0, MFLOPS = 2905.2, elapsed time = 0.688421s, sum = -2257.74
+Block size = 732, N = 1000
+--- fn = mmul0, MFLOPS = 2887.33, elapsed time = 0.692682s, sum = -2257.74
+Block size = 733, N = 1000
+--- fn = mmul0, MFLOPS = 2772.86, elapsed time = 0.721276s, sum = -2257.74
+Block size = 734, N = 1000
+--- fn = mmul0, MFLOPS = 2984.93, elapsed time = 0.670032s, sum = -2257.74
+Block size = 735, N = 1000
+--- fn = mmul0, MFLOPS = 2890.06, elapsed time = 0.692026s, sum = -2257.74
+Block size = 736, N = 1000
+--- fn = mmul0, MFLOPS = 2902.99, elapsed time = 0.688946s, sum = -2257.74
+Block size = 737, N = 1000
+--- fn = mmul0, MFLOPS = 2680.3, elapsed time = 0.746184s, sum = -2257.74
+Block size = 738, N = 1000
+--- fn = mmul0, MFLOPS = 2903.95, elapsed time = 0.688716s, sum = -2257.74
+Block size = 739, N = 1000
+--- fn = mmul0, MFLOPS = 2905.86, elapsed time = 0.688264s, sum = -2257.74
+Block size = 740, N = 1000
+--- fn = mmul0, MFLOPS = 2880.45, elapsed time = 0.694335s, sum = -2257.74
+Block size = 741, N = 1000
+--- fn = mmul0, MFLOPS = 2804.04, elapsed time = 0.713256s, sum = -2257.74
+Block size = 742, N = 1000
+--- fn = mmul0, MFLOPS = 2514.05, elapsed time = 0.795529s, sum = -2257.74
+Block size = 743, N = 1000
+--- fn = mmul0, MFLOPS = 2671.17, elapsed time = 0.748736s, sum = -2257.74
+Block size = 744, N = 1000
+--- fn = mmul0, MFLOPS = 2812.24, elapsed time = 0.711178s, sum = -2257.74
+Block size = 745, N = 1000
+--- fn = mmul0, MFLOPS = 2741.62, elapsed time = 0.729496s, sum = -2257.74
+Block size = 746, N = 1000
+--- fn = mmul0, MFLOPS = 2797.94, elapsed time = 0.714811s, sum = -2257.74
+Block size = 747, N = 1000
+--- fn = mmul0, MFLOPS = 2924.13, elapsed time = 0.683963s, sum = -2257.74
+Block size = 748, N = 1000
+--- fn = mmul0, MFLOPS = 2985.15, elapsed time = 0.669982s, sum = -2257.74
+Block size = 749, N = 1000
+--- fn = mmul0, MFLOPS = 2795.07, elapsed time = 0.715546s, sum = -2257.74
+Block size = 750, N = 1000
+--- fn = mmul0, MFLOPS = 2851.2, elapsed time = 0.70146s, sum = -2257.74
+Block size = 751, N = 1000
+--- fn = mmul0, MFLOPS = 2832.78, elapsed time = 0.706021s, sum = -2257.74
+Block size = 752, N = 1000
+--- fn = mmul0, MFLOPS = 2868.01, elapsed time = 0.697348s, sum = -2257.74
+Block size = 753, N = 1000
+--- fn = mmul0, MFLOPS = 2837.52, elapsed time = 0.704842s, sum = -2257.74
+Block size = 754, N = 1000
+--- fn = mmul0, MFLOPS = 2867.91, elapsed time = 0.697373s, sum = -2257.74
+Block size = 755, N = 1000
+--- fn = mmul0, MFLOPS = 2783.1, elapsed time = 0.718623s, sum = -2257.74
+Block size = 756, N = 1000
+--- fn = mmul0, MFLOPS = 2878.02, elapsed time = 0.694922s, sum = -2257.74
+Block size = 757, N = 1000
+--- fn = mmul0, MFLOPS = 2913.34, elapsed time = 0.686497s, sum = -2257.74
+Block size = 758, N = 1000
+--- fn = mmul0, MFLOPS = 2787.64, elapsed time = 0.717454s, sum = -2257.74
+Block size = 759, N = 1000
+--- fn = mmul0, MFLOPS = 2640, elapsed time = 0.757576s, sum = -2257.74
+Block size = 760, N = 1000
+--- fn = mmul0, MFLOPS = 2765.64, elapsed time = 0.723159s, sum = -2257.74
+Block size = 761, N = 1000
+--- fn = mmul0, MFLOPS = 2559.8, elapsed time = 0.781311s, sum = -2257.74
+Block size = 762, N = 1000
+--- fn = mmul0, MFLOPS = 2625.92, elapsed time = 0.761639s, sum = -2257.74
+Block size = 763, N = 1000
+--- fn = mmul0, MFLOPS = 2795.5, elapsed time = 0.715436s, sum = -2257.74
+Block size = 764, N = 1000
+--- fn = mmul0, MFLOPS = 2727.52, elapsed time = 0.733267s, sum = -2257.74
+Block size = 765, N = 1000
+--- fn = mmul0, MFLOPS = 2908.61, elapsed time = 0.687614s, sum = -2257.74
+Block size = 766, N = 1000
+--- fn = mmul0, MFLOPS = 2904.86, elapsed time = 0.688502s, sum = -2257.74
+Block size = 767, N = 1000
+--- fn = mmul0, MFLOPS = 2822.35, elapsed time = 0.70863s, sum = -2257.74
+Block size = 768, N = 1000
+--- fn = mmul0, MFLOPS = 2975.12, elapsed time = 0.672241s, sum = -2257.74
+Block size = 769, N = 1000
+--- fn = mmul0, MFLOPS = 2566.03, elapsed time = 0.779415s, sum = -2257.74
+Block size = 770, N = 1000
+--- fn = mmul0, MFLOPS = 2717.6, elapsed time = 0.735944s, sum = -2257.74
+Block size = 771, N = 1000
+--- fn = mmul0, MFLOPS = 2498.75, elapsed time = 0.800399s, sum = -2257.74
+Block size = 772, N = 1000
+--- fn = mmul0, MFLOPS = 2759.36, elapsed time = 0.724806s, sum = -2257.74
+Block size = 773, N = 1000
+--- fn = mmul0, MFLOPS = 2873.68, elapsed time = 0.695972s, sum = -2257.74
+Block size = 774, N = 1000
+--- fn = mmul0, MFLOPS = 2898.12, elapsed time = 0.690103s, sum = -2257.74
+Block size = 775, N = 1000
+--- fn = mmul0, MFLOPS = 2848.88, elapsed time = 0.702031s, sum = -2257.74
+Block size = 776, N = 1000
+--- fn = mmul0, MFLOPS = 2924.84, elapsed time = 0.683799s, sum = -2257.74
+Block size = 777, N = 1000
+--- fn = mmul0, MFLOPS = 2883.95, elapsed time = 0.693493s, sum = -2257.74
+Block size = 778, N = 1000
+--- fn = mmul0, MFLOPS = 2929.34, elapsed time = 0.682747s, sum = -2257.74
+Block size = 779, N = 1000
+--- fn = mmul0, MFLOPS = 2850.77, elapsed time = 0.701565s, sum = -2257.74
+Block size = 780, N = 1000
+--- fn = mmul0, MFLOPS = 2932.96, elapsed time = 0.681906s, sum = -2257.74
+Block size = 781, N = 1000
+--- fn = mmul0, MFLOPS = 2888.66, elapsed time = 0.692362s, sum = -2257.74
+Block size = 782, N = 1000
+--- fn = mmul0, MFLOPS = 2762.63, elapsed time = 0.723949s, sum = -2257.74
+Block size = 783, N = 1000
+--- fn = mmul0, MFLOPS = 2631.42, elapsed time = 0.760046s, sum = -2257.74
+Block size = 784, N = 1000
+--- fn = mmul0, MFLOPS = 2901.18, elapsed time = 0.689374s, sum = -2257.74
+Block size = 785, N = 1000
+--- fn = mmul0, MFLOPS = 2823.81, elapsed time = 0.708264s, sum = -2257.74
+Block size = 786, N = 1000
+--- fn = mmul0, MFLOPS = 2746.88, elapsed time = 0.728099s, sum = -2257.74
+Block size = 787, N = 1000
+--- fn = mmul0, MFLOPS = 2756.59, elapsed time = 0.725534s, sum = -2257.74
+Block size = 788, N = 1000
+--- fn = mmul0, MFLOPS = 2877.87, elapsed time = 0.694959s, sum = -2257.74
+Block size = 789, N = 1000
+--- fn = mmul0, MFLOPS = 2813.64, elapsed time = 0.710824s, sum = -2257.74
+Block size = 790, N = 1000
+--- fn = mmul0, MFLOPS = 2801.27, elapsed time = 0.713962s, sum = -2257.74
+Block size = 791, N = 1000
+--- fn = mmul0, MFLOPS = 2827.98, elapsed time = 0.707219s, sum = -2257.74
+Block size = 792, N = 1000
+--- fn = mmul0, MFLOPS = 3035.83, elapsed time = 0.658798s, sum = -2257.74
+Block size = 793, N = 1000
+--- fn = mmul0, MFLOPS = 2917.32, elapsed time = 0.68556s, sum = -2257.74
+Block size = 794, N = 1000
+--- fn = mmul0, MFLOPS = 2947.66, elapsed time = 0.678504s, sum = -2257.74
+Block size = 795, N = 1000
+--- fn = mmul0, MFLOPS = 2904.77, elapsed time = 0.688523s, sum = -2257.74
+Block size = 796, N = 1000
+--- fn = mmul0, MFLOPS = 3033.78, elapsed time = 0.659244s, sum = -2257.74
+Block size = 797, N = 1000
+--- fn = mmul0, MFLOPS = 2956.44, elapsed time = 0.676489s, sum = -2257.74
+Block size = 798, N = 1000
+--- fn = mmul0, MFLOPS = 2862.72, elapsed time = 0.698637s, sum = -2257.74
+Block size = 799, N = 1000
+--- fn = mmul0, MFLOPS = 2880.11, elapsed time = 0.694419s, sum = -2257.74
+Block size = 800, N = 1000
+--- fn = mmul0, MFLOPS = 2710.08, elapsed time = 0.737986s, sum = -2257.74
+Block size = 801, N = 1000
+--- fn = mmul0, MFLOPS = 2423.23, elapsed time = 0.825344s, sum = -2257.74
+Block size = 802, N = 1000
+--- fn = mmul0, MFLOPS = 2748.96, elapsed time = 0.727547s, sum = -2257.74
+Block size = 803, N = 1000
+--- fn = mmul0, MFLOPS = 2653.99, elapsed time = 0.753581s, sum = -2257.74
+Block size = 804, N = 1000
+--- fn = mmul0, MFLOPS = 3033.83, elapsed time = 0.659233s, sum = -2257.74
+Block size = 805, N = 1000
+--- fn = mmul0, MFLOPS = 3000.79, elapsed time = 0.666492s, sum = -2257.74
+Block size = 806, N = 1000
+--- fn = mmul0, MFLOPS = 2957.55, elapsed time = 0.676235s, sum = -2257.74
+Block size = 807, N = 1000
+--- fn = mmul0, MFLOPS = 3045.43, elapsed time = 0.656721s, sum = -2257.74
+Block size = 808, N = 1000
+--- fn = mmul0, MFLOPS = 3094.51, elapsed time = 0.646306s, sum = -2257.74
+Block size = 809, N = 1000
+--- fn = mmul0, MFLOPS = 2770.94, elapsed time = 0.721777s, sum = -2257.74
+Block size = 810, N = 1000
+--- fn = mmul0, MFLOPS = 3090.34, elapsed time = 0.647178s, sum = -2257.74
+Block size = 811, N = 1000
+--- fn = mmul0, MFLOPS = 2698.73, elapsed time = 0.74109s, sum = -2257.74
+Block size = 812, N = 1000
+--- fn = mmul0, MFLOPS = 2773.99, elapsed time = 0.720983s, sum = -2257.74
+Block size = 813, N = 1000
+--- fn = mmul0, MFLOPS = 2778.57, elapsed time = 0.719795s, sum = -2257.74
+Block size = 814, N = 1000
+--- fn = mmul0, MFLOPS = 2871.11, elapsed time = 0.696594s, sum = -2257.74
+Block size = 815, N = 1000
+--- fn = mmul0, MFLOPS = 2872.83, elapsed time = 0.696178s, sum = -2257.74
+Block size = 816, N = 1000
+--- fn = mmul0, MFLOPS = 2933.53, elapsed time = 0.681773s, sum = -2257.74
+Block size = 817, N = 1000
+--- fn = mmul0, MFLOPS = 2629.54, elapsed time = 0.760589s, sum = -2257.74
+Block size = 818, N = 1000
+--- fn = mmul0, MFLOPS = 2576.01, elapsed time = 0.776394s, sum = -2257.74
+Block size = 819, N = 1000
+--- fn = mmul0, MFLOPS = 2793.55, elapsed time = 0.715935s, sum = -2257.74
+Block size = 820, N = 1000
+--- fn = mmul0, MFLOPS = 2439.96, elapsed time = 0.819687s, sum = -2257.74
+Block size = 821, N = 1000
+--- fn = mmul0, MFLOPS = 2551.31, elapsed time = 0.78391s, sum = -2257.74
+Block size = 822, N = 1000
+--- fn = mmul0, MFLOPS = 2721.35, elapsed time = 0.734929s, sum = -2257.74
+Block size = 823, N = 1000
+--- fn = mmul0, MFLOPS = 2893.26, elapsed time = 0.691262s, sum = -2257.74
+Block size = 824, N = 1000
+--- fn = mmul0, MFLOPS = 2850.72, elapsed time = 0.701576s, sum = -2257.74
+Block size = 825, N = 1000
+--- fn = mmul0, MFLOPS = 2899.16, elapsed time = 0.689856s, sum = -2257.74
+Block size = 826, N = 1000
+--- fn = mmul0, MFLOPS = 2448.97, elapsed time = 0.816669s, sum = -2257.74
+Block size = 827, N = 1000
+--- fn = mmul0, MFLOPS = 2326.32, elapsed time = 0.859726s, sum = -2257.74
+Block size = 828, N = 1000
+--- fn = mmul0, MFLOPS = 2755.27, elapsed time = 0.725882s, sum = -2257.74
+Block size = 829, N = 1000
+--- fn = mmul0, MFLOPS = 2602.19, elapsed time = 0.768584s, sum = -2257.74
+Block size = 830, N = 1000
+--- fn = mmul0, MFLOPS = 2690.47, elapsed time = 0.743364s, sum = -2257.74
+Block size = 831, N = 1000
+--- fn = mmul0, MFLOPS = 2706.46, elapsed time = 0.738974s, sum = -2257.74
+Block size = 832, N = 1000
+--- fn = mmul0, MFLOPS = 2854.62, elapsed time = 0.700619s, sum = -2257.74
+Block size = 833, N = 1000
+--- fn = mmul0, MFLOPS = 2938.77, elapsed time = 0.680557s, sum = -2257.74
+Block size = 834, N = 1000
+--- fn = mmul0, MFLOPS = 2904.71, elapsed time = 0.688536s, sum = -2257.74
+Block size = 835, N = 1000
+--- fn = mmul0, MFLOPS = 2499.71, elapsed time = 0.800092s, sum = -2257.74
+Block size = 836, N = 1000
+--- fn = mmul0, MFLOPS = 2416.85, elapsed time = 0.827524s, sum = -2257.74
+Block size = 837, N = 1000
+--- fn = mmul0, MFLOPS = 2442.3, elapsed time = 0.818899s, sum = -2257.74
+Block size = 838, N = 1000
+--- fn = mmul0, MFLOPS = 2440.38, elapsed time = 0.819545s, sum = -2257.74
+Block size = 839, N = 1000
+--- fn = mmul0, MFLOPS = 2339.78, elapsed time = 0.85478s, sum = -2257.74
+Block size = 840, N = 1000
+--- fn = mmul0, MFLOPS = 2915.82, elapsed time = 0.685914s, sum = -2257.74
+Block size = 841, N = 1000
+--- fn = mmul0, MFLOPS = 2878.82, elapsed time = 0.694728s, sum = -2257.74
+Block size = 842, N = 1000
+--- fn = mmul0, MFLOPS = 2931.89, elapsed time = 0.682153s, sum = -2257.74
+Block size = 843, N = 1000
+--- fn = mmul0, MFLOPS = 2919.79, elapsed time = 0.684981s, sum = -2257.74
+Block size = 844, N = 1000
+--- fn = mmul0, MFLOPS = 2964.05, elapsed time = 0.674753s, sum = -2257.74
+Block size = 845, N = 1000
+--- fn = mmul0, MFLOPS = 2921.04, elapsed time = 0.684688s, sum = -2257.74
+Block size = 846, N = 1000
+--- fn = mmul0, MFLOPS = 3048.47, elapsed time = 0.656067s, sum = -2257.74
+Block size = 847, N = 1000
+--- fn = mmul0, MFLOPS = 2883.41, elapsed time = 0.693624s, sum = -2257.74
+Block size = 848, N = 1000
+--- fn = mmul0, MFLOPS = 2953.16, elapsed time = 0.67724s, sum = -2257.74
+Block size = 849, N = 1000
+--- fn = mmul0, MFLOPS = 2825.74, elapsed time = 0.70778s, sum = -2257.74
+Block size = 850, N = 1000
+--- fn = mmul0, MFLOPS = 2983.07, elapsed time = 0.67045s, sum = -2257.74
+Block size = 851, N = 1000
+--- fn = mmul0, MFLOPS = 2856.98, elapsed time = 0.700039s, sum = -2257.74
+Block size = 852, N = 1000
+--- fn = mmul0, MFLOPS = 2833.94, elapsed time = 0.705732s, sum = -2257.74
+Block size = 853, N = 1000
+--- fn = mmul0, MFLOPS = 2900.63, elapsed time = 0.689505s, sum = -2257.74
+Block size = 854, N = 1000
+--- fn = mmul0, MFLOPS = 2997.35, elapsed time = 0.667256s, sum = -2257.74
+Block size = 855, N = 1000
+--- fn = mmul0, MFLOPS = 2953.92, elapsed time = 0.677066s, sum = -2257.74
+Block size = 856, N = 1000
+--- fn = mmul0, MFLOPS = 2790.68, elapsed time = 0.71667s, sum = -2257.74
+Block size = 857, N = 1000
+--- fn = mmul0, MFLOPS = 2691.78, elapsed time = 0.743004s, sum = -2257.74
+Block size = 858, N = 1000
+--- fn = mmul0, MFLOPS = 2939.53, elapsed time = 0.680382s, sum = -2257.74
+Block size = 859, N = 1000
+--- fn = mmul0, MFLOPS = 2779.94, elapsed time = 0.719441s, sum = -2257.74
+Block size = 860, N = 1000
+--- fn = mmul0, MFLOPS = 2964.68, elapsed time = 0.67461s, sum = -2257.74
+Block size = 861, N = 1000
+--- fn = mmul0, MFLOPS = 2821.13, elapsed time = 0.708935s, sum = -2257.74
+Block size = 862, N = 1000
+--- fn = mmul0, MFLOPS = 2380.36, elapsed time = 0.840209s, sum = -2257.74
+Block size = 863, N = 1000
+--- fn = mmul0, MFLOPS = 2486.7, elapsed time = 0.804278s, sum = -2257.74
+Block size = 864, N = 1000
+--- fn = mmul0, MFLOPS = 2546.05, elapsed time = 0.78553s, sum = -2257.74
+Block size = 865, N = 1000
+--- fn = mmul0, MFLOPS = 2192.85, elapsed time = 0.912054s, sum = -2257.74
+Block size = 866, N = 1000
+--- fn = mmul0, MFLOPS = 2428.83, elapsed time = 0.823443s, sum = -2257.74
+Block size = 867, N = 1000
+--- fn = mmul0, MFLOPS = 2344.75, elapsed time = 0.852969s, sum = -2257.74
+Block size = 868, N = 1000
+--- fn = mmul0, MFLOPS = 2699.07, elapsed time = 0.740997s, sum = -2257.74
+Block size = 869, N = 1000
+--- fn = mmul0, MFLOPS = 2789.66, elapsed time = 0.716933s, sum = -2257.74
+Block size = 870, N = 1000
+--- fn = mmul0, MFLOPS = 2776.59, elapsed time = 0.720307s, sum = -2257.74
+Block size = 871, N = 1000
+--- fn = mmul0, MFLOPS = 2827.2, elapsed time = 0.707413s, sum = -2257.74
+Block size = 872, N = 1000
+--- fn = mmul0, MFLOPS = 2676.54, elapsed time = 0.747232s, sum = -2257.74
+Block size = 873, N = 1000
+--- fn = mmul0, MFLOPS = 2485.94, elapsed time = 0.804526s, sum = -2257.74
+Block size = 874, N = 1000
+--- fn = mmul0, MFLOPS = 2902.21, elapsed time = 0.689131s, sum = -2257.74
+Block size = 875, N = 1000
+--- fn = mmul0, MFLOPS = 2844.83, elapsed time = 0.703029s, sum = -2257.74
+Block size = 876, N = 1000
+--- fn = mmul0, MFLOPS = 3006.37, elapsed time = 0.665255s, sum = -2257.74
+Block size = 877, N = 1000
+--- fn = mmul0, MFLOPS = 2950.47, elapsed time = 0.677859s, sum = -2257.74
+Block size = 878, N = 1000
+--- fn = mmul0, MFLOPS = 2989.06, elapsed time = 0.669106s, sum = -2257.74
+Block size = 879, N = 1000
+--- fn = mmul0, MFLOPS = 2907.52, elapsed time = 0.687872s, sum = -2257.74
+Block size = 880, N = 1000
+--- fn = mmul0, MFLOPS = 2728.24, elapsed time = 0.733072s, sum = -2257.74
+Block size = 881, N = 1000
+--- fn = mmul0, MFLOPS = 2812.14, elapsed time = 0.711201s, sum = -2257.74
+Block size = 882, N = 1000
+--- fn = mmul0, MFLOPS = 2994.67, elapsed time = 0.667854s, sum = -2257.74
+Block size = 883, N = 1000
+--- fn = mmul0, MFLOPS = 2943.41, elapsed time = 0.679485s, sum = -2257.74
+Block size = 884, N = 1000
+--- fn = mmul0, MFLOPS = 2830.62, elapsed time = 0.706559s, sum = -2257.74
+Block size = 885, N = 1000
+--- fn = mmul0, MFLOPS = 2982.28, elapsed time = 0.670628s, sum = -2257.74
+Block size = 886, N = 1000
+--- fn = mmul0, MFLOPS = 2981.81, elapsed time = 0.670734s, sum = -2257.74
+Block size = 887, N = 1000
+--- fn = mmul0, MFLOPS = 2897.94, elapsed time = 0.690146s, sum = -2257.74
+Block size = 888, N = 1000
+--- fn = mmul0, MFLOPS = 2981.7, elapsed time = 0.670758s, sum = -2257.74
+Block size = 889, N = 1000
+--- fn = mmul0, MFLOPS = 2896.62, elapsed time = 0.69046s, sum = -2257.74
+Block size = 890, N = 1000
+--- fn = mmul0, MFLOPS = 2995.33, elapsed time = 0.667706s, sum = -2257.74
+Block size = 891, N = 1000
+--- fn = mmul0, MFLOPS = 2850.51, elapsed time = 0.701629s, sum = -2257.74
+Block size = 892, N = 1000
+--- fn = mmul0, MFLOPS = 3000.89, elapsed time = 0.666469s, sum = -2257.74
+Block size = 893, N = 1000
+--- fn = mmul0, MFLOPS = 2943.95, elapsed time = 0.67936s, sum = -2257.74
+Block size = 894, N = 1000
+--- fn = mmul0, MFLOPS = 2975, elapsed time = 0.672269s, sum = -2257.74
+Block size = 895, N = 1000
+--- fn = mmul0, MFLOPS = 2901.8, elapsed time = 0.689228s, sum = -2257.74
+Block size = 896, N = 1000
+--- fn = mmul0, MFLOPS = 3047.72, elapsed time = 0.656229s, sum = -2257.74
+Block size = 897, N = 1000
+--- fn = mmul0, MFLOPS = 2947.28, elapsed time = 0.678592s, sum = -2257.74
+Block size = 898, N = 1000
+--- fn = mmul0, MFLOPS = 2909.84, elapsed time = 0.687322s, sum = -2257.74
+Block size = 899, N = 1000
+--- fn = mmul0, MFLOPS = 3005.47, elapsed time = 0.665453s, sum = -2257.74
+Block size = 900, N = 1000
+--- fn = mmul0, MFLOPS = 2983.44, elapsed time = 0.670366s, sum = -2257.74
+Block size = 901, N = 1000
+--- fn = mmul0, MFLOPS = 2966.29, elapsed time = 0.674244s, sum = -2257.74
+Block size = 902, N = 1000
+--- fn = mmul0, MFLOPS = 2955.57, elapsed time = 0.676688s, sum = -2257.74
+Block size = 903, N = 1000
+--- fn = mmul0, MFLOPS = 2995.28, elapsed time = 0.667717s, sum = -2257.74
+Block size = 904, N = 1000
+--- fn = mmul0, MFLOPS = 3064.59, elapsed time = 0.652615s, sum = -2257.74
+Block size = 905, N = 1000
+--- fn = mmul0, MFLOPS = 2905.1, elapsed time = 0.688445s, sum = -2257.74
+Block size = 906, N = 1000
+--- fn = mmul0, MFLOPS = 2848.6, elapsed time = 0.702099s, sum = -2257.74
+Block size = 907, N = 1000
+--- fn = mmul0, MFLOPS = 2916.05, elapsed time = 0.68586s, sum = -2257.74
+Block size = 908, N = 1000
+--- fn = mmul0, MFLOPS = 2778.49, elapsed time = 0.719815s, sum = -2257.74
+Block size = 909, N = 1000
+--- fn = mmul0, MFLOPS = 3003.97, elapsed time = 0.665786s, sum = -2257.74
+Block size = 910, N = 1000
+--- fn = mmul0, MFLOPS = 2912.92, elapsed time = 0.686596s, sum = -2257.74
+Block size = 911, N = 1000
+--- fn = mmul0, MFLOPS = 2698.04, elapsed time = 0.741278s, sum = -2257.74
+Block size = 912, N = 1000
+--- fn = mmul0, MFLOPS = 2862.99, elapsed time = 0.698571s, sum = -2257.74
+Block size = 913, N = 1000
+--- fn = mmul0, MFLOPS = 2980.05, elapsed time = 0.671129s, sum = -2257.74
+Block size = 914, N = 1000
+--- fn = mmul0, MFLOPS = 2850.09, elapsed time = 0.701731s, sum = -2257.74
+Block size = 915, N = 1000
+--- fn = mmul0, MFLOPS = 2837.52, elapsed time = 0.704841s, sum = -2257.74
+Block size = 916, N = 1000
+--- fn = mmul0, MFLOPS = 2697.21, elapsed time = 0.741507s, sum = -2257.74
+Block size = 917, N = 1000
+--- fn = mmul0, MFLOPS = 2929.56, elapsed time = 0.682697s, sum = -2257.74
+Block size = 918, N = 1000
+--- fn = mmul0, MFLOPS = 2784.35, elapsed time = 0.7183s, sum = -2257.74
+Block size = 919, N = 1000
+--- fn = mmul0, MFLOPS = 2638.79, elapsed time = 0.757924s, sum = -2257.74
+Block size = 920, N = 1000
+--- fn = mmul0, MFLOPS = 2915.23, elapsed time = 0.686052s, sum = -2257.74
+Block size = 921, N = 1000
+--- fn = mmul0, MFLOPS = 2692.66, elapsed time = 0.742759s, sum = -2257.74
+Block size = 922, N = 1000
+--- fn = mmul0, MFLOPS = 2596.31, elapsed time = 0.770325s, sum = -2257.74
+Block size = 923, N = 1000
+--- fn = mmul0, MFLOPS = 2612.94, elapsed time = 0.765421s, sum = -2257.74
+Block size = 924, N = 1000
+--- fn = mmul0, MFLOPS = 2866.57, elapsed time = 0.697699s, sum = -2257.74
+Block size = 925, N = 1000
+--- fn = mmul0, MFLOPS = 2786.62, elapsed time = 0.717716s, sum = -2257.74
+Block size = 926, N = 1000
+--- fn = mmul0, MFLOPS = 2656.76, elapsed time = 0.752796s, sum = -2257.74
+Block size = 927, N = 1000
+--- fn = mmul0, MFLOPS = 2394.37, elapsed time = 0.835293s, sum = -2257.74
+Block size = 928, N = 1000
+--- fn = mmul0, MFLOPS = 2874.66, elapsed time = 0.695735s, sum = -2257.74
+Block size = 929, N = 1000
+--- fn = mmul0, MFLOPS = 2951.92, elapsed time = 0.677525s, sum = -2257.74
+Block size = 930, N = 1000
+--- fn = mmul0, MFLOPS = 2838.23, elapsed time = 0.704665s, sum = -2257.74
+Block size = 931, N = 1000
+--- fn = mmul0, MFLOPS = 2832.42, elapsed time = 0.706111s, sum = -2257.74
+Block size = 932, N = 1000
+--- fn = mmul0, MFLOPS = 2908.33, elapsed time = 0.687679s, sum = -2257.74
+Block size = 933, N = 1000
+--- fn = mmul0, MFLOPS = 2887.03, elapsed time = 0.692753s, sum = -2257.74
+Block size = 934, N = 1000
+--- fn = mmul0, MFLOPS = 2923.24, elapsed time = 0.684172s, sum = -2257.74
+Block size = 935, N = 1000
+--- fn = mmul0, MFLOPS = 2789.95, elapsed time = 0.71686s, sum = -2257.74
+Block size = 936, N = 1000
+--- fn = mmul0, MFLOPS = 3017.83, elapsed time = 0.662727s, sum = -2257.74
+Block size = 937, N = 1000
+--- fn = mmul0, MFLOPS = 2905.55, elapsed time = 0.688339s, sum = -2257.74
+Block size = 938, N = 1000
+--- fn = mmul0, MFLOPS = 2939.95, elapsed time = 0.680283s, sum = -2257.74
+Block size = 939, N = 1000
+--- fn = mmul0, MFLOPS = 2906.98, elapsed time = 0.688s, sum = -2257.74
+Block size = 940, N = 1000
+--- fn = mmul0, MFLOPS = 2991.48, elapsed time = 0.668566s, sum = -2257.74
+Block size = 941, N = 1000
+--- fn = mmul0, MFLOPS = 3043.88, elapsed time = 0.657057s, sum = -2257.74
+Block size = 942, N = 1000
+--- fn = mmul0, MFLOPS = 3104.03, elapsed time = 0.644323s, sum = -2257.74
+Block size = 943, N = 1000
+--- fn = mmul0, MFLOPS = 2941.3, elapsed time = 0.679972s, sum = -2257.74
+Block size = 944, N = 1000
+--- fn = mmul0, MFLOPS = 2528.77, elapsed time = 0.790898s, sum = -2257.74
+Block size = 945, N = 1000
+--- fn = mmul0, MFLOPS = 2454.57, elapsed time = 0.814807s, sum = -2257.74
+Block size = 946, N = 1000
+--- fn = mmul0, MFLOPS = 2694.91, elapsed time = 0.74214s, sum = -2257.74
+Block size = 947, N = 1000
+--- fn = mmul0, MFLOPS = 2709.03, elapsed time = 0.738272s, sum = -2257.74
+Block size = 948, N = 1000
+--- fn = mmul0, MFLOPS = 2850.16, elapsed time = 0.701714s, sum = -2257.74
+Block size = 949, N = 1000
+--- fn = mmul0, MFLOPS = 2963.54, elapsed time = 0.674868s, sum = -2257.74
+Block size = 950, N = 1000
+--- fn = mmul0, MFLOPS = 3073.3, elapsed time = 0.650767s, sum = -2257.74
+Block size = 951, N = 1000
+--- fn = mmul0, MFLOPS = 3045.35, elapsed time = 0.656739s, sum = -2257.74
+Block size = 952, N = 1000
+--- fn = mmul0, MFLOPS = 3116.97, elapsed time = 0.641649s, sum = -2257.74
+Block size = 953, N = 1000
+--- fn = mmul0, MFLOPS = 3009.14, elapsed time = 0.664642s, sum = -2257.74
+Block size = 954, N = 1000
+--- fn = mmul0, MFLOPS = 3114.3, elapsed time = 0.642198s, sum = -2257.74
+Block size = 955, N = 1000
+--- fn = mmul0, MFLOPS = 3056.4, elapsed time = 0.654364s, sum = -2257.74
+Block size = 956, N = 1000
+--- fn = mmul0, MFLOPS = 3104.28, elapsed time = 0.644271s, sum = -2257.74
+Block size = 957, N = 1000
+--- fn = mmul0, MFLOPS = 3087.7, elapsed time = 0.647732s, sum = -2257.74
+Block size = 958, N = 1000
+--- fn = mmul0, MFLOPS = 2818.14, elapsed time = 0.709689s, sum = -2257.74
+Block size = 959, N = 1000
+--- fn = mmul0, MFLOPS = 2923.49, elapsed time = 0.684115s, sum = -2257.74
+Block size = 960, N = 1000
+--- fn = mmul0, MFLOPS = 2936.7, elapsed time = 0.681036s, sum = -2257.74
+Block size = 961, N = 1000
+--- fn = mmul0, MFLOPS = 2839.4, elapsed time = 0.704374s, sum = -2257.74
+Block size = 962, N = 1000
+--- fn = mmul0, MFLOPS = 3005.11, elapsed time = 0.665532s, sum = -2257.74
+Block size = 963, N = 1000
+--- fn = mmul0, MFLOPS = 2852.7, elapsed time = 0.70109s, sum = -2257.74
+Block size = 964, N = 1000
+--- fn = mmul0, MFLOPS = 2818.57, elapsed time = 0.70958s, sum = -2257.74
+Block size = 965, N = 1000
+--- fn = mmul0, MFLOPS = 2962.81, elapsed time = 0.675034s, sum = -2257.74
+Block size = 966, N = 1000
+--- fn = mmul0, MFLOPS = 2988.04, elapsed time = 0.669335s, sum = -2257.74
+Block size = 967, N = 1000
+--- fn = mmul0, MFLOPS = 3000.97, elapsed time = 0.666452s, sum = -2257.74
+Block size = 968, N = 1000
+--- fn = mmul0, MFLOPS = 3046.1, elapsed time = 0.656577s, sum = -2257.74
+Block size = 969, N = 1000
+--- fn = mmul0, MFLOPS = 2913.26, elapsed time = 0.686516s, sum = -2257.74
+Block size = 970, N = 1000
+--- fn = mmul0, MFLOPS = 3029.3, elapsed time = 0.660218s, sum = -2257.74
+Block size = 971, N = 1000
+--- fn = mmul0, MFLOPS = 2967.17, elapsed time = 0.674043s, sum = -2257.74
+Block size = 972, N = 1000
+--- fn = mmul0, MFLOPS = 2932.38, elapsed time = 0.682041s, sum = -2257.74
+Block size = 973, N = 1000
+--- fn = mmul0, MFLOPS = 2813.77, elapsed time = 0.710791s, sum = -2257.74
+Block size = 974, N = 1000
+--- fn = mmul0, MFLOPS = 3026.1, elapsed time = 0.660917s, sum = -2257.74
+Block size = 975, N = 1000
+--- fn = mmul0, MFLOPS = 3032.6, elapsed time = 0.6595s, sum = -2257.74
+Block size = 976, N = 1000
+--- fn = mmul0, MFLOPS = 3017.95, elapsed time = 0.662702s, sum = -2257.74
+Block size = 977, N = 1000
+--- fn = mmul0, MFLOPS = 2990.42, elapsed time = 0.668802s, sum = -2257.74
+Block size = 978, N = 1000
+--- fn = mmul0, MFLOPS = 3004.96, elapsed time = 0.665567s, sum = -2257.74
+Block size = 979, N = 1000
+--- fn = mmul0, MFLOPS = 3077.32, elapsed time = 0.649917s, sum = -2257.74
+Block size = 980, N = 1000
+--- fn = mmul0, MFLOPS = 2946.94, elapsed time = 0.678671s, sum = -2257.74
+Block size = 981, N = 1000
+--- fn = mmul0, MFLOPS = 2877.02, elapsed time = 0.695163s, sum = -2257.74
+Block size = 982, N = 1000
+--- fn = mmul0, MFLOPS = 2881.83, elapsed time = 0.694004s, sum = -2257.74
+Block size = 983, N = 1000
+--- fn = mmul0, MFLOPS = 2859.67, elapsed time = 0.699381s, sum = -2257.74
+Block size = 984, N = 1000
+--- fn = mmul0, MFLOPS = 2791.21, elapsed time = 0.716536s, sum = -2257.74
+Block size = 985, N = 1000
+--- fn = mmul0, MFLOPS = 2848.98, elapsed time = 0.702006s, sum = -2257.74
+Block size = 986, N = 1000
+--- fn = mmul0, MFLOPS = 2522.67, elapsed time = 0.792812s, sum = -2257.74
+Block size = 987, N = 1000
+--- fn = mmul0, MFLOPS = 2903.81, elapsed time = 0.688751s, sum = -2257.74
+Block size = 988, N = 1000
+--- fn = mmul0, MFLOPS = 2687.34, elapsed time = 0.74423s, sum = -2257.74
+Block size = 989, N = 1000
+--- fn = mmul0, MFLOPS = 2911.05, elapsed time = 0.687038s, sum = -2257.74
+Block size = 990, N = 1000
+--- fn = mmul0, MFLOPS = 2889.65, elapsed time = 0.692125s, sum = -2257.74
+Block size = 991, N = 1000
+--- fn = mmul0, MFLOPS = 2757.15, elapsed time = 0.725387s, sum = -2257.74
+Block size = 992, N = 1000
+--- fn = mmul0, MFLOPS = 2758.13, elapsed time = 0.72513s, sum = -2257.74
+Block size = 993, N = 1000
+--- fn = mmul0, MFLOPS = 2759.65, elapsed time = 0.724729s, sum = -2257.74
+Block size = 994, N = 1000
+--- fn = mmul0, MFLOPS = 2690.46, elapsed time = 0.743366s, sum = -2257.74
+Block size = 995, N = 1000
+--- fn = mmul0, MFLOPS = 2828.76, elapsed time = 0.707024s, sum = -2257.74
+Block size = 996, N = 1000
+--- fn = mmul0, MFLOPS = 2669.87, elapsed time = 0.7491s, sum = -2257.74
+Block size = 997, N = 1000
+--- fn = mmul0, MFLOPS = 2477.94, elapsed time = 0.807123s, sum = -2257.74
+Block size = 998, N = 1000
+--- fn = mmul0, MFLOPS = 2461.16, elapsed time = 0.812626s, sum = -2257.74
+Block size = 999, N = 1000
+--- fn = mmul0, MFLOPS = 2535.26, elapsed time = 0.788875s, sum = -2257.74
+Block size = 1000, N = 1000
+--- fn = mmul0, MFLOPS = 2572.05, elapsed time = 0.777591s, sum = -2257.74
