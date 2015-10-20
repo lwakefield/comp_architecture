@@ -25,14 +25,21 @@ double    c[N][N];
 void
 mmulb(int b, double C[N][N], double A[N][N], double B[N][N])
 {
+    //for kk := 1 to N by B do
+    //    for jj := 1 to N by B do
+    //        for i := 1 to N do
+    //            for k := kk to min(kk+B-1, N) do
+    //                r = X[i,k]; [> register allocated <] 
+    //                for j := jj to min(jj+B-1, N) do
+    //                    Z[i,j] += r*Y[k,j];
     int i, j, jj, k, kk;
     double r;
     for (kk = 0; kk < N; kk += b) {
         for (jj = 0; jj < N; jj += b) {
             for (i = 0; i < N; i++) {
-                for (k = kk; k < (kk+b-1 < N ? kk+b-1 : N); k++) {
+                for (k = kk; k < (kk+b < N ? kk+b : N); k++) {
                     r = A[i][k];
-                    for (j = jj; j < (jj+b-1 < N ? jj+b-1 : N); j++) {
+                    for (j = jj; j < (jj+b < N ? jj+b : N); j++) {
                         C[i][j] += r * B[k][j];
                     }
                 }
