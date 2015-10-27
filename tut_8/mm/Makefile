@@ -1,5 +1,5 @@
 mm-1:	mm-1.o
-	gcc -O3 -o mm-1 mm-1.c
+	g++ -msse2 -O3 -I ./eigen -o mm-1 mm-1.cpp
 
 mm-blas:	mm-blas.o
 	gcc -O3 -o mm-blas mm-blas.c -lblas

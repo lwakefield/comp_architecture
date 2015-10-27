@@ -1,7 +1,5 @@
-/*
-**	blocked matrix multiplication example
-**	compile with gcc -O3 -o mm-1 mm-1.c 
-*/
+#define EIGEN_VECTORIZE
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,20 +28,10 @@ double    c[N][N];
 void 
 mmule(int b, double C[N][N], double A[N][N], double B[N][N])
 {
-    MatrixXd mat_a(N,N);
-    MatrixXd mat_b(N,N);
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            mat_a(i,j) = A[i][j];
-            mat_b(i,j) = B[i][j];
-        }
-    }
+    MatrixXd mat_a = Map<Matrix<double, N, N, RowMajor> >((double *)A, N, N);
+    MatrixXd mat_b = Map<Matrix<double, N, N, RowMajor> >((double *)B, N, N);
     MatrixXd mat_c = mat_a * mat_b;
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            C[i][j] = mat_c(i,j);
-        }
-    }
+    Map<MatrixXd>((double *)C, mat_c.rows(), mat_c.cols()) = mat_c;
 }
 
 void
